@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Preview - ChiefOperator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #1a1a1a; color: #fff; }
+        .header { padding: 2rem; text-align: center; background: #000; }
+        .header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .header p { color: #888; }
+        .templates { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem; }
+        .template-card { background: #2a2a2a; border-radius: 12px; overflow: hidden; }
+        .template-header { padding: 1.5rem; background: #333; }
+        .template-header h2 { font-size: 1.3rem; }
+        .template-header p { color: #888; font-size: 0.9rem; margin-top: 0.3rem; }
+        .preview-frame { width: 100%; height: 500px; border: none; }
+        .preview-restaurant {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #8B4513;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .preview-restaurant h1 { font-size: 2.5rem; font-family: Georgia, serif; margin-bottom: 1rem; }
+        .preview-restaurant p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.9; }
+        .preview-restaurant .btn {
+            background: #D4A574;
+            color: #333;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .preview-salon {
+            background: linear-gradient(135deg, #f5e6f0 0%, #e8d5e0 100%);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #444;
+            padding: 2rem;
+        }
+        .preview-salon h1 { font-size: 2.5rem; color: #8b4a6e; font-weight: 300; letter-spacing: 2px; margin-bottom: 1rem; }
+        .preview-salon p { font-size: 1.1rem; color: #666; margin-bottom: 1.5rem; }
+        .preview-salon .btn {
+            background: #8b4a6e;
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        @media (max-width: 900px) {
+            .templates { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 ChiefOperator Templates</h1>
+        <p>One-page websites for local businesses • €250-350 • 48hr delivery</p>
+    </div>
+    
+    <div class="templates">
+        <div class="template-card">
+            <div class="template-header">
+                <h2>🍽️ Restaurant Template</h2>
+                <p>Warm, elegant design for restaurants, cafes, bistros</p>
+            </div>
+            <div class="preview-restaurant">
+                <h1>Bistro Italiano</h1>
+                <p>Authentieke Italiaanse keuken sinds 1995</p>
+                <a href="#" class="btn">Reserveer een tafel</a>
+            </div>
+        </div>
+        
+        <div class="template-card">
+            <div class="template-header">
+                <h2>✨ Salon Template</h2>
+                <p>Modern, feminine design for salons, beauty, wellness</p>
+            </div>
+            <div class="preview-salon">
+                <h1>Studio Belle</h1>
+                <p>Jouw moment van ontspanning en schoonheid</p>
+                <a href="#" class="btn">Maak een afspraak</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

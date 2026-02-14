@@ -1,0 +1,533 @@
+{
+  "template_blueprints": {
+    "version": "2.2",
+    "last_updated": "2026-02-14",
+    "description": "Floatweb template blueprints based on industry behavior research",
+    
+    "restaurant": {
+      "start": {
+        "name": "Restaurant Start",
+        "industry": "restaurant",
+        "tier": "Start",
+        "pages": 1,
+        "sections": [
+          {
+            "id": "hero",
+            "type": "hero-centered",
+            "content": {
+              "headline": "[Restaurant Naam]",
+              "subheadline": "[Tagline - sfeer/keuken type]",
+              "background": "atmosphere-photo",
+              "cta_primary": {
+                "text": "Reserveer een tafel",
+                "action": "tel:PHONE",
+                "style": "btn-primary"
+              },
+              "cta_secondary": {
+                "text": "Bekijk menu",
+                "action": "scroll-to-menu",
+                "style": "btn-secondary"
+              }
+            }
+          },
+          {
+            "id": "about",
+            "type": "text-block",
+            "content": {
+              "headline": "Over [Restaurant]",
+              "text": "2-3 sentences about cuisine, atmosphere, unique selling point",
+              "max_length": "300 chars"
+            }
+          },
+          {
+            "id": "highlights",
+            "type": "feature-grid",
+            "content": {
+              "headline": "Onze specialiteiten",
+              "items": 3,
+              "layout": "3-col",
+              "content_type": "dish-highlight",
+              "each_item": {
+                "image": "dish-photo",
+                "title": "Dish name",
+                "description": "Brief description (max 80 chars)"
+              }
+            }
+          },
+          {
+            "id": "hours",
+            "type": "info-block",
+            "content": {
+              "headline": "Openingstijden",
+              "layout": "simple-list",
+              "data": ["Maandag: gesloten", "Di-Vr: 17:00-22:00", "Za-Zo: 12:00-23:00"]
+            }
+          },
+          {
+            "id": "menu-preview",
+            "type": "cta-block",
+            "content": {
+              "headline": "Bekijk ons menu",
+              "text": "Ontdek onze gerechten",
+              "cta": {
+                "text": "Download menu (PDF)",
+                "action": "download-pdf",
+                "style": "btn-secondary"
+              }
+            }
+          },
+          {
+            "id": "contact",
+            "type": "contact-block",
+            "content": {
+              "headline": "Contact",
+              "address": "[Straatnaam 123, 1234 AB Stad]",
+              "phone": "[06-12345678]",
+              "email": "[info@restaurant.nl]",
+              "show_map": true
+            }
+          },
+          {
+            "id": "footer-cta",
+            "type": "cta-banner",
+            "content": {
+              "headline": "Reserveren?",
+              "cta": {
+                "text": "Bel direct",
+                "action": "tel:PHONE",
+                "style": "btn-primary-lg"
+              }
+            }
+          }
+        ],
+        "navigation": {
+          "type": "minimal-sticky",
+          "items": ["Home", "Menu", "Contact"],
+          "mobile": "hamburger"
+        },
+        "colors": {
+          "primary": "warm-accent",
+          "suggested": "#C75B39 (terracotta)"
+        },
+        "fonts": {
+          "heading": "Inter",
+          "body": "Inter"
+        },
+        "required_assets": [
+          "Hero atmosphere photo",
+          "3 dish photos",
+          "Logo",
+          "Menu PDF"
+        ],
+        "conversion_focus": [
+          "Phone reservation (primary)",
+          "Menu download (secondary)"
+        ]
+      },
+      
+      "groei": {
+        "name": "Restaurant Groei",
+        "industry": "restaurant",
+        "tier": "Groei",
+        "pages": ["Home", "Menu", "Over Ons", "Contact"],
+        "sections_home": [
+          {
+            "id": "hero",
+            "type": "hero-fullscreen",
+            "content": {
+              "headline": "[Restaurant Naam]",
+              "subheadline": "[Tagline]",
+              "background": "high-quality-atmosphere",
+              "overlay": "gradient-dark",
+              "cta_primary": {
+                "text": "Reserveer tafel",
+                "action": "/reserveren",
+                "style": "btn-primary-lg"
+              },
+              "cta_secondary": {
+                "text": "Bekijk menu",
+                "action": "/menu",
+                "style": "btn-outline-light"
+              }
+            }
+          },
+          {
+            "id": "about",
+            "type": "split-layout",
+            "content": {
+              "layout": "text-left-image-right",
+              "headline": "[Over ons headline]",
+              "text": "Longer story about restaurant, chef, philosophy",
+              "image": "interior or chef photo"
+            }
+          },
+          {
+            "id": "menu-preview",
+            "type": "menu-highlights",
+            "content": {
+              "headline": "Highlights van ons menu",
+              "items": 4,
+              "layout": "2x2-grid",
+              "cta": {
+                "text": "Bekijk volledig menu",
+                "action": "/menu"
+              }
+            }
+          },
+          {
+            "id": "testimonials",
+            "type": "reviews-carousel",
+            "content": {
+              "headline": "Wat gasten zeggen",
+              "source": "google-reviews",
+              "max_items": 3
+            }
+          },
+          {
+            "id": "gallery",
+            "type": "image-grid",
+            "content": {
+              "headline": "Sfeerimpressie",
+              "layout": "masonry",
+              "images": 6
+            }
+          },
+          {
+            "id": "contact",
+            "type": "contact-detailed",
+            "content": {
+              "headline": "Contact & Reserveren",
+              "form": true,
+              "map": true,
+              "opening_hours": true,
+              "parking_info": true
+            }
+          }
+        ],
+        "features": [
+          "Online reservation form",
+          "Full menu page with categories",
+          "Photo gallery",
+          "Google reviews integration",
+          "Multi-page navigation"
+        ]
+      }
+    },
+    
+    "loodgieter": {
+      "start": {
+        "name": "Loodgieter Start",
+        "industry": "loodgieter",
+        "tier": "Start",
+        "pages": 1,
+        "target_persona": "Local plumber, 1-5 employees, family business",
+        "sections": [
+          {
+            "id": "hero",
+            "type": "hero-split",
+            "content": {
+              "layout": "text-left",
+              "headline": "[Bedrijfsnaam]",
+              "subheadline": "Uw betrouwbare loodgieter in [Regio]",
+              "badge": "24/7 Spoedservice",
+              "cta_primary": {
+                "text": "[06-12345678]",
+                "action": "tel:PHONE",
+                "style": "btn-primary-xl",
+                "icon": "phone",
+                "note": "Phone DOMINANT - largest element"
+              },
+              "visual": "van-photo or team-photo"
+            }
+          },
+          {
+            "id": "services",
+            "type": "service-cards",
+            "content": {
+              "headline": "Onze diensten",
+              "layout": "3-col",
+              "services": [
+                {
+                  "icon": "droplet",
+                  "title": "Lekkages",
+                  "description": "Snelle detectie en reparatie"
+                },
+                {
+                  "icon": "flame",
+                  "title": "CV & Verwarming",
+                  "description": "Installatie en onderhoud"
+                },
+                {
+                  "icon": "bath",
+                  "title": "Sanitair",
+                  "description": "Badkamers en wc's"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trust",
+            "type": "trust-bar",
+            "content": {
+              "layout": "horizontal-icons",
+              "items": [
+                {"icon": "shield", "text": "Garantie op werk"},
+                {"icon": "clock", "text": "Snel ter plaatse"},
+                {"icon": "map-pin", "text": "Werkzaam in [Regio]"}
+              ]
+            }
+          },
+          {
+            "id": "about",
+            "type": "text-block",
+            "content": {
+              "headline": "Over [Bedrijfsnaam]",
+              "text": "Brief story: years in business, family company, service area",
+              "years_badge": "[X] jaar ervaring"
+            }
+          },
+          {
+            "id": "service-area",
+            "type": "info-block",
+            "content": {
+              "headline": "Werkgebied",
+              "text": "Wij zijn werkzaam in: [Stad1], [Stad2], [Stad3] en omgeving",
+              "show_map": true
+            }
+          },
+          {
+            "id": "contact",
+            "type": "contact-cta",
+            "content": {
+              "headline": "Direct contact",
+              "phone_large": true,
+              "alternate_cta": "Of vraag een offerte aan",
+              "form_link": "#offerte"
+            }
+          },
+          {
+            "id": "footer",
+            "type": "footer-minimal",
+            "content": {
+              "kvk": "KVK: [nummer]",
+              "phone": "Tel: [nummer]",
+              "hours": "Bereikbaar: [dagen/tijden]"
+            }
+          }
+        ],
+        "navigation": {
+          "type": "minimal",
+          "items": ["Home", "Diensten", "Contact"],
+          "sticky": false
+        },
+        "colors": {
+          "primary": "trust-blue",
+          "suggested": "#1e40af (professional blue)"
+        },
+        "conversion_rules": [
+          "Phone number must be largest CTA",
+          "Click-to-call on mobile",
+          "Service area prominently displayed",
+          "Trust elements above fold"
+        ],
+        "required_assets": [
+          "Company van photo OR team photo",
+          "Logo",
+          "Service area definition"
+        ]
+      },
+      
+      "groei": {
+        "name": "Loodgieter Groei",
+        "industry": "loodgieter",
+        "tier": "Groei",
+        "pages": ["Home", "Diensten", "Over Ons", "Contact"],
+        "sections_home": [
+          {
+            "id": "hero",
+            "type": "hero-emergency",
+            "content": {
+              "headline": "[Bedrijfsnaam]",
+              "subheadline": "Vakkundige loodgieters in [Regio]",
+              "emergency_banner": {
+                "text": "Spoed? Bel direct",
+                "phone": "[PHONE]",
+                "available": "24/7 beschikbaar"
+              },
+              "cta_primary": "Bel nu",
+              "cta_secondary": "Offerte aanvragen"
+            }
+          },
+          {
+            "id": "services",
+            "type": "service-detailed",
+            "content": {
+              "headline": "Waarmee kunnen wij u helpen?",
+              "services": [
+                {
+                  "title": "Loodgieterswerk",
+                  "items": ["Lekkages", "Verstoppingen", "Leidingwerk"]
+                },
+                {
+                  "title": "CV & Verwarming",
+                  "items": ["Ketel installatie", "Onderhoud", "Reparatie"]
+                },
+                {
+                  "title": "Sanitair",
+                  "items": ["Badkamer renovatie", "Toilet", "Kranen"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "trust",
+            "type": "trust-comprehensive",
+            "content": {
+              "certifications": ["Techniek Nederland", "InstallQ"],
+              "years": "[X] jaar ervaring",
+              "guarantee": "Garantie op alle werkzaamheden",
+              "reviews": "Google reviews integration"
+            }
+          },
+          {
+            "id": "offerte",
+            "type": "form-cta",
+            "content": {
+              "headline": "Vraag een offerte aan",
+              "form_fields": ["Naam", "Telefoon", "Email", "Omschrijving werk"],
+              "response_time": "Binnen 24 uur reactie"
+            }
+          },
+          {
+            "id": "service-area",
+            "type": "map-area",
+            "content": {
+              "headline": "Ons werkgebied",
+              "map": true,
+              "cities": ["Stad1", "Stad2", "Stad3"]
+            }
+          }
+        ],
+        "features": [
+          "Emergency service highlight",
+          "Offerte aanvraag form",
+          "Service area map",
+          "Google reviews",
+          "Certification badges"
+        ]
+      }
+    },
+    
+    "salon": {
+      "groei": {
+        "name": "Salon Groei",
+        "industry": "salon",
+        "tier": "Groei",
+        "pages": ["Home", "Diensten/Prijzen", "Team", "Contact"],
+        "sections_home": [
+          {
+            "id": "hero",
+            "type": "hero-atmosphere",
+            "content": {
+              "headline": "[Salon Naam]",
+              "subheadline": "Jouw haar, jouw stijl",
+              "background": "salon-interior",
+              "cta_primary": {
+                "text": "Boek je afspraak",
+                "action": "/boeken"
+              },
+              "cta_secondary": {
+                "text": "Bekijk prijzen",
+                "action": "/prijzen"
+              }
+            }
+          },
+          {
+            "id": "services",
+            "type": "service-categories",
+            "content": {
+              "headline": "Onze behandelingen",
+              "categories": [
+                {
+                  "title": "Dames",
+                  "services": ["Knippen", "Kleuren", "Highlights"],
+                  "price_from": "vanaf €35"
+                },
+                {
+                  "title": "Heren",
+                  "services": ["Knippen", "Baard", "Contours"],
+                  "price_from": "vanaf €25"
+                },
+                {
+                  "title": "Kleuren",
+                  "services": ["Hele hoofd", "Uitgroei", "Balayage"],
+                  "price_from": "vanaf €55"
+                }
+              ]
+            }
+          },
+          {
+            "id": "team",
+            "type": "team-grid",
+            "content": {
+              "headline": "Ontmoet ons team",
+              "members": 3,
+              "each": {
+                "photo": "portrait",
+                "name": "[Naam]",
+                "role": "[Specialisatie]"
+              }
+            }
+          },
+          {
+            "id": "gallery",
+            "type": "instagram-feed",
+            "content": {
+              "headline": "Volg ons op Instagram",
+              "handle": "@[salonhandle]",
+              "feed_embed": true
+            }
+          },
+          {
+            "id": "reviews",
+            "type": "reviews-grid",
+            "content": {
+              "headline": "Wat klanten zeggen",
+              "source": "google-reviews",
+              "show_stars": true
+            }
+          },
+          {
+            "id": "contact",
+            "type": "contact-booking",
+            "content": {
+              "headline": "Maak je afspraak",
+              "methods": ["Online boeken", "Bel", "WhatsApp"],
+              "hours": true,
+              "location": true
+            }
+          }
+        ],
+        "colors": {
+          "primary": "soft-pink",
+          "suggested": "#8b4a6e (dusty rose)"
+        },
+        "features": [
+          "Online booking integration",
+          "Price transparency",
+          "Team introduction",
+          "Instagram feed",
+          "Google reviews"
+        ]
+      }
+    }
+  },
+  
+  "design_principles": {
+    "mobile_first": true,
+    "conversion_optimized": true,
+    "industry_appropriate": true,
+    "no_assumptions": "All designs based on research data",
+    "tier_appropriate": "Complexity matches tier level"
+  }
+}

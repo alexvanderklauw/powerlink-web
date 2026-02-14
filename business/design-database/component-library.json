@@ -1,0 +1,338 @@
+{
+  "component_library": {
+    "version": "2.1",
+    "last_updated": "2026-02-14",
+    "description": "Modular component system for Floatweb templates",
+    
+    "hero_sections": {
+      "variants": [
+        {
+          "id": "hero-centered",
+          "name": "Centered Headline + CTA",
+          "description": "Text centered, background image or solid color",
+          "html_structure": "section.hero > div.container > h1 + p.lead + div.cta-group",
+          "tier_support": ["Start", "Groei", "Pro"],
+          "use_cases": ["Strong brand messaging", "Service businesses"],
+          "spacing": "py-20 md:py-32"
+        },
+        {
+          "id": "hero-split",
+          "name": "Split Layout",
+          "description": "Text left, image/visual right (or reverse)",
+          "html_structure": "section.hero > div.container > div.grid-2-cols > div.text-content + div.visual",
+          "tier_support": ["Start", "Groei", "Pro"],
+          "use_cases": ["Product showcase", "Trust building"],
+          "spacing": "py-16 md:py-24"
+        },
+        {
+          "id": "hero-fullscreen",
+          "name": "Fullscreen Background",
+          "description": "Full viewport height with background image/video",
+          "html_structure": "section.hero.fullscreen > div.overlay > div.container > h1 + p + cta",
+          "tier_support": ["Groei", "Pro"],
+          "use_cases": ["Restaurants", "Experience businesses"],
+          "spacing": "h-screen"
+        },
+        {
+          "id": "hero-minimal",
+          "name": "Minimal Text",
+          "description": "Large typography, minimal visual, solid background",
+          "html_structure": "section.hero.minimal > div.container > h1.display + p + cta",
+          "tier_support": ["Start"],
+          "use_cases": ["Consultants", "Simple services"],
+          "spacing": "py-12 md:py-20"
+        },
+        {
+          "id": "hero-gradient",
+          "name": "Gradient Background",
+          "description": "Bold gradient with minimal imagery",
+          "html_structure": "section.hero.gradient-bg > div.container > h1 + p + cta",
+          "tier_support": ["Groei", "Pro"],
+          "use_cases": ["Tech", "Modern services"],
+          "spacing": "py-20 md:py-28"
+        }
+      ]
+    },
+
+    "navigation_types": {
+      "variants": [
+        {
+          "id": "nav-minimal",
+          "name": "Minimal Top Nav",
+          "description": "Logo + 3-4 links, clean and simple",
+          "html_structure": "nav > div.container > a.logo + ul.nav-links + optional-cta",
+          "tier_support": ["Start", "Groei", "Pro"],
+          "position": "static|sticky"
+        },
+        {
+          "id": "nav-sticky",
+          "name": "Sticky Navigation",
+          "description": "Fixed position while scrolling",
+          "html_structure": "nav.sticky > div.container > ...",
+          "tier_support": ["Groei", "Pro"],
+          "position": "fixed top-0"
+        },
+        {
+          "id": "nav-transparent",
+          "name": "Transparent to Solid",
+          "description": "Transparent over hero, solid on scroll",
+          "html_structure": "nav.transparent.with-scroll-effect > ...",
+          "tier_support": ["Groei", "Pro"],
+          "js_required": true
+        },
+        {
+          "id": "nav-hamburger",
+          "name": "Mobile Hamburger",
+          "description": "Collapsed menu on mobile, full on desktop",
+          "html_structure": "nav > div.container > a.logo + button.hamburger + div.mobile-menu",
+          "tier_support": ["Start", "Groei", "Pro"],
+          "responsive": true
+        }
+      ]
+    },
+
+    "conversion_elements": {
+      "variants": [
+        {
+          "id": "cta-primary",
+          "name": "Primary Solid Button",
+          "description": "Main call-to-action, prominent",
+          "html_structure": "a.btn.btn-primary | button.btn.btn-primary",
+          "icon_options": ["arrow-right", "phone", "calendar"],
+          "tier_support": ["Start", "Groei", "Pro"],
+          "required": true
+        },
+        {
+          "id": "cta-secondary",
+          "name": "Secondary Outline Button",
+          "description": "Alternative action, less prominent",
+          "html_structure": "a.btn.btn-secondary | button.btn.btn-secondary",
+          "icon_options": ["info", "download", "external-link"],
+          "tier_support": ["Start", "Groei", "Pro"]
+        },
+        {
+          "id": "cta-floating-whatsapp",
+          "name": "Floating WhatsApp Button",
+          "description": "Fixed position, always visible",
+          "html_structure": "a.floating-btn.whatsapp.fixed.bottom-4.right-4",
+          "icon": "message-circle",
+          "tier_support": ["Groei", "Pro"],
+          "mobile_only": false
+        },
+        {
+          "id": "cta-sticky-bottom",
+          "name": "Sticky Bottom Bar",
+          "description": "Fixed CTA bar at bottom of viewport",
+          "html_structure": "div.sticky-cta-bar.fixed.bottom-0",
+          "tier_support": ["Groei", "Pro"],
+          "mobile_only": true
+        },
+        {
+          "id": "cta-inline-block",
+          "name": "Inline CTA Block",
+          "description": "CTA within content sections",
+          "html_structure": "div.cta-block > h3 + p + button",
+          "tier_support": ["Start", "Groei", "Pro"]
+        },
+        {
+          "id": "cta-final-banner",
+          "name": "Final CTA Banner",
+          "description": "Large CTA section before footer",
+          "html_structure": "section.cta-banner > div.container > h2 + p + button",
+          "tier_support": ["Start", "Groei", "Pro"],
+          "required": true
+        }
+      ]
+    },
+
+    "trust_elements": {
+      "variants": [
+        {
+          "id": "trust-stars",
+          "name": "Star Rating Row",
+          "description": "Visual star rating with count",
+          "html_structure": "div.star-rating > div.stars + span.rating-text",
+          "tier_support": ["Groei", "Pro"],
+          "data_source": "google|trustpilot|manual"
+        },
+        {
+          "id": "trust-testimonial",
+          "name": "Customer Testimonial",
+          "description": "Quote with avatar and name",
+          "html_structure": "div.testimonial > blockquote + div.author > img + div.author-info",
+          "tier_support": ["Groei", "Pro"]
+        },
+        {
+          "id": "trust-logo-cloud",
+          "name": "Client Logo Cloud",
+          "description": "Grid of partner/client logos",
+          "html_structure": "div.logo-cloud > div.logos > img*6",
+          "tier_support": ["Groei", "Pro"]
+        },
+        {
+          "id": "trust-badge",
+          "name": "Trust Badge",
+          "description": "Certification or guarantee badge",
+          "html_structure": "div.trust-badge > img.icon + span.text",
+          "examples": ["KVK", "Garantie", "24/7 Service"],
+          "tier_support": ["Start", "Groei", "Pro"]
+        },
+        {
+          "id": "trust-stats",
+          "name": "Stats Counter",
+          "description": "Numbers: customers, years, projects",
+          "html_structure": "div.stats > div.stat > span.number + span.label",
+          "tier_support": ["Groei", "Pro"]
+        }
+      ]
+    },
+
+    "content_sections": {
+      "variants": [
+        {
+          "id": "section-features",
+          "name": "Features Grid",
+          "description": "3-4 feature cards with icons",
+          "html_structure": "section.features > div.container > h2 + div.grid-3-cols > div.feature-card*3",
+          "tier_support": ["Start", "Groei", "Pro"]
+        },
+        {
+          "id": "section-services",
+          "name": "Services List",
+          "description": "Expandable or listed services",
+          "html_structure": "section.services > div.container > h2 + div.services-list > div.service-item",
+          "tier_support": ["Start", "Groei", "Pro"]
+        },
+        {
+          "id": "section-about",
+          "name": "About Split",
+          "description": "Text and image side by side",
+          "html_structure": "section.about > div.container > div.grid-2-cols > div.text + div.image",
+          "tier_support": ["Groei", "Pro"]
+        },
+        {
+          "id": "section-gallery",
+          "name": "Image Gallery",
+          "description": "Grid or masonry image gallery",
+          "html_structure": "section.gallery > div.container > h2 + div.image-grid",
+          "tier_support": ["Groei", "Pro"]
+        },
+        {
+          "id": "section-faq",
+          "name": "FAQ Accordion",
+          "description": "Expandable question/answer pairs",
+          "html_structure": "section.faq > div.container > h2 + div.accordion > details*5",
+          "tier_support": ["Groei", "Pro"],
+          "js_required": true
+        },
+        {
+          "id": "section-contact",
+          "name": "Contact Block",
+          "description": "Form + contact info side by side",
+          "html_structure": "section.contact > div.container > div.grid-2-cols > div.contact-info + div.contact-form",
+          "tier_support": ["Groei", "Pro"]
+        }
+      ]
+    },
+
+    "footer_types": {
+      "variants": [
+        {
+          "id": "footer-minimal",
+          "name": "Minimal Footer",
+          "description": "Links + copyright only",
+          "html_structure": "footer > div.container > div.footer-links + p.copyright",
+          "tier_support": ["Start", "Groei", "Pro"],
+          "columns": 1
+        },
+        {
+          "id": "footer-multi-column",
+          "name": "Multi-Column Footer",
+          "description": "Organized link sections",
+          "html_structure": "footer > div.container > div.grid-4-cols > div.footer-col*4",
+          "tier_support": ["Groei", "Pro"],
+          "columns": 4
+        },
+        {
+          "id": "footer-newsletter",
+          "name": "Newsletter Footer",
+          "description": "Email capture + links",
+          "html_structure": "footer > div.container > div.newsletter-block + div.footer-links",
+          "tier_support": ["Groei", "Pro"]
+        },
+        {
+          "id": "footer-full",
+          "name": "Full-Featured Footer",
+          "description": "Map, social, newsletter, links",
+          "html_structure": "footer > div.container > div.footer-grid + div.footer-bottom",
+          "tier_support": ["Pro"]
+        }
+      ]
+    },
+
+    "booking_components": {
+      "variants": [
+        {
+          "id": "booking-simple-form",
+          "name": "Simple Booking Form",
+          "description": "Name, date, time, service selection",
+          "html_structure": "form.booking > input.name + input.date + select.time + select.service + button",
+          "tier_support": ["Groei", "Pro"]
+        },
+        {
+          "id": "booking-calendar",
+          "name": "Calendar Picker",
+          "description": "Visual calendar for date selection",
+          "html_structure": "div.calendar-widget > div.calendar + div.time-slots",
+          "tier_support": ["Pro"],
+          "js_required": true
+        },
+        {
+          "id": "booking-service-cards",
+          "name": "Service Selection Cards",
+          "description": "Visual cards for service selection",
+          "html_structure": "div.service-cards > div.service-card*4 > img + h4 + p + button",
+          "tier_support": ["Pro"]
+        }
+      ]
+    }
+  },
+
+  "composition_rules": {
+    "start_tier": {
+      "max_sections": 4,
+      "allowed_heroes": ["hero-centered", "hero-minimal", "hero-split"],
+      "allowed_ctas": ["cta-primary", "cta-floating-whatsapp"],
+      "navigation": ["nav-minimal", "nav-hamburger"],
+      "footer": ["footer-minimal"],
+      "no_gradients": true,
+      "no_animations": true
+    },
+    "groei_tier": {
+      "max_sections": 6,
+      "allowed_heroes": ["hero-centered", "hero-split", "hero-fullscreen", "hero-gradient"],
+      "allowed_ctas": ["cta-primary", "cta-secondary", "cta-floating-whatsapp", "cta-sticky-bottom", "cta-inline-block", "cta-final-banner"],
+      "navigation": ["nav-minimal", "nav-sticky", "nav-hamburger"],
+      "footer": ["footer-minimal", "footer-multi-column", "footer-newsletter"],
+      "simple_gradients": true,
+      "simple_animations": true
+    },
+    "pro_tier": {
+      "max_sections": "unlimited",
+      "allowed_heroes": "all",
+      "allowed_ctas": "all",
+      "navigation": "all",
+      "footer": "all",
+      "complex_gradients": true,
+      "complex_animations": true,
+      "booking_components": true
+    }
+  },
+
+  "assembly_patterns": {
+    "classic_service": ["hero-centered", "section-features", "section-about", "section-contact", "cta-final-banner"],
+    "portfolio_focus": ["hero-split", "section-gallery", "section-services", "trust-testimonial", "cta-final-banner"],
+    "conversion_focus": ["hero-centered", "trust-stars", "section-features", "trust-testimonial", "cta-final-banner", "cta-floating-whatsapp"],
+    "local_business": ["hero-split", "section-about", "section-services", "trust-badge", "section-contact"]
+  }
+}

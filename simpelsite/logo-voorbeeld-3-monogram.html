@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Voorbeeld 3 - Monogram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .logo-container {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .logo-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .monogram {
+            width: 56px;
+            height: 56px;
+            background: #1E293B;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .monogram::before {
+            content: 'S';
+            color: white;
+            font-weight: 800;
+            font-size: 1.75rem;
+        }
+        .monogram::after {
+            content: 'S';
+            position: absolute;
+            color: #F97316;
+            font-weight: 800;
+            font-size: 1rem;
+            bottom: 8px;
+            right: 10px;
+        }
+        .logo-text {
+            text-align: left;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #1E293B;
+            line-height: 1;
+        }
+        .logo span {
+            color: #F97316;
+        }
+        .tagline {
+            margin-top: 0.5rem;
+            color: #64748B;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #1E293B;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        body { position: relative; }
+    </style>
+</head>
+<body>
+    <div class="label">Optie 3: Monogram SS</div>
+    <div class="logo-container">
+        <div class="logo-wrapper">
+            <div class="monogram"></div>
+            <div class="logo-text">
+                <div class="logo">Simpel<span>Site</span></div>
+            </div>
+        </div>
+        <div class="tagline">Dubbele 'S' in vierkant + tekst</div>
+    </div>
+</body>
+</html>

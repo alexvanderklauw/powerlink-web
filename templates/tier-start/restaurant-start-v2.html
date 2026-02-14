@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Restaurant] — [Type] in [Stad]</title>
+    <meta name="description" content="[Tagline]. Reserveer direct. Open [dagen] [tijden]. [Adres]">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c2410c; --primary-dark: #9a3412;
+            --neutral-900: #0f172a; --neutral-700: #334155; --neutral-100: #f1f5f9;
+            --space-4: 1rem; --space-8: 2rem; --space-16: 4rem;
+            --font: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font); line-height: 1.6; color: var(--neutral-900); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); }
+        
+        /* Header */
+        .header { background: white; border-bottom: 1px solid #e2e8f0; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+        .nav-phone { display: flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600; }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('[hero-image]') center/cover;
+            color: white; text-align: center; padding: var(--space-16) 1rem; min-height: 70vh;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-title { font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero-subtitle { font-size: 1.125rem; opacity: 0.95; margin-bottom: 2rem; }
+        .hero-ctas { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+        @media (min-width: 640px) { .hero-ctas { flex-direction: row; justify-content: center; } }
+        
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem;
+            font-weight: 600; border-radius: 0.5rem; transition: all 0.2s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+        .btn-secondary { background: white; color: var(--neutral-900); border: 2px solid #e2e8f0; }
+        .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+        .btn-lg { padding: 1rem 2rem; font-size: 1.125rem; }
+        
+        /* Sections */
+        .section { padding: var(--space-16) 1rem; }
+        .section-title { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 2rem; }
+        .text-center { text-align: center; }
+        
+        /* About */
+        .about { background: white; }
+        .about-text { max-width: 700px; margin: 0 auto; color: var(--neutral-700); font-size: 1.125rem; }
+        
+        /* Highlights */
+        .highlights { background: var(--neutral-100); }
+        .grid-3 { display: grid; gap: 1.5rem; }
+        @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+        
+        .card { background: white; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .card-image { aspect-ratio: 4/3; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #64748b; }
+        .card-content { padding: 1.5rem; }
+        .card-title { font-weight: 600; margin-bottom: 0.5rem; }
+        .card-desc { color: #64748b; font-size: 0.875rem; }
+        
+        /* Hours */
+        .hours { background: white; }
+        .hours-list { max-width: 400px; margin: 2rem auto 0; list-style: none; }
+        .hours-item { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0; }
+        
+        /* Menu CTA */
+        .menu-cta { background: var(--primary); color: white; text-align: center; }
+        .menu-cta .section-title { color: white; }
+        
+        /* Contact */
+        .contact { background: var(--neutral-100); }
+        .contact-address { font-size: 1.125rem; color: var(--neutral-700); margin-bottom: 1rem; }
+        .contact-phone { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .map { background: #e2e8f0; height: 250px; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; color: #64748b; margin-top: 2rem; }
+        
+        /* Footer */
+        .footer { background: var(--neutral-900); color: #94a3b8; padding: 2rem 1rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">[Restaurant]</a>
+            <a href="tel:[PHONE]" class="nav-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.22.92.41 1.81.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.96.29 1.86.48 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                [06-12345678]
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">[Restaurant Naam]</h1>
+            <p class="hero-subtitle">[Tagline: Authentieke Italiaanse keuken in hartje Amsterdam]</p>
+            <div class="hero-ctas">
+                <a href="tel:[PHONE]" class="btn btn-primary btn-lg">Reserveer een tafel</a>
+                <a href="#menu" class="btn btn-secondary btn-lg">Bekijk menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about section">
+        <div class="container">
+            <h2 class="section-title">Over [Restaurant]</h2>
+            <p class="about-text">[Beschrijving: In het hart van [Stad] vindt u [Restaurant]. Wij serveren authentieke [keuken] met een moderne twist. Kom genieten van verse ingrediënten en een warme sfeer.]</p>
+        </div>
+    </section>
+
+    <section class="highlights section">
+        <div class="container">
+            <h2 class="section-title">Onze specialiteiten</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-image">[Gerecht foto]</div>
+                    <div class="card-content">
+                        <h3 class="card-title">[Gerecht 1]</h3>
+                        <p class="card-desc">[Korte beschrijving]</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">[Gerecht foto]</div>
+                    <div class="card-content">
+                        <h3 class="card-title">[Gerecht 2]</h3>
+                        <p class="card-desc">[Korte beschrijving]</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">[Gerecht foto]</div>
+                    <div class="card-content">
+                        <h3 class="card-title">[Gerecht 3]</h3>
+                        <p class="card-desc">[Korte beschrijving]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hours section">
+        <div class="container">
+            <h2 class="section-title">Openingstijden</h2>
+            <ul class="hours-list">
+                <li class="hours-item"><span>Maandag</span><span>Gesloten</span></li>
+                <li class="hours-item"><span>Dinsdag - Vrijdag</span><span>17:00 - 22:00</span></li>
+                <li class="hours-item"><span>Zaterdag - Zondag</span><span>12:00 - 23:00</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-cta section">
+        <div class="container">
+            <h2 class="section-title">Bekijk ons menu</h2>
+            <p style="opacity: 0.95; margin-bottom: 1.5rem;">Ontdek onze gerechten en dranken</p>
+            <a href="[menu-pdf]" class="btn btn-secondary btn-lg" download>Download menu (PDF)</a>
+        </div>
+    </section>
+
+    <section class="contact section">
+        <div class="container text-center">
+            <h2 class="section-title">Contact</h2>
+            <p class="contact-address">[Straatnaam 123]<br>[1234 AB Stad]</p>
+            <a href="tel:[PHONE]" class="contact-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.22.92.41 1.81.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.96.29 1.86.48 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                [06-12345678]
+            </a>
+            <p>Reserveren via WhatsApp? Stuur een bericht naar [06-nummer]</p>
+            <div class="map">[Google Maps]</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; [Jaar] [Restaurant] | [Adres]</p>
+        </div>
+    </footer>
+</body>
+</html>

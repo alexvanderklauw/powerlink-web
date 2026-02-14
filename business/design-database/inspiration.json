@@ -1,0 +1,177 @@
+{
+  "version": "2.0",
+  "last_updated": "2026-02-14",
+  "schema_version": "1.0",
+  "categories": {
+    "hero_types": [
+      {
+        "id": "hero-fullscreen",
+        "name": "Fullscreen Image",
+        "description": "Full viewport height with background image",
+        "tier_support": ["Start", "Groei", "Pro"],
+        "industries": ["restaurant", "salon", "hotel", "fitness"],
+        "effectiveness_score": 8.5
+      },
+      {
+        "id": "hero-split",
+        "name": "Split Layout",
+        "description": "Text left, image right (or reverse)",
+        "tier_support": ["Start", "Groei", "Pro"],
+        "industries": ["trades", "consulting", "b2b", "services"],
+        "effectiveness_score": 8.0
+      },
+      {
+        "id": "hero-minimal",
+        "name": "Minimal Text",
+        "description": "Centered text, no image, solid background",
+        "tier_support": ["Start"],
+        "industries": ["consulting", "freelance", "minimal-brands"],
+        "effectiveness_score": 6.5
+      },
+      {
+        "id": "hero-video",
+        "name": "Video Background",
+        "description": "Autoplay muted video background",
+        "tier_support": ["Groei", "Pro"],
+        "industries": ["fitness", "travel", "events", "creative"],
+        "effectiveness_score": 9.0
+      },
+      {
+        "id": "hero-gradient",
+        "name": "Gradient Overlay",
+        "description": "Bold gradient with minimal imagery",
+        "tier_support": ["Groei", "Pro"],
+        "industries": ["tech", "saas", "modern-services"],
+        "effectiveness_score": 8.2
+      }
+    ],
+    "cta_placements": [
+      {
+        "id": "cta-hero-primary",
+        "name": "Hero Primary",
+        "description": "Main CTA button in hero section",
+        "priority": 1,
+        "required": true,
+        "tier_support": ["Start", "Groei", "Pro"]
+      },
+      {
+        "id": "cta-floating",
+        "name": "Floating Sticky",
+        "description": "Fixed button visible while scrolling",
+        "priority": 2,
+        "required": false,
+        "tier_support": ["Groei", "Pro"]
+      },
+      {
+        "id": "cta-section-end",
+        "name": "Section End",
+        "description": "CTA at end of each major section",
+        "priority": 3,
+        "required": false,
+        "tier_support": ["Start", "Groei", "Pro"]
+      },
+      {
+        "id": "cta-footer",
+        "name": "Footer CTA",
+        "description": "Final call-to-action in footer",
+        "priority": 4,
+        "required": true,
+        "tier_support": ["Start", "Groei", "Pro"]
+      },
+      {
+        "id": "cta-exit-intent",
+        "name": "Exit Intent Popup",
+        "description": "Modal triggered on exit intent",
+        "priority": 5,
+        "required": false,
+        "tier_support": ["Pro"]
+      }
+    ],
+    "navigation_types": [
+      {
+        "id": "nav-sticky",
+        "name": "Sticky Header",
+        "description": "Fixed position while scrolling",
+        "tier_support": ["Start", "Groei", "Pro"]
+      },
+      {
+        "id": "nav-transparent",
+        "name": "Transparent Sticky",
+        "description": "Transparent over hero, solid on scroll",
+        "tier_support": ["Groei", "Pro"]
+      },
+      {
+        "id": "nav-hamburger",
+        "name": "Mobile Hamburger",
+        "description": "Collapsed menu on mobile",
+        "tier_support": ["Start", "Groei", "Pro"]
+      },
+      {
+        "id": "nav-hidden",
+        "name": "Hidden/Minimal",
+        "description": "No visible nav, scroll reveals",
+        "tier_support": ["Groei", "Pro"]
+      }
+    ],
+    "trust_elements": [
+      {
+        "id": "trust-reviews",
+        "name": "Customer Reviews",
+        "description": "Testimonials with photos",
+        "tier_support": ["Groei", "Pro"]
+      },
+      {
+        "id": "trust-badges",
+        "name": "Trust Badges",
+        "description": "Security, payment, certification icons",
+        "tier_support": ["Groei", "Pro"]
+      },
+      {
+        "id": "trust-logos",
+        "name": "Client Logos",
+        "description": "Previously worked with...",
+        "tier_support": ["Groei", "Pro"]
+      },
+      {
+        "id": "trust-stats",
+        "name": "Stats Counter",
+        "description": "Numbers: customers served, years active",
+        "tier_support": ["Groei", "Pro"]
+      },
+      {
+        "id": "trust-social",
+        "name": "Social Proof",
+        "description": "Instagram feed, follower counts",
+        "tier_support": ["Groei", "Pro"]
+      }
+    ]
+  },
+  "entries": [],
+  "trends": {
+    "weekly": [],
+    "monthly": [],
+    "quarterly": []
+  },
+  "patterns": {
+    "section_orders": [
+      ["hero", "features", "about", "services", "testimonials", "cta", "footer"],
+      ["hero", "about", "services", "gallery", "contact", "footer"],
+      ["hero", "social-proof", "features", "pricing", "faq", "footer"],
+      ["hero", "video", "services", "trust", "cta", "footer"]
+    ],
+    "color_approaches": [
+      "warm-monochrome",
+      "cool-monochrome",
+      "complementary",
+      "triadic",
+      "analogous",
+      "neutral-accent"
+    ],
+    "spacing_densities": [
+      "compact",
+      "comfortable",
+      "airy",
+      "luxury"
+    ]
+  }
+}

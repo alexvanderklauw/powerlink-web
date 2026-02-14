@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiteBezorgd - Logo Concepts</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background: #f5f5f5; 
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { text-align: center; margin-bottom: 40px; color: #333; }
+        .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .logo-card { 
+            background: white; 
+            border-radius: 16px; 
+            padding: 40px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .logo-card h3 { margin-bottom: 20px; color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .logo-container { 
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+        }
+        .logo-container.light {
+            background: white;
+        }
+        .logo-container.dark {
+            background: #1a1a2e;
+        }
+        .tagline { 
+            font-style: italic; 
+            color: #888; 
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        /* SVG Styles */
+        .scooter-logo { font-weight: 900; letter-spacing: -1px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛵 SiteBezorgd Logo Concepts</h1>
+        
+        <div class="logo-grid">
+            
+            <!-- Concept 1: Delivery Scooter -->
+            <div class="logo-card">
+                <h3>Concept 1: The Speedy Scooter</h3>
+                <div class="logo-container">
+                    <svg width="280" height="100" viewBox="0 0 280 100">
+                        <!-- Speed lines -->
+                        <line x1="20" y1="60" x2="50" y2="60" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+                        <line x1="25" y1="70" x2="45" y2="70" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                        
+                        <!-- Scooter body -->
+                        <ellipse cx="100" cy="75" rx="25" ry="25" fill="white" opacity="0.9"/>
+                        <circle cx="100" cy="75" r="12" fill="#FF6B35"/>
+                        
+                        <!-- Delivery box -->
+                        <rect x="110" y="35" width="40" height="35" rx="4" fill="white" opacity="0.95"/>
+                        <rect x="118" y="45" width="24" height="3" fill="#FF6B35"/>
+                        <rect x="118" y="52" width="16" height="3" fill="#FF6B35" opacity="0.6"/>
+                        <rect x="118" y="59" width="20" height="3" fill="#FF6B35" opacity="0.4"/>
+                        
+                        <!-- Handlebars -->
+                        <path d="M 100 35 L 90 25" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="85" y1="25" x2="95" y2="25" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        
+                        <!-- Text -->
+                        <text x="165" y="58" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="900" fill="white">Site</text>
+                        <text x="165" y="88" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="900" fill="white">Bezorgd</text>
+                        
+                        <!-- Small TM -->
+                        <text x="260" y="45" font-family="system-ui" font-size="10" fill="white" opacity="0.7">™</text>
+                    </svg>
+                </div>
+                <p class="tagline">"Website af voordat je pizza aankomt"</p>
+            </div>
+
+            <!-- Concept 2: The Checkmark Box -->
+            <div class="logo-card">
+                <h3>Concept 2: The Delivery Check</h3>
+                <div class="logo-container">
+                    <svg width="280" height="100" viewBox="0 0 280 100">
+                        <!-- Delivery box -->
+                        <rect x="20" y="20" width="70" height="60" rx="8" fill="white"/>
+                        <rect x="30" y="30" width="50" height="40" rx="4" fill="#FF6B35" opacity="0.1"/>
+                        
+                        <!-- Box flaps detail -->
+                        <line x1="55" y1="20" x2="55" y2="80" stroke="#FF6B35" stroke-width="2" opacity="0.3"/>
+                        
+                        <!-- Green checkmark -->
+                        <path d="M 35 52 L 48 65 L 75 38" stroke="#22C55E" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Text -->
+                        <text x="105" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="white">Site</text>
+                        <text x="105" y="82" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="white">Bezorgd</text>
+                    </svg>
+                </div>
+                <p class="tagline">Clean, professional, "done" feeling</p>
+            </div>
+
+            <!-- Concept 3: Speed Lines Modern -->
+            <div class="logo-card">
+                <h3>Concept 3: Speed Delivery</h3>
+                <div class="logo-container">
+                    <svg width="280" height="100" viewBox="0 0 280 100">
+                        <!-- Speed lines background -->
+                        <line x1="10" y1="35" x2="50" y2="35" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+                        <line x1="5" y1="50" x2="45" y2="50" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+                        <line x1="15" y1="65" x2="55" y2="65" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+                        
+                        <!-- Cursor/Arrow icon -->
+                        <path d="M 65 25 L 65 70 L 80 55 L 95 75 L 105 70 L 90 50 L 110 50 Z" fill="white"/>
+                        
+                        <!-- Text -->
+                        <text x="125" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="white">Site</text>
+                        <text x="125" y="82" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="white">Bezorgd</text>
+                    </svg>
+                </div>
+                <p class="tagline">Fast, tech-forward, dynamic</p>
+            </div>
+
+            <!-- Concept 4: Circular Badge -->
+            <div class="logo-card">
+                <h3>Concept 4: The Badge</h3>
+                <div class="logo-container">
+                    <svg width="280" height="100" viewBox="0 0 280 100">
+                        <!-- Circle background -->
+                        <circle cx="55" cy="50" r="40" fill="white"/>
+                        
+                        <!-- Inner elements -->
+                        <circle cx="55" cy="50" r="32" fill="none" stroke="#FF6B35" stroke-width="3"/>
+                        
+                        <!-- Scooter icon simplified -->
+                        <circle cx="45" cy="62" r="8" fill="#FF6B35"/>
+                        <circle cx="70" cy="62" r="8" fill="#FF6B35"/>
+                        <path d="M 45 62 L 50 45 L 70 45 L 75 62" stroke="#FF6B35" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="50" y1="45" x2="48" y2="35" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
+                        
+                        <!-- Text -->
+                        <text x="110" y="45" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="900" fill="white">Site</text>
+                        <text x="110" y="72" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="900" fill="white">Bezorgd</text>
+                        <text x="110" y="88" font-family="system-ui" font-size="10" fill="white" opacity="0.8">WEBSITE BEZORGSERVICE</text>
+                    </svg>
+                </div>
+                <p class="tagline">Classic badge style, trustworthy</p>
+            </div>
+
+            <!-- Concept 5: Minimal Wordmark -->
+            <div class="logo-card">
+                <h3>Concept 5: Minimal Wordmark</h3>
+                <div class="logo-container light">
+                    <svg width="280" height="100" viewBox="0 0 280 100">
+                        <!-- Simple accent line -->
+                        <line x1="20" y1="50" x2="40" y2="50" stroke="#FF6B35" stroke-width="4" stroke-linecap="round"/>
+                        
+                        <!-- Text -->
+                        <text x="50" y="45" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="800" fill="#1a1a2e">Site</text>
+                        <text x="50" y="80" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="800" fill="#FF6B35">Bezorgd</text>
+                        
+                        <!-- Small delivery icon -->
+                        <circle cx="220" cy="40" r="12" fill="#1a1a2e" opacity="0.1"/>
+                        <path d="M 214 40 L 218 44 L 226 36" stroke="#22C55E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="tagline">Clean, modern, minimal</p>
+            </div>
+
+            <!-- Concept 6: Dark Mode Version -->
+            <div class="logo-card">
+                <h3>Concept 6: Dark Mode Scooter</h3>
+                <div class="logo-container dark">
+                    <svg width="280" height="100" viewBox="0 0 280 100">
+                        <!-- Glow effect -->
+                        <ellipse cx="100" cy="75" rx="30" ry="30" fill="#FF6B35" opacity="0.2"/>
+                        
+                        <!-- Scooter -->
+                        <ellipse cx="100" cy="75" rx="22" ry="22" fill="#FF6B35"/>
+                        <circle cx="100" cy="75" r="10" fill="#1a1a2e"/>
+                        
+                        <!-- Box with glow -->
+                        <rect x="110" y="35" width="38" height="33" rx="4" fill="#F7931E"/>
+                        <rect x="117" y="43" width="24" height="2.5" fill="#1a1a2e" opacity="0.3"/>
+                        <rect x="117" y="49" width="16" height="2.5" fill="#1a1a2e" opacity="0.2"/>
+                        
+                        <!-- Handlebars -->
+                        <path d="M 100 35 L 92 26" stroke="#FF6B35" stroke-width="3" stroke-linecap="round"/>
+                        
+                        <!-- Speed lines -->
+                        <line x1="25" y1="55" x2="50" y2="55" stroke="#F7931E" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                        <line x1="30" y1="65" x2="48" y2="65" stroke="#F7931E" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                        
+                        <!-- Text with gradient effect -->
+                        <text x="160" y="55" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="900" fill="white">Site</text>
+                        <text x="160" y="85" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="900" fill="#F7931E">Bezorgd</text>
+                    </svg>
+                </div>
+                <p class="tagline">Dark mode ready, modern glow effect</p>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 40px; padding: 30px; background: white; border-radius: 12px; text-align: center;">
+            <h2 style="margin-bottom: 15px; color: #333;">Color Palette</h2>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #FF6B35; border-radius: 8px; margin-bottom: 8px;"></div>
+                    <small style="color: #666;">Primary<br>#FF6B35</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #F7931E; border-radius: 8px; margin-bottom: 8px;"></div>
+                    <small style="color: #666;">Accent<br>#F7931E</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #22C55E; border-radius: 8px; margin-bottom: 8px;"></div>
+                    <small style="color: #666;">Success<br>#22C55E</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #1a1a2e; border-radius: 8px; margin-bottom: 8px;"></div>
+                    <small style="color: #666;">Dark<br>#1a1a2e</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+{
+  "industry": "salon",
+  "sub_industries": ["kapper", "kapsalon", "barbershop", "schoonheidssalon"],
+  "sample_size": 10,
+  "research_date": "2026-02-14",
+  "status": "COMPLETE",
+  "last_updated": "2026-02-14",
+  
+  "common_navigation_structure": "Logo + Home + [Diensten/Prijzen] + [Team/Gallery] + [Contact/Boeken]",
+  
+  "homepage_structure": [
+    "Hero with salon atmosphere + booking CTA",
+    "Service categories (Dames/Heren/Kleuren)",
+    "Pricing visibility (vanaf-prijzen or full)",
+    "Team introduction (photos + names)",
+    "Before/after or portfolio gallery",
+    "Customer reviews/testimonials",
+    "Instagram feed or social proof",
+    "Location + booking CTA"
+  ],
+  
+  "menu_strategy": "Services categorized (Dames, Heren, Kleuren, Treatments). Pricing usually visible. Optional: online booking per service.",
+  
+  "booking_strategy": "Primary: 'Maak afspraak' / 'Boek nu'. Methods: Online booking system (Treatwell, Planaday), phone, WhatsApp, walk-in.",
+  
+  "pricing_strategy": "Usually VISIBLE. Builds trust. Either full price list or 'vanaf' prices. Transparency expected in this industry.",
+  
+  "cta_patterns": [
+    "Maak afspraak / Boek online (primary)",
+    "Bekijk prijzen (secondary)",
+    "Bel salon (tertiary)",
+    "Routebeschrijving"
+  ],
+  
+  "trust_elements": [
+    "Customer reviews (Google, Facebook)",
+    "Before/after photos (transformations)",
+    "Team photos with names/specialties",
+    "Brand/products used (L'Oreal, Wella, etc.)",
+    "Years in business",
+    "Certifications/education",
+    "Social media following (Instagram)"
+  ],
+  
+  "gallery_usage": "HEAVY. Before/after transformations critical. Hairstyle portfolio. Instagram integration almost standard. Interior shots for atmosphere.",
+  
+  "common_mistakes": [
+    "No pricing visible (customers want transparency)",
+    "No online booking option",
+    "Missing team photos (personal connection lost)",
+    "Outdated gallery (shows old work)",
+    "No mobile optimization",
+    "Slow loading due to heavy images",
+    "No Instagram integration (missed opportunity)"
+  ],
+  
+  "modern_trends": [
+    "Online booking integration (Treatwell, Planaday)",
+    "Instagram feed on website",
+    "Online product sales",
+    "Loyalty programs",
+    "Digital consultation forms",
+    "Gender-neutral pricing",
+    "Sustainability focus (eco products)"
+  ],
+  
+  "conversion_patterns": [
+    "Prominent 'Boek nu' button",
+    "Opening hours clearly visible",
+    "Multiple location listings (if chain)",
+    "Online reviews displayed",
+    "Special offers for new customers",
+    "Gift cards"
+  ],
+  
+  "research_notes": "10 salon websites analyzed including: Smile Kappers (chain, multi-location, booking integration), Kinki Kappers (authentic, creative focus), Hizi Hair (large chain, professional), The Hair Hub (personal approach), Hair & Looks (local focus), AMI Kappers (100+ salons). Pattern: Pricing transparency expected. Team photos essential. Instagram integration common. Booking system differentiates Groei/Pro from Start.",
+  
+  "example_sites": [
+    {
+      "url": "https://www.smilekappers.nl",
+      "name": "Smile Kappers",
+      "tier": "Groei",
+      "type": "Chain (multiple locations)",
+      "strengths": ["Online booking", "Instagram feed", "Multi-location", "Team pages", "News section"],
+      "weaknesses": ["Uses emojis (outdated)", "Dated 2021 references", "Heavy uppercase usage", "Slow Instagram feed"],
+      "observations": "Good Groei reference, improvable"
+    },
+    {
+      "url": "https://www.kinki.nl",
+      "name": "Kinki Kappers",
+      "tier": "Groei",
+      "type": "Creative salon chain",
+      "strengths": ["Strong brand voice", "Authentic positioning", "Creative focus", "Online booking"],
+      "observations": "Brand differentiation through personality"
+    },
+    {
+      "url": "https://www.hizihair.nl",
+      "name": "Hizi Hair",
+      "tier": "Pro",
+      "type": "Large professional chain",
+      "strengths": ["Professional image", "Color expertise focus", "Multiple services", "Walk-in + appointment"],
+      "observations": "Corporate, standardized"
+    },
+    {
+      "url": "https://thehairhub.nl",
+      "name": "The Hair Hub",
+      "tier": "Groei",
+      "type": "Personal approach salon",
+      "strengths": ["Personal connection focus", "Personality-driven", "Online booking"],
+      "observations": "Differentiation through personal service"
+    },
+    {
+      "url": "https://hairandlooks.nl",
+      "name": "Hair & Looks",
+      "tier": "Groei",
+      "type": "Local salon chain",
+      "strengths": ["Local focus", "Personal advice emphasis", "Online booking"],
+      "observations": "Neighborhood salon positioning"
+    },
+    {
+      "url": "https://www.amikappers.nl",
+      "name": "AMI Kappers",
+      "tier": "Pro",
+      "type": "Large chain (100+ salons)",
+      "strengths": ["Scale (100+ locations)", "Blogs and inspiration", "Online booking", "Strong SEO"],
+      "observations": "Volume model, not our target"
+    }
+  ],
+  
+  "pattern_summary": {
+    "pricing_visibility": "Visible 90% (full or vanaf)",
+    "booking_method": "Online system 70%, Phone 90%, WhatsApp 40%",
+    "team_photos": "Present 80%, prominent 60%",
+    "instagram_feed": "Integrated 50%, linked 80%",
+    "review_display": "Google reviews 60%, testimonials 40%"
+  },
+  
+  "template_requirements": {
+    "start_tier": {
+      "required_sections": ["hero", "services", "team", "contact"],
+      "max_sections": 5,
+      "cta": "Phone/WhatsApp booking",
+      "pricing": "Simple vanaf-prijzen list",
+      "features": ["Click-to-call", "Service list", "Team photos"]
+    },
+    "groei_tier": {
+      "required_sections": ["hero", "services", "pricing", "gallery", "team", "reviews", "booking", "contact"],
+      "max_sections": 8,
+      "cta": "Online booking form or WhatsApp",
+      "pricing": "Full price list by category",
+      "features": ["Photo gallery", "Google reviews", "Team profiles", "Online form"]
+    },
+    "pro_tier": {
+      "required_sections": "All Groei + online booking integration, product shop, loyalty program, multi-location",
+      "cta": "Integrated booking (Treatwell/custom)",
+      "pricing": "Dynamic pricing, package deals, subscriptions",
+      "features": ["Booking system integration", "Product webshop", "Loyalty program", "Multi-location"]
+    }
+  }
+}

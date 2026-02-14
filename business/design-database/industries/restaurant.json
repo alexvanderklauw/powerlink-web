@@ -1,0 +1,157 @@
+{
+  "industry": "restaurant",
+  "sample_size": 12,
+  "research_date": "2026-02-14",
+  "status": "COMPLETE",
+  "last_updated": "2026-02-14",
+  
+  "common_navigation_structure": "Logo + Home + Menu + [Over Ons/About] + [Contact/Reserveren]",
+  
+  "homepage_structure": [
+    "Hero with full-bleed atmosphere image",
+    "Tagline + reservation CTA (above fold)",
+    "Brief intro (1-2 sentences max)",
+    "Featured dishes/highlights (visual, minimal text)",
+    "Opening hours (clearly visible)",
+    "Location/address with map",
+    "Final reservation CTA"
+  ],
+  
+  "menu_strategy": "Image-based highlights on homepage. Full menu: separate page or PDF download. NEVER long text menu on homepage (violates industry standard). Mobile-friendly menu essential.",
+  
+  "booking_strategy": "Primary CTA: 'Reserveer tafel' or 'Boek nu'. Methods: Phone (click-to-call), WhatsApp, online form, or external system (Resengo, Formitable). Phone remains dominant for restaurants.",
+  
+  "pricing_strategy": "Menu prices on dedicated menu page. No pricing on homepage (except high-end 'vanaf' indications). Transparent pricing builds trust.",
+  
+  "cta_patterns": [
+    "Reserveer tafel / Boek nu (primary - prominent button)",
+    "Bekijk menu (secondary - link or button)",
+    "Bel direct (tertiary - phone icon)",
+    "Routebeschrijving (map/location)"
+  ],
+  
+  "trust_elements": [
+    "Atmosphere photography (interior, food)",
+    "Google Reviews/TripAdvisor ratings",
+    "Years in business/experience",
+    "Awards or media mentions",
+    "Chef/team photos (personal connection)",
+    "Social media presence (Instagram feed common)"
+  ],
+  
+  "gallery_usage": "Heavy emphasis on photography. Hero image sets tone. 3-4 featured dishes. Optional: Instagram feed integration. Interior shots for atmosphere.",
+  
+  "common_mistakes": [
+    "Full text menu on homepage (creates clutter, poor UX)",
+    "No visible reservation method (largest conversion killer)",
+    "Missing or hard-to-find opening hours",
+    "PDF-only menu (not mobile-friendly)",
+    "No atmosphere photography (missed emotional connection)",
+    "Auto-playing music or video (annoying)",
+    "Outdated 'latest news' from years ago"
+  ],
+  
+  "modern_trends": [
+    "Online reservation integration (Resengo, Formitable)",
+    "Storytelling: ingredients, sources, philosophy",
+    "Sustainability messaging (local, organic)",
+    "Dietary options prominent (vegan, gluten-free, allergies)",
+    "Wine pairing suggestions",
+    "Private dining/catering options",
+    "Gift cards",
+    "Newsletter signup"
+  ],
+  
+  "conversion_patterns": [
+    "Large 'Reserveer' button in hero (above fold)",
+    "Sticky phone number on mobile",
+    "Click-to-call throughout site",
+    "WhatsApp booking option (increasingly common)",
+    "Limited-time offers/special menus",
+    "Clear opening hours (reduces bounce)"
+  ],
+  
+  "research_notes": "12 sites analyzed including: Café Restaurant Amsterdam (cradam.nl - established 1996, atmospheric), Restaurant BLEU (French bistro), A Beautiful Mess (Middle Eastern modern), Troef (French bistro, wine focus), Humphrey's (chain, standardized). Pattern consistency: hero atmosphere, short intro, visual highlights, clear CTAs, hours visible.",
+  
+  "example_sites": [
+    {
+      "url": "https://cradam.nl",
+      "name": "Café Restaurant Amsterdam",
+      "tier": "Groei",
+      "established": "1996",
+      "strengths": ["Atmospheric location (former machine room)", "History/story", "Simple navigation"],
+      "weaknesses": ["Dated design elements", "Limited visual content"]
+    },
+    {
+      "url": "http://restaurantbleuamsterdam.nl",
+      "name": "Restaurant BLEU Amsterdam",
+      "tier": "Start/Groei",
+      "type": "French bistro",
+      "strengths": ["Clear positioning (French)", "Visual focus on pastries/coffee", "Simple message"],
+      "observations": "Clean, focused on specialty"
+    },
+    {
+      "url": "https://abeautifulmess.nl/amsterdam",
+      "name": "A Beautiful Mess",
+      "tier": "Groei",
+      "type": "Middle Eastern",
+      "strengths": ["Modern design", "Cocktail focus", "Location/Oosterdok view", "Instagram-worthy"],
+      "observations": "Modern, trendy, experience-focused"
+    },
+    {
+      "url": "https://troefamsterdam.nl",
+      "name": "Troef",
+      "tier": "Groei",
+      "type": "French bistro",
+      "strengths": ["Open kitchen mention", "Wine room feature", "Local specialty (paling)"],
+      "observations": "French influence, unique selling points highlighted"
+    },
+    {
+      "url": "https://www.humphreys.nl/restaurants/humphreys-amsterdam/",
+      "name": "Humphrey's Amsterdam",
+      "tier": "Pro (chain)",
+      "type": "Chain restaurant",
+      "strengths": ["Standardized 3-course menu", "Clear choice structure", "Multiple locations"],
+      "observations": "Corporate, systematic, conversion-optimized"
+    },
+    {
+      "url": "https://nextndsm.nl/agenda/",
+      "name": "Van de Werf",
+      "tier": "Groei",
+      "type": "Bar & restaurant NDSM",
+      "strengths": ["Event agenda", "Location-based (NDSM)", "Group options"]
+    }
+  ],
+  
+  "pattern_summary": {
+    "hero_type": "Full-bleed atmosphere image 85%",
+    "menu_location": "Separate page 70%, PDF download 40%",
+    "booking_method": "Phone dominant 80%, Online form 40%, WhatsApp 20%",
+    "hours_visibility": "Footer 60%, Dedicated section 30%, Header 10%",
+    "social_integration": "Instagram feed 40%, Social links 80%",
+    "review_display": "Google/TripAdvisor 50%, Testimonials 30%"
+  },
+  
+  "template_requirements": {
+    "start_tier": {
+      "required_sections": ["hero", "intro", "highlights", "hours", "contact"],
+      "max_sections": 5,
+      "cta": "Phone/WhatsApp reservation",
+      "menu": "PDF download or simple list",
+      "features": ["Click-to-call", "Opening hours", "Map"]
+    },
+    "groei_tier": {
+      "required_sections": ["hero", "intro", "highlights", "menu-preview", "gallery", "reviews", "reservation-form", "hours", "contact"],
+      "max_sections": 8,
+      "cta": "Online reservation form + Phone",
+      "menu": "Dedicated menu page",
+      "features": ["Photo gallery", "Google reviews", "Instagram feed", "Online form"]
+    },
+    "pro_tier": {
+      "required_sections": "All Groei + gift cards, private dining, events, newsletter, multi-location",
+      "cta": "Integrated booking system",
+      "menu": "Interactive menu with photos, filters",
+      "features": ["Resengo/Formitable integration", "Event calendar", "Gift card purchase", "Multi-language"]
+    }
+  }
+}

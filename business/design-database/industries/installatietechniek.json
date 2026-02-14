@@ -1,0 +1,92 @@
+{
+  "industry": "installatietechniek",
+  "sample_size": 2,
+  "research_date": "2026-02-14",
+  "status": "PARTIAL_RESEARCH",
+  "last_updated": "2026-02-14",
+  
+  "common_navigation_structure": "Logo + Home + Diensten + Projecten + Over Ons + Contact",
+  
+  "homepage_structure": [
+    "Hero with company positioning",
+    "Service categories overview",
+    "Project showcase or case studies",
+    "About/company story",
+    "Service areas",
+    "Contact + offerte aanvraag"
+  ],
+  
+  "menu_strategy": "Service categories (Werktuigbouw, Elektrotechniek, etc.). Often technical but should focus on client benefits.",
+  
+  "booking_strategy": "Offerte aanvraag form (primary). Phone secondary. For maintenance: service contracts.",
+  
+  "pricing_strategy": "Almost never on website. 'Vraag offerte aan' is standard. Some show indicatief for common services.",
+  
+  "cta_patterns": [
+    "Offerte aanvragen (primary - form)",
+    "Bel ons (secondary)",
+    "Download brochure (tertiary)"
+  ],
+  
+  "trust_elements": [
+    "Years in business",
+    "Project portfolio",
+    "Certifications (Techniek Nederland)",
+    "Client logos",
+    "Team/expertise",
+    "Service area coverage",
+    "Maintenance contracts"
+  ],
+  
+  "gallery_usage": "Project photos important. Before/after renovation shots. Client facility photos.",
+  
+  "common_mistakes": [
+    "Too technical (client doesn't understand)",
+    "No project examples",
+    "Missing service area",
+    "No offerte aanvraag process",
+    "Outdated project portfolio"
+  ],
+  
+  "modern_trends": [
+    "Duurzaamheid/energy transition focus",
+    "Smart building integration",
+    "Client portal for project tracking",
+    "Maintenance app (Pro tier)"
+  ],
+  
+  "conversion_patterns": [
+    "Offerte aanvraag with clear process",
+    "Phone for urgent inquiries",
+    "Service area map",
+    "Project case studies"
+  ],
+  
+  "research_notes": "Partial research. Analyzed dejong.nl (large corporate - not target). Need 8+ more SMB installatiebedrijven.",
+  
+  "example_sites": [
+    {
+      "url": "https://dejong.nl",
+      "name": "A. de Jong Installatietechniek",
+      "type": "Large corporate",
+      "tier": "Pro",
+      "key_features": ["145-year history", "News carousel", "Employee testimonials", "Multi-location"],
+      "observations": "Not target market - too large. Good reference for Pro tier features."
+    }
+  ],
+  
+  "template_requirements": {
+    "start_tier": {
+      "required_sections": ["hero", "services", "about", "contact"],
+      "cta": "Offerte aanvraag form or phone"
+    },
+    "groei_tier": {
+      "required_sections": ["hero", "services", "projects", "about", "contact"],
+      "cta": "Offerte aanvraag + Phone"
+    },
+    "pro_tier": {
+      "required_sections": "All Groei + client portal, maintenance contracts, case studies",
+      "cta": "Integrated offerte system + Portal"
+    }
+  }
+}

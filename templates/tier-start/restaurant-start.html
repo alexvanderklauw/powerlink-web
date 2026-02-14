@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Restaurant Naam] - [Keuken type] in [Stad]</title>
+    <meta name="description" content="[Restaurant Naam] - [tagline]. Reserveer direct een tafel. Geopend [dagen/tijden]. [Straatnaam], [Stad]">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           DESIGN TOKENS - Restaurant Warm Theme
+           ======================================== */
+        :root {
+            /* Colors - Warm/Terracotta Theme */
+            --color-primary-600: #c2410c;
+            --color-primary-700: #9a3412;
+            --color-primary-100: #ffedd5;
+            
+            --color-accent-500: #d97706;
+            --color-accent-600: #b45309;
+            
+            --color-neutral-900: #0f172a;
+            --color-neutral-700: #334155;
+            --color-neutral-500: #64748b;
+            --color-neutral-200: #e2e8f0;
+            --color-neutral-100: #f1f5f9;
+            --color-neutral-50: #f8fafc;
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            
+            /* Spacing */
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            
+            --section-py: var(--space-12);
+            --section-px: var(--space-4);
+        }
+        
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--text-base);
+            line-height: 1.6;
+            color: var(--color-neutral-900);
+            background: var(--color-neutral-50);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0.5rem;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        /* ========================================
+           UTILITIES
+           ======================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--section-px);
+        }
+        
+        .section-padding {
+            padding: var(--section-py) var(--section-px);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-6);
+            font-family: var(--font-primary);
+            font-size: var(--text-base);
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary-600);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-700);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--color-neutral-900);
+            border: 2px solid var(--color-neutral-200);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--color-primary-600);
+            color: var(--color-primary-600);
+        }
+        
+        .btn-lg {
+            padding: var(--space-4) var(--space-8);
+            font-size: var(--text-lg);
+        }
+        
+        /* ========================================
+           HEADER
+           ======================================== */
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--color-neutral-200);
+            padding: var(--space-4) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-primary-600);
+        }
+        
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--color-primary-600);
+            font-weight: 600;
+        }
+        
+        .nav-phone svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* ========================================
+           HERO
+           ======================================== */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('[hero-image]') center/cover;
+            color: white;
+            text-align: center;
+            padding: var(--space-16) var(--section-px);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-title {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: var(--text-4xl);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: var(--text-lg);
+            opacity: 0.95;
+            margin-bottom: var(--space-8);
+        }
+        
+        .hero-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            align-items: center;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-ctas {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+        /* ========================================
+           ABOUT
+           ======================================== */
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+            color: var(--color-neutral-900);
+        }
+        
+        .about-text {
+            color: var(--color-neutral-700);
+            font-size: var(--text-lg);
+        }
+        
+        /* ========================================
+           HIGHLIGHTS
+           ======================================== */
+        .highlights {
+            background: var(--color-neutral-100);
+        }
+        
+        .highlights-grid {
+            display: grid;
+            gap: var(--space-6);
+        }
+        
+        @media (min-width: 768px) {
+            .highlights-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .highlight-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .highlight-image {
+            aspect-ratio: 4/3;
+            background: var(--color-neutral-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-neutral-500);
+        }
+        
+        .highlight-content {
+            padding: var(--space-4);
+        }
+        
+        .highlight-title {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+        }
+        
+        .highlight-desc {
+            color: var(--color-neutral-500);
+            font-size: var(--text-sm);
+        }
+        
+        /* ========================================
+           HOURS
+           ======================================== */
+        .hours {
+            background: white;
+        }
+        
+        .hours-content {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hours-list {
+            list-style: none;
+            margin-top: var(--space-6);
+        }
+        
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--color-neutral-200);
+        }
+        
+        .hours-day {
+            font-weight: 500;
+        }
+        
+        .hours-time {
+            color: var(--color-neutral-700);
+        }
+        
+        /* ========================================
+           MENU CTA
+           ======================================== */
+        .menu-cta {
+            background: var(--color-primary-600);
+            color: white;
+            text-align: center;
+        }
+        
+        .menu-cta .section-title {
+            color: white;
+        }
+        
+        .menu-cta-text {
+            opacity: 0.95;
+            margin-bottom: var(--space-6);
+        }
+        
+        /* ========================================
+           CONTACT
+           ======================================== */
+        .contact {
+            background: var(--color-neutral-100);
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-address {
+            font-size: var(--text-lg);
+            color: var(--color-neutral-700);
+            margin-bottom: var(--space-4);
+        }
+        
+        .contact-phone {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-primary-600);
+            margin-bottom: var(--space-6);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+        
+        .contact-map {
+            background: var(--color-neutral-200);
+            height: 250px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-neutral-500);
+            margin-top: var(--space-6);
+        }
+        
+        /* ========================================
+           FOOTER CTA
+           ======================================== */
+        .footer-cta {
+            background: var(--color-neutral-900);
+            color: white;
+            text-align: center;
+        }
+        
+        .footer-cta-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+        }
+        
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: var(--color-neutral-900);
+            color: var(--color-neutral-400);
+            padding: var(--space-8) var(--section-px);
+            text-align: center;
+            border-top: 1px solid var(--color-neutral-800);
+        }
+        
+        .footer-text {
+            font-size: var(--text-sm);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">[Restaurant]</a>
+            <a href="tel:[PHONE]" class="nav-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                [06-12345678]
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">[Restaurant Naam]</h1>
+                <p class="hero-subtitle">[Tagline: Authentieke Italiaanse keuken / Franse brasserie / etc.]</p>
+                <div class="hero-ctas">
+                    <a href="tel:[PHONE]" class="btn btn-primary btn-lg">Reserveer een tafel</a>
+                    <a href="#menu" class="btn btn-secondary btn-lg">Bekijk menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Over [Restaurant]</h2>
+                <p class="about-text">[Korte beschrijving: sfeer, keuken, uniek verhaal. Max 2-3 zinnen. Bijv: In het hart van [Stad] vindt u [Restaurant]. Wij serveren authentieke [keuken] met een moderne twist. Kom genieten van verse ingrediënten en een warme sfeer.]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights section-padding">
+        <div class="container">
+            <h2 class="section-title text-center">Onze specialiteiten</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-image">[Gerecht foto]</div>
+                    <div class="highlight-content">
+                        <h3 class="highlight-title">[Gerecht 1]</h3>
+                        <p class="highlight-desc">[Korte beschrijving]</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-image">[Gerecht foto]</div>
+                    <div class="highlight-content">
+                        <h3 class="highlight-title">[Gerecht 2]</h3>
+                        <p class="highlight-desc">[Korte beschrijving]</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-image">[Gerecht foto]</div>
+                    <div class="highlight-content">
+                        <h3 class="highlight-title">[Gerecht 3]</h3>
+                        <p class="highlight-desc">[Korte beschrijving]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOURS -->
+    <section class="hours section-padding">
+        <div class="container">
+            <div class="hours-content">
+                <h2 class="section-title">Openingstijden</h2>
+                <ul class="hours-list">
+                    <li class="hours-item">
+                        <span class="hours-day">Maandag</span>
+                        <span class="hours-time">Gesloten</span>
+                    </li>
+                    <li class="hours-item">
+                        <span class="hours-day">Dinsdag - Vrijdag</span>
+                        <span class="hours-time">17:00 - 22:00</span>
+                    </li>
+                    <li class="hours-item">
+                        <span class="hours-day">Zaterdag - Zondag</span>
+                        <span class="hours-time">12:00 - 23:00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU CTA -->
+    <section id="menu" class="menu-cta section-padding">
+        <div class="container">
+            <h2 class="section-title">Bekijk ons menu</h2>
+            <p class="menu-cta-text">Ontdek onze gerechten en dranken</p>
+            <a href="[menu-pdf]" class="btn btn-secondary btn-lg" download>Download menu (PDF)</a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section-padding">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-address">[Straatnaam 123]<br>[1234 AB Stad]</p>
+                <a href="tel:[PHONE]" class="contact-phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    [06-12345678]
+                </a>
+                <p>Reserveren via WhatsApp? Stuur een bericht naar [06-nummer]</p>
+                <div class="contact-map">[Google Maps embed]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="footer-cta section-padding">
+        <div class="container">
+            <h2 class="footer-cta-title">Reserveren?</h2>
+            <a href="tel:[PHONE]" class="btn btn-primary btn-lg">Bel direct</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© [Jaar] [Restaurant Naam] | [Straatnaam 123, Stad]</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Salon Name] - [Haar/Beauty/Nagels]</title>
+    <meta name="description" content="[Salon Naam] - [Tagline]. Professionele behandelingen in [Stad]. Boek nu je afspraak.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload hero image if used (uncomment and customize when adding background-image) -->
+    <!-- <link rel="preload" as="image" href="hero-image.jpg" fetchpriority="high"> -->
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #444; }
+        .hero {
+            background: linear-gradient(135deg, #f5e6f0 0%, #e8d5e0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 1rem; 
+            color: #8b4a6e;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .hero p { 
+            font-size: 1.3rem; 
+            margin-bottom: 2rem; 
+            color: #666;
+        }
+        .btn {
+            background: #8b4a6e;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .btn:hover { 
+            background: #6d3a57;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #8b4a6e;
+            color: #8b4a6e;
+            margin-left: 1rem;
+        }
+        .btn-outline:hover {
+            background: #8b4a6e;
+            color: white;
+        }
+        .section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .section h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+            text-align: center; 
+            color: #8b4a6e;
+            font-weight: 300;
+        }
+        .section > p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card .icon { 
+            font-size: 3rem; 
+            margin-bottom: 1rem; 
+        }
+        .service-card h3 { 
+            color: #8b4a6e; 
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .service-card .price {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .about {
+            background: #f9f5f7;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text h3 {
+            color: #8b4a6e;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .about-image {
+            background: #e8d5e0;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b4a6e;
+            font-size: 1.2rem;
+        }
+        .info-bar {
+            background: #8b4a6e;
+            color: white;
+            padding: 3rem 2rem;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .info-item h4 { 
+            font-size: 1.2rem; 
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .info-item p { opacity: 0.9; }
+        .booking {
+            background: linear-gradient(135deg, #f5e6f0 0%, #e8d5e0 100%);
+            text-align: center;
+        }
+        .booking h2 { margin-bottom: 1rem; }
+        .booking > p { margin-bottom: 2rem; }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        footer a { color: #e8d5e0; }
+        @media (max-width: 768px) {
+            .about-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>[Salon Naam]</h1>
+        <p>[Tagline - bijv: Jouw moment van ontspanning en schoonheid]</p>
+        <div>
+            <a href="#afspraak" class="btn">Maak een afspraak</a>
+            <a href="#behandelingen" class="btn btn-outline">Onze behandelingen</a>
+        </div>
+    </section>
+
+    <section class="section" id="behandelingen">
+        <h2>Onze Behandelingen</h2>
+        <p>Professionele zorg voor de beste versie van jezelf</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">✂️</div>
+                <h3>[Dienst 1 - bv. Knippen & Stylen]</h3>
+                <p>[Korte beschrijving van de behandeling]</p>
+                <div class="price">vanaf €[xx]</div>
+            </div>
+            <div class="service-card">
+                <div class="icon">💅</div>
+                <h3>[Dienst 2 - bv. Gelnagels]</h3>
+                <p>[Korte beschrijving van de behandeling]</p>
+                <div class="price">vanaf €[xx]</div>
+            </div>
+            <div class="service-card">
+                <div class="icon">✨</div>
+                <h3>[Dienst 3 - bv. Gezichtsbehandeling]</h3>
+                <p>[Korte beschrijving van de behandeling]</p>
+                <div class="price">vanaf €[xx]</div>
+            </div>
+            <div class="service-card">
+                <div class="icon">💆</div>
+                <h3>[Dienst 4 - bv. Massage]</h3>
+                <p>[Korte beschrijving van de behandeling]</p>
+                <div class="price">vanaf €[xx]</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about">
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Over [Salon Naam]</h3>
+                <p>[Beschrijving van de salon, de eigenaresse/het team, de sfeer, de filosofie... Wat maakt deze salon speciaal?]</p>
+                <p style="margin-top: 1rem;">
+                    <strong>✓</strong> 10+ jaar ervaring<br>
+                    <strong>✓</strong> Gecertificeerde specialisten<br>
+                    <strong>✓</strong> Premium producten<br>
+                    <strong>✓</strong> Ontspannen sfeer
+                </p>
+            </div>
+            <div class="about-image">
+                [Foto van de salon/eigenaresse]
+            </div>
+        </div>
+    </section>
+
+    <section class="info-bar">
+        <div class="info-grid">
+            <div class="info-item">
+                <h4>📍 Adres</h4>
+                <p>[Straatnaam 123]<br>[1234 AB Stad]</p>
+            </div>
+            <div class="info-item">
+                <h4>🕐 Openingstijden</h4>
+                <p>Ma-Vr: 9:00 - 18:00<br>Za: 10:00 - 16:00</p>
+            </div>
+            <div class="info-item">
+                <h4>📞 Contact</h4>
+                <p>[06-12345678]<br>[info@salon.nl]</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section booking" id="afspraak">
+        <h2>Boek Je Afspraak</h2>
+        <p>Kies wat jou het beste past - bel, app, of loop binnen</p>
+        <a href="https://wa.me/[NUMMER]" class="btn">Boek via WhatsApp</a>
+        <p style="margin-top: 1.5rem; color: #666;">
+            Of bel: <a href="tel:[NUMMER]" style="color: #8b4a6e;">[06-12345678]</a>
+        </p>
+    </section>
+
+    <footer>
+        <p><strong>[Salon Naam]</strong></p>
+        <p>[Straatnaam 123, 1234 AB Stad]</p>
+        <p>📞 [06-12345678] | ✉️ [info@salon.nl]</p>
+        <p style="margin-top: 1rem;">
+            <a href="#">Instagram</a> | <a href="#">Facebook</a>
+        </p>
+    </footer>
+</body>
+</html>

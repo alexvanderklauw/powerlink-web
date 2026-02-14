@@ -1,0 +1,264 @@
+{
+  "research_framework": {
+    "version": "2.1",
+    "last_updated": "2026-02-14",
+    "phase": "INSPIRATION_RESEARCH",
+    "researcher": "Design Evolution Engine",
+    "categories": {
+      "tier_start": {
+        "description": "One-page websites for small local businesses",
+        "criteria": [
+          "Clean single-page layout",
+          "Clear primary CTA",
+          "Modern sans-serif typography",
+          "Good spacing (8px system compliance)",
+          "Minimal clutter",
+          "Fast loading (< 2.5s LCP)"
+        ],
+        "industries": {
+          "installatietechniek": {
+            "search_terms": ["installatietechniek website", "cv installateur", "verwarmingstechniek"],
+            "collected_sites": [],
+            "target_count": 3,
+            "notes": "Mostly corporate sites found - need to find smaller local businesses"
+          },
+          "kapper_salon": {
+            "search_terms": ["kapper website", "kapsalon", "barbershop nederland"],
+            "collected_sites": [],
+            "target_count": 3,
+            "notes": "Most sites are multi-page with booking systems (Groei/Pro tier)"
+          },
+          "loodgieter_vakman": {
+            "search_terms": ["loodgieter website", "loodgietersbedrijf", "24uurs loodgieter"],
+            "collected_sites": [],
+            "target_count": 3,
+            "notes": "Mix of traditional multi-page sites and platform listings"
+          }
+        }
+      },
+      "tier_groei": {
+        "description": "Multi-page websites with structured content",
+        "criteria": [
+          "Clear navigation structure",
+          "Multiple service pages",
+          "Testimonials or reviews",
+          "Portfolio or image gallery",
+          "Local SEO optimization",
+          "Contact page with form"
+        ],
+        "industries": {
+          "installatietechniek": {
+            "search_terms": ["installatiebedrijf website", "technisch installatiebureau"],
+            "collected_sites": [
+              {
+                "url": "https://dejong.nl",
+                "name": "A. de Jong Installatietechniek",
+                "analyzed": true,
+                "tier": "Pro",
+                "notes": "Large corporate site with news carousel, employee testimonials, multi-location"
+              }
+            ],
+            "target_count": 3
+          },
+          "kapper_salon": {
+            "search_terms": ["haarsalon website", "beauty salon nederland"],
+            "collected_sites": [
+              {
+                "url": "https://www.smilekappers.nl",
+                "name": "Smile Kappers",
+                "analyzed": true,
+                "tier": "Groei",
+                "notes": "Chain of salons, booking functionality, Instagram feed, team pages, news"
+              }
+            ],
+            "target_count": 3
+          },
+          "loodgieter": {
+            "search_terms": ["loodgieter bedrijf", "installateur"],
+            "collected_sites": [
+              {
+                "url": "https://www.spaansloodgieters.nl",
+                "name": "Spaans Loodgieters",
+                "analyzed": true,
+                "tier": "Groei",
+                "notes": "Traditional local business site, 75 years history, brand logos carousel, multi-page"
+              }
+            ],
+            "target_count": 3
+          }
+        }
+      },
+      "tier_pro": {
+        "description": "Advanced functionality with booking/payments",
+        "criteria": [
+          "Online booking system",
+          "Reservation module",
+          "Payment integration",
+          "Booking UX clarity",
+          "Trust elements prominently",
+          "Visual hierarchy excellence"
+        ],
+        "industries": {
+          "salon_booking": {
+            "search_terms": ["kapper online boeken", "salon afspraak maken"],
+            "collected_sites": [
+              {
+                "url": "https://www.smilekappers.nl",
+                "name": "Smile Kappers",
+                "analyzed": true,
+                "tier": "Groei/Pro",
+                "booking_system": "Integrated",
+                "notes": "Online booking, salon chain, multi-location"
+              }
+            ],
+            "target_count": 3
+          },
+          "restaurant_booking": {
+            "search_terms": ["restaurant reserveren", "tafel boeken restaurant"],
+            "collected_sites": [],
+            "target_count": 3
+          },
+          "ecommerce_local": {
+            "search_terms": ["lokale winkel webshop", "bestellen bij restaurant"],
+            "collected_sites": [],
+            "target_count": 3
+          }
+        }
+      }
+    }
+  },
+  
+  "collected_sites": [
+    {
+      "id": "site-001",
+      "url": "https://dejong.nl",
+      "name": "A. de Jong Installatietechniek",
+      "industry": "installatietechniek",
+      "tier_category": "Pro",
+      "layout_type": "multi-page-corporate",
+      "hero_type": "none-traditional",
+      "cta_style": "contact-form",
+      "section_order": ["services", "projects", "employee-testimonials", "news-carousel", "contact"],
+      "trust_elements": ["145-years-history", "employee-quotes", "project-showcase", "multi-location"],
+      "visual_density": "content-heavy",
+      "color_style": "corporate-blue",
+      "typography_style": "traditional-sans",
+      "strengths": [
+        "Strong history/tradition messaging",
+        "Employee testimonials add personal touch",
+        "Project showcase with case studies",
+        "News section shows activity",
+        "Multi-location presence",
+        "Clear service categorization"
+      ],
+      "weaknesses": [
+        "No clear hero section",
+        "Dated design aesthetic",
+        "Too much text, poor scanability",
+        "No clear primary CTA above fold",
+        "Old-style carousel",
+        "Not mobile-optimized appearance"
+      ],
+      "floatweb_opportunity": "Large corporate - not primary target. Shows what smaller competitors aspire to.",
+      "date_analyzed": "2026-02-14"
+    },
+    {
+      "id": "site-002",
+      "url": "https://www.smilekappers.nl",
+      "name": "Smile Kappers",
+      "industry": "kapper_salon",
+      "tier_category": "Groei",
+      "layout_type": "multi-page",
+      "hero_type": "minimal-ctas",
+      "cta_style": "primary-buttons",
+      "section_order": ["hero-ctas", "news", "teams", "customer-rating", "brands", "instagram-feed"],
+      "trust_elements": ["customer-rating", "brand-logos", "instagram-social-proof", "multi-location"],
+      "visual_density": "medium",
+      "color_style": "purple-accent",
+      "typography_style": "bold-uppercase",
+      "strengths": [
+        "Clear booking CTA prominent",
+        "Instagram integration for social proof",
+        "Team pages for personal connection",
+        "Brand logos establish quality",
+        "Multiple locations clearly listed",
+        "News/blog section for SEO"
+      ],
+      "weaknesses": [
+        "Uses emojis (violates modern standards)",
+        "Dated '2021' reference still visible",
+        "Heavy uppercase usage",
+        "Instagram feed can slow loading",
+        "No clear value proposition text",
+        "Design feels dated (2021 era)"
+      ],
+      "floatweb_opportunity": "Perfect Groei tier example. Booking integration, multi-page, modern enough but improvable.",
+      "date_analyzed": "2026-02-14"
+    },
+    {
+      "id": "site-003",
+      "url": "https://www.spaansloodgieters.nl",
+      "name": "Spaans Loodgieters",
+      "industry": "loodgieter",
+      "tier_category": "Groei",
+      "layout_type": "traditional-multi-page",
+      "hero_type": "brand-carousel",
+      "cta_style": "text-link",
+      "section_order": ["brand-logos", "about", "services", "offerte-cta"],
+      "trust_elements": ["75-years-history", "brand-logos", "thuiscomfort-certification"],
+      "visual_density": "text-heavy",
+      "color_style": "traditional",
+      "typography_style": "standard-serif",
+      "strengths": [
+        "Strong local presence (Monster, Den Haag area)",
+        "75-year history builds trust",
+        "Brand logos show quality associations",
+        "Clear service descriptions",
+        "Thuiscomfort certification",
+        "Contact info always visible"
+      ],
+      "weaknesses": [
+        "Very dated design (early 2010s aesthetic)",
+        "No clear hero or value proposition",
+        "Text-heavy, poor readability",
+        "Brand carousel is old-fashioned",
+        "No clear CTA buttons",
+        "Not mobile-responsive appearance",
+        "No social proof (reviews/testimonials)"
+      ],
+      "floatweb_opportunity": "EXCELLENT target! Traditional local business needs modernization. Clear upgrade path to Start/Groei.",
+      "date_analyzed": "2026-02-14"
+    }
+  ],
+  
+  "pattern_analysis": {
+    "common_hero_types": {
+      "none-traditional": 1,
+      "minimal-ctas": 1,
+      "brand-carousel": 1
+    },
+    "common_cta_styles": {
+      "contact-form": 1,
+      "primary-buttons": 1,
+      "text-link": 1
+    },
+    "common_section_orders": [
+      ["services", "about", "contact"],
+      ["hero", "news", "teams", "social-proof"],
+      ["brands", "about", "services", "cta"]
+    ],
+    "common_trust_elements": [
+      "years-in-business",
+      "brand-logos",
+      "location-presence",
+      "certifications"
+    ]
+  },
+  
+  "key_findings": {
+    "market_gap": "Traditional local businesses (loodgieters, installateurs) have very dated websites (2010-era design)",
+    "opportunity": "High potential for Floatweb Start/Groei tiers targeting these businesses",
+    "competitive_advantage": "Modern design, mobile-first, clear CTAs, no emoji, fast loading",
+    "target_persona": "Local trades businesses with 5-25 employees, family-owned, 10+ years in business"
+  }
+}
