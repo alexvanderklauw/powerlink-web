@@ -1092,6 +1092,24 @@
             background: var(--accent);
         }
 
+        .tier-orange {
+            background: var(--accent) !important;
+            border-color: var(--accent) !important;
+        }
+        
+        .tier-orange strong {
+            color: var(--primary) !important;
+            font-weight: 800 !important;
+        }
+        
+        .tier-orange:hover {
+            background: #ea580c !important;
+        }
+        
+        .tier-orange input:checked + div {
+            color: var(--primary) !important;
+        }
+
         .price-tag {
             display: inline-block;
             background: rgba(249, 115, 22, 0.1);
@@ -1776,42 +1794,28 @@
                                 <input type="radio" name="doel" value="Zichtbaar zijn">
                                 <span>Gewoon professioneel zichtbaar zijn</span>
                             </label>
-                            <label class="radio-item">
-                                <input type="radio" name="doel" value="Laat adviseren">
-                                <span>Laat mij adviseren</span>
-                            </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Hoe uitgebreid moet je website zijn? *</label>
                         <div class="radio-group">
-                            <label class="radio-item tier-option" data-tier="Start">
-                                <input type="radio" name="uitgebreidheid" value="Eén overzichtelijke pagina" required>
+                            <label class="radio-item tier-option tier-orange" data-tier="Start">
+                                <input type="radio" name="uitgebreidheid" value="Start" required>
                                 <div>
-                                    <strong>Eén overzichtelijke pagina</strong>
-                                    <small class="tier-badge">Start pakket</small>
+                                    <strong>Start</strong>
                                 </div>
                             </label>
-                            <label class="radio-item tier-option" data-tier="Groei">
-                                <input type="radio" name="uitgebreidheid" value="Meerdere pagina's">
+                            <label class="radio-item tier-option tier-orange" data-tier="Groei">
+                                <input type="radio" name="uitgebreidheid" value="Groei">
                                 <div>
-                                    <strong>Meerdere pagina's</strong>
-                                    <small class="tier-badge">Groei pakket</small>
+                                    <strong>Groei</strong>
                                 </div>
                             </label>
-                            <label class="radio-item tier-option" data-tier="Pro">
-                                <input type="radio" name="uitgebreidheid" value="Best uitgebreid">
+                            <label class="radio-item tier-option tier-orange" data-tier="Pro">
+                                <input type="radio" name="uitgebreidheid" value="Pro">
                                 <div>
-                                    <strong>Best uitgebreid met aparte secties</strong>
-                                    <small class="tier-badge">Pro pakket</small>
-                                </div>
-                            </label>
-                            <label class="radio-item tier-option" data-tier="Groei">
-                                <input type="radio" name="uitgebreidheid" value="Laat jullie adviseren">
-                                <div>
-                                    <strong>Laat jullie adviseren</strong>
-                                    <small class="tier-badge">Groei pakket</small>
+                                    <strong>Pro</strong>
                                 </div>
                             </label>
                         </div>
@@ -1820,13 +1824,17 @@
                     <div class="form-group">
                         <label>Wil je dat klanten automatisch kunnen reserveren? *</label>
                         <div class="radio-group">
-                            <label class="radio-item">
+                            <label class="radio-item tier-option tier-orange" data-tier="Pro">
                                 <input type="radio" name="reserveren" value="Ja" required>
-                                <span>Ja <span class="tier-badge pro-badge">Upgrade naar Pro</span></span>
+                                <div>
+                                    <strong>Ja - Hiervoor heb je Pro nodig</strong>
+                                </div>
                             </label>
-                            <label class="radio-item">
+                            <label class="radio-item tier-option tier-orange" data-tier="Start">
                                 <input type="radio" name="reserveren" value="Nee">
-                                <span>Nee</span>
+                                <div>
+                                    <strong>Nee</strong>
+                                </div>
                             </label>
                         </div>
                     </div>
@@ -2345,14 +2353,13 @@
                     // Base tier on uitgebreidheid
                     let tier = 'Start';
                     switch (data.uitgebreidheid) {
-                        case 'Eén overzichtelijke pagina':
+                        case 'Start':
                             tier = 'Start';
                             break;
-                        case 'Meerdere pagina\'s':
-                        case 'Laat jullie adviseren':
+                        case 'Groei':
                             tier = 'Groei';
                             break;
-                        case 'Best uitgebreid':
+                        case 'Pro':
                             tier = 'Pro';
                             break;
                     }
