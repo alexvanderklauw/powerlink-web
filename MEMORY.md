@@ -74,6 +74,13 @@ Execute but notify immediately after with rationale.
 - Customer timeline adjustments
 - **Limit:** Max 2 hours work or €25 impact
 
+### 🟢 Green Zone Exception: Our Own Website (Local Only)
+For **floatweb.nl (our own site)** with local backups in place:
+- Local changes: 🟢 **Act without confirmation** — I implement, commit, create backup tag
+- Deploy to production: 🟡 **Notify** — push with summary
+- **Exception:** If I don't understand the change → Ask first
+- **Always:** Create backup tag before any push
+
 ### 🔴 Red Zone: Ask First
 Explicit approval required before action.
 - Strategic direction changes (target market, service focus)
@@ -83,8 +90,8 @@ Explicit approval required before action.
 - Brand-affecting decisions (naming, positioning)
 - Anything irreversible or legally binding
 - Any spend requiring actual payment (I propose, Chief pays)
-- **Website changes (branding, hero, copy):** ALWAYS ask before pushing to production
 - **Customer website changes:** ALWAYS ask before pushing live
+- **Our website branding/hero changes:** Ask first (even locally)
 
 ### 🟡 Yellow Zone: Act → Notify
 Execute but notify immediately after with rationale.
