@@ -1117,7 +1117,7 @@
         }
 
         .tier-label-text {
-            flex: 1;
+            flex: 0 1 auto;
         }
 
         .tier-badge-inline {
@@ -1832,8 +1832,8 @@
                                 <span class="tier-badge-inline">GROEI</span>
                             </label>
                             <label class="radio-item tier-option" data-tier="Pro">
-                                <input type="radio" name="uitgebreidheid" value="Best uitgebreid">
-                                <span class="tier-label-text">Best uitgebreid met aparte secties</span>
+                                <input type="radio" name="uitgebreidheid" value="Meerdere pagina's met reservering of betaling">
+                                <span class="tier-label-text">Meerdere pagina's met reservering of betaling</span>
                                 <span class="tier-badge-inline">PRO</span>
                             </label>
                         </div>
@@ -2365,7 +2365,7 @@
                         case 'Meerdere pagina\'s':
                             tier = 'Groei';
                             break;
-                        case 'Best uitgebreid':
+                        case 'Meerdere pagina\'s met reservering of betaling':
                             tier = 'Pro';
                             break;
                     }
