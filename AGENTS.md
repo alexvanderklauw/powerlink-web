@@ -189,3 +189,20 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+---
+
+## Pre-Push Checklist (Always)
+
+Before pushing ANY changes to GitHub/Netlify:
+
+1. **On feature branch?** (Never push directly to main)
+2. **Backup tag created?** (`backup-YYYY-MM-DD-HHMM`)
+3. **Changes reviewed?** (Local testing complete)
+4. **Approval required?**
+   - Customer websites: ALWAYS ask first
+   - Floatweb branding/hero/copy: ALWAYS ask first
+   - Other floatweb changes: Notify, 24hr window
+5. **Rollback plan ready?** (Know which tag to revert to)
+
+See TOOLS.md for full backup & rollback strategy.

@@ -1,0 +1,6 @@
+{
+  "schema": "backup-log.v1",
+  "maxBackups": 20,
+  "backups": [],
+  "releases": []
+}

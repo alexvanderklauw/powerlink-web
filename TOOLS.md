@@ -209,3 +209,111 @@ ETA: [Time]
 | Logo update | 🔴 Red — ask first |
 | "48 hours" → "5 days" correction | 🔴 Red — ask first |
 | Customer site: any change | 🔴 Red — ask first |
+
+---
+
+## Backup & Rollback Strategy
+
+### Philosophy
+**Never lose work. Never break production. Always have a way back.**
+
+We use Git as primary backup system (branches + tags) with local release folders for major milestones.
+
+### Directory Structure
+```
+clawd/
+├── workspace/          ← ACTIVE: Work in feature branches only
+├── backups/            ← AUTO: Git tags (lightweight, unlimited)
+├── releases/           ← MANUAL: Major version snapshots
+└── .backup-log.json    ← Tracks releases
+```
+
+### Workflow: The 4-Step Safety Net
+
+#### Step 1: Feature Branch (Always)
+```bash
+# Create feature branch before any changes
+git checkout -b feature/new-hero-text
+
+# Make changes, commit often
+git add .
+git commit -m "Draft: New hero text"
+```
+
+#### Step 2: Pre-Push Backup Tag (Mandatory)
+```bash
+# Before pushing to GitHub, create timestamped backup tag
+git tag backup-2026-02-15-1730-hero-text
+git push origin backup-2026-02-15-1730-hero-text
+
+# Keep last 20 backup tags, delete old ones
+git tag -l "backup-*" | sort | head -n -20 | xargs git tag -d
+```
+
+#### Step 3: Deploy to Preview (Optional)
+```bash
+# Push branch for preview (not main)
+git push origin feature/new-hero-text
+# Netlify deploy preview auto-generated
+```
+
+#### Step 4: Production Deploy (Approved Only)
+```bash
+# After you approve changes
+git checkout main
+git merge feature/new-hero-text
+git tag release-v1.2-hero-update
+git push origin main --tags
+
+# Also copy to releases/ folder for local archive
+copy workspace/ releases/v1.2-hero-update/
+```
+
+### Rollback Commands
+
+| Scenario | Command |
+|----------|---------|
+| **Undo last commit** (not pushed) | `git reset --soft HEAD~1` |
+| **Revert pushed commit** | `git revert <commit-hash>` |
+| **Rollback to tag** | `git checkout backup-2026-02-15-1730` |
+| **Rollback to release** | Copy `releases/v1.1/` → workspace/ |
+| **Emergency: Reset to main** | `git checkout main; git reset --hard origin/main` |
+
+### Backup Log Format (.backup-log.json)
+```json
+{
+  "schema": "backup-log.v1",
+  "maxBackups": 20,
+  "backups": [
+    {
+      "tag": "backup-2026-02-15-1730",
+      "branch": "feature/new-hero",
+      "reason": "Pre-push safety",
+      "created": "2026-02-15T17:30:00Z"
+    }
+  ],
+  "releases": [
+    {
+      "version": "v1.2",
+      "folder": "releases/v1.2-hero-update",
+      "description": "New hero text + FAQ section",
+      "deployed": "2026-02-15T18:00:00Z"
+    }
+  ]
+}
+```
+
+### Checklist: Before Any Push
+
+- [ ] Working on feature branch (not main)
+- [ ] Created backup tag: `backup-YYYY-MM-DD-HHMM`
+- [ ] Changes reviewed locally
+- [ ] For customer sites: approval received from Chief
+- [ ] For floatweb.nl: approval if branding/copy/hero changed
+- [ ] Rollback plan known (which tag to revert to)
+
+### Maintenance
+
+**Weekly:** Review backup tags, delete old ones (keep last 20)
+**Monthly:** Archive major releases to `releases/` folder
+**Quarterly:** Clean `releases/` folder (keep last 10 major versions)
