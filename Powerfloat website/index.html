@@ -1840,22 +1840,27 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Wil je beter gevonden worden in meerdere steden? *</label>
-                        <div class="radio-group">
-                            <label class="radio-item">
-                                <input type="radio" name="meerdere_regios" value="Nee" required>
-                                <span>Nee, 1 stad is genoeg</span>
-                            </label>
-                            <label class="radio-item">
-                                <input type="radio" name="meerdere_regios" value="Ja">
-                                <span>Ja, meerdere regio's <span class="price-tag">+€25 per extra pagina</span></span>
-                            </label>
-                        </div>
+                        <label for="aantalRegios">Aantal regio's/steden *</label>
+                        <select name="aantal_regios" id="aantalRegios" required>
+                            <option value="1">1 regio/stad</option>
+                            <option value="2">2 regio's/steden</option>
+                            <option value="3">3 regio's/steden</option>
+                            <option value="4">4 regio's/steden</option>
+                            <option value="5">5+ regio's/steden</option>
+                        </select>
+                        <small class="form-help">Per extra regio boven je pakketlimiet: +€25</small>
                     </div>
 
-                    <div class="form-group" id="aantalRegiosGroup" style="display:none;">
-                        <label for="aantalRegios">Hoeveel extra regio's?</label>
-                        <input type="number" name="aantal_regios" id="aantalRegios" min="1" value="1">
+                    <div class="form-group">
+                        <label for="aantalDiensten">Aantal diensten/producten voor aparte pagina's *</label>
+                        <select name="aantal_diensten" id="aantalDiensten" required>
+                            <option value="1">1 dienst/product</option>
+                            <option value="2">2 diensten/producten</option>
+                            <option value="3">3 diensten/producten</option>
+                            <option value="4">4 diensten/producten</option>
+                            <option value="5">5+ diensten/producten</option>
+                        </select>
+                        <small class="form-help">Per extra onderwerp boven je pakketlimiet: +€25</small>
                     </div>
 
                     <div class="form-navigation">
@@ -2080,15 +2085,6 @@
                         });
                     });
 
-                    // Meerdere regios toggle
-                    const regioRadios = document.querySelectorAll('input[name="meerdere_regios"]');
-                    regioRadios.forEach(radio => {
-                        radio.addEventListener('change', (e) => {
-                            const aantalGroup = document.getElementById('aantalRegiosGroup');
-                            aantalGroup.style.display = e.target.value === 'Ja' ? 'block' : 'none';
-                        });
-                    });
-
                     // Kleuren toggle
                     const kleurenRadios = document.querySelectorAll('input[name="kleuren"]');
                     kleurenRadios.forEach(radio => {
@@ -2104,11 +2100,6 @@
                     const domeinJa = document.getElementById('domeinJa');
                     if (domeinJa && domeinJa.checked) {
                         document.getElementById('domeinInput').style.display = 'block';
-                    }
-
-                    const meerdereRegios = document.querySelector('input[name="meerdere_regios"][value="Ja"]');
-                    if (meerdereRegios && meerdereRegios.checked) {
-                        document.getElementById('aantalRegiosGroup').style.display = 'block';
                     }
 
                     // Initialize kleuren input state
@@ -2364,9 +2355,17 @@
                             break;
                     }
 
-                    // Upgrade to Groei if multiple regions and currently Start
-                    if (data.meerdere_regios === 'Ja' && tier === 'Start') {
+                    // Check vindbaarheid limits
+                    const aantalRegios = parseInt(data.aantal_regios) || 1;
+                    const aantalDiensten = parseInt(data.aantal_diensten) || 1;
+                    const totaalVindbaarheid = aantalRegios + aantalDiensten;
+
+                    // Upgrade tier if vindbaarheid exceeds limits
+                    if (tier === 'Start' && totaalVindbaarheid > 2) {
                         tier = 'Groei';
+                    }
+                    if (tier === 'Groei' && totaalVindbaarheid > 6) {
+                        tier = 'Pro';
                     }
 
                     return tier;
@@ -2384,12 +2383,31 @@
                     let monthly = tierData[tier].monthly;
                     const extras = [];
 
-                    // Extra regios
-                    if (this.formData.meerdere_regios === 'Ja') {
-                        const aantalRegios = parseInt(this.formData.aantal_regios) || 1;
-                        const extraRegioCost = aantalRegios * 25;
-                        setup += extraRegioCost;
-                        extras.push(`${aantalRegios} extra regio pagina's (+€${extraRegioCost})`);
+                    // Calculate vindbaarheid limits
+                    const aantalRegios = parseInt(this.formData.aantal_regios) || 1;
+                    const aantalDiensten = parseInt(this.formData.aantal_diensten) || 1;
+                    
+                    // Determine limits per tier
+                    let regioLimiet = 1;
+                    let dienstLimiet = 1;
+                    
+                    if (tier === 'Groei') {
+                        regioLimiet = 3;
+                        dienstLimiet = 3;
+                    } else if (tier === 'Pro') {
+                        regioLimiet = 999; // Onbeperkt
+                        dienstLimiet = 999;
+                    }
+                    
+                    // Calculate extra costs
+                    const extraRegios = Math.max(0, aantalRegios - regioLimiet);
+                    const extraDiensten = Math.max(0, aantalDiensten - dienstLimiet);
+                    const totaalExtra = extraRegios + extraDiensten;
+                    
+                    if (totaalExtra > 0) {
+                        const extraKosten = totaalExtra * 25;
+                        setup += extraKosten;
+                        extras.push(`${totaalExtra} extra vindbaarheid pagina's (+€${extraKosten})`);
                     }
 
                     // Logo maken
@@ -2445,8 +2463,9 @@
                     if (data.reserveren === 'Ja') {
                         reasons.push('Je wilt automatisch reserveren');
                     }
-                    if (data.meerdere_regios === 'Ja') {
-                        reasons.push('Je richt je op meerdere regio\'s');
+                    const totaalVindbaarheid = (parseInt(data.aantal_regios) || 1) + (parseInt(data.aantal_diensten) || 1);
+                    if (totaalVindbaarheid > 2) {
+                        reasons.push(`Je wilt ${totaalVindbaarheid} vindbaarheid pagina's (regio's + diensten)`);
                     }
                     if (data.doel) {
                         reasons.push(`Hoofddoel: ${data.doel.toLowerCase()}`);
