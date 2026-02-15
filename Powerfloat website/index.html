@@ -1110,6 +1110,18 @@
             color: var(--primary) !important;
         }
 
+        .tier-badge-inline {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
         .price-tag {
             display: inline-block;
             background: rgba(249, 115, 22, 0.1);
@@ -1800,22 +1812,25 @@
                     <div class="form-group">
                         <label>Hoe uitgebreid moet je website zijn? *</label>
                         <div class="radio-group">
-                            <label class="radio-item tier-option tier-orange" data-tier="Start">
-                                <input type="radio" name="uitgebreidheid" value="Start" required>
+                            <label class="radio-item tier-option" data-tier="Start">
+                                <input type="radio" name="uitgebreidheid" value="Eén overzichtelijke pagina" required>
                                 <div>
-                                    <strong>Start</strong>
+                                    <strong>Eén overzichtelijke pagina</strong>
+                                    <span class="tier-badge-inline">START</span>
                                 </div>
                             </label>
-                            <label class="radio-item tier-option tier-orange" data-tier="Groei">
-                                <input type="radio" name="uitgebreidheid" value="Groei">
+                            <label class="radio-item tier-option" data-tier="Groei">
+                                <input type="radio" name="uitgebreidheid" value="Meerdere pagina's">
                                 <div>
-                                    <strong>Groei</strong>
+                                    <strong>Meerdere pagina's</strong>
+                                    <span class="tier-badge-inline">GROEI</span>
                                 </div>
                             </label>
-                            <label class="radio-item tier-option tier-orange" data-tier="Pro">
-                                <input type="radio" name="uitgebreidheid" value="Pro">
+                            <label class="radio-item tier-option" data-tier="Pro">
+                                <input type="radio" name="uitgebreidheid" value="Best uitgebreid">
                                 <div>
-                                    <strong>Pro</strong>
+                                    <strong>Best uitgebreid met aparte secties</strong>
+                                    <span class="tier-badge-inline">PRO</span>
                                 </div>
                             </label>
                         </div>
@@ -1824,13 +1839,14 @@
                     <div class="form-group">
                         <label>Wil je dat klanten automatisch kunnen reserveren? *</label>
                         <div class="radio-group">
-                            <label class="radio-item tier-option tier-orange" data-tier="Pro">
+                            <label class="radio-item tier-option" data-tier="Pro">
                                 <input type="radio" name="reserveren" value="Ja" required>
                                 <div>
-                                    <strong>Ja - Hiervoor heb je Pro nodig</strong>
+                                    <strong>Ja</strong>
+                                    <span class="tier-badge-inline">PRO</span>
                                 </div>
                             </label>
-                            <label class="radio-item tier-option tier-orange" data-tier="Start">
+                            <label class="radio-item tier-option" data-tier="Start">
                                 <input type="radio" name="reserveren" value="Nee">
                                 <div>
                                     <strong>Nee</strong>
@@ -2344,13 +2360,13 @@
                     // Base tier on uitgebreidheid
                     let tier = 'Start';
                     switch (data.uitgebreidheid) {
-                        case 'Start':
+                        case 'Eén overzichtelijke pagina':
                             tier = 'Start';
                             break;
-                        case 'Groei':
+                        case 'Meerdere pagina\'s':
                             tier = 'Groei';
                             break;
-                        case 'Pro':
+                        case 'Best uitgebreid':
                             tier = 'Pro';
                             break;
                     }
