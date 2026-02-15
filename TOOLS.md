@@ -32,6 +32,58 @@ See `/business/outreach-scripts/initial-outreach.md`
 
 ---
 
+## Free Stock Photo Resources
+
+### For Customer Websites
+
+| Site | URL | Best For | License | Account Needed |
+|------|-----|----------|---------|----------------|
+| **Unsplash** | unsplash.com | Modern, diverse, high-quality photos | Free to use (Unsplash License) | Optional (for collections) |
+| **Pexels** | pexels.com | Business, people, technology | Free to use (Pexels License) | Optional |
+| **Pixabay** | pixabay.com | Illustrations, vectors, icons, video | Free to use (Pixabay License) | Optional |
+| **Burst** | burst.shopify.com | E-commerce, business, lifestyle | Free to use (CC0) | No |
+| **Freepik** | freepik.com | Vector graphics, PSD, icons | Free with attribution / Premium | Yes (for downloads) |
+
+### Usage Guidelines:
+- **Unsplash:** Great for hero images, authentic business photos
+- **Pexels:** Excellent for people/business scenarios
+- **Pixabay:** Best for icons, illustrations, vector graphics
+- **Burst:** Perfect for e-commerce and product photos
+- **Freepik:** Good for UI elements, icons, mockups (requires attribution on free tier)
+
+### Download Strategy:
+1. Search with specific terms (e.g., "restaurant interior", "professional headshot")
+2. Check orientation (landscape for heroes, portrait for team)
+3. Download highest resolution available
+4. Rename to descriptive filename (e.g., `restaurant-hero-unsplash.jpg`)
+5. Store in `/assets/images/[client-name]/`
+
+### Chrome Access Status:
+- ✅ Chrome running locally
+- ⚠️ Sites have bot protection (manual download needed)
+- 🔄 Can browse but not auto-download
+
+---
+
+## Browser Access
+
+### Current Status
+- **Chrome:** Running on host machine
+- **Access:** Via OpenClaw gateway
+- **Use cases:** Research, competitor analysis, stock photo browsing
+- **Limitations:** Bot protection on some sites
+
+### Setup Commands:
+```bash
+# Check status
+openclaw browser status
+
+# Start if needed
+openclaw browser start
+```
+
+---
+
 ## Model Routing: Spawn vs Handle
 
 **Rule of thumb:** If I can verify the result in <30 seconds, spawn to cheap model. If it needs my judgment or multi-turn reasoning, I handle it.
