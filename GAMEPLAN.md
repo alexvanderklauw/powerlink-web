@@ -78,6 +78,84 @@
 
 ---
 
+## TRACKING SETUP & ANALYTICS 📊
+
+### Funnel Stages
+| Stage | Beschrijving | Tracking Event |
+|-------|-------------|----------------|
+| **1. Visit** | Gebruiker bezoekt floatweb.nl | `page_view` |
+| **2. Calculator** | Gebruiker bekijkt/invult de prijscalculator | `engagement` - `calculator_viewed` |
+| **3. Contact** | Gebruiker start contact (formulier/WA/mail) | `conversion` - `contact_initiated` |
+| **4. Preview** | Gebruiker vraagt gratis concept aan | `conversion` - `intake_form_submit` |
+| **5. Close** | Deal gesloten, betaling ontvangen | `conversion` - `deal_closed` (manual) |
+
+### Key Metrics
+
+#### Website Metrics (Google Analytics)
+| Metric | Doel | Hoe meten |
+|--------|------|-----------|
+| Page views | Baseline | GA4 automatisch |
+| Unieke bezoekers | Groei tracken | GA4 automatisch |
+| Bounce rate | < 50% | GA4 automatisch |
+| Gemiddelde sessieduur | > 2 min | GA4 automatisch |
+| Mobile vs desktop | 60/40 split | GA4 automatisch |
+
+#### Calculator Metrics
+| Metric | Doel | Tracking |
+|--------|------|----------|
+| Calculator views | Alle bezoekers zien calculator | Intersection Observer + gtag |
+| Form starts | > 30% van calculator views | Step 1 completion |
+| Form completions | > 50% van starts | Step 5 submit |
+| Drop-off per stap | Identificeer problemen | Per stap events |
+
+#### Conversion Metrics
+| Metric | Doel | Tracking |
+|--------|------|----------|
+| Contact form submits | Track alle leads | Netlify Forms + gtag |
+| WhatsApp clicks | Secondary CTA | gtag event on click |
+| Email clicks | Secondary CTA | gtag event on click |
+| Deal conversion rate | > 10% van leads | CRM manual entry |
+
+### Tracking Implementatie
+
+#### Google Analytics 4 Setup
+```javascript
+// Reeds geïmplementeerd in index.html
+// Event tracking voor:
+// - contact clicks (WhatsApp/email)
+// - calculator engagement
+// - form submissions
+```
+
+#### Netlify Form Tracking
+- Form name: `floatweb-intake`
+- Hidden fields: calculated_tier, calculated_setup, calculated_monthly
+- Form data JSON voor CRM integratie
+
+#### CRM Tracking (Toekomst)
+| Data Point | Source | Doel |
+|------------|--------|------|
+| Lead bron | UTM params / Referrer | Attribution |
+| Lead score | Form velden | Prioritering |
+| Status | Manual updates | Pipeline |
+| Deal value | Calculated fields | Forecasting |
+
+### Tools Stack
+| Tool | Doel | Status |
+|------|------|--------|
+| Google Analytics 4 | Website analytics | ✅ Geïmplementeerd (placeholder ID) |
+| Netlify Analytics | Server-side stats | ✅ Inbegrepen |
+| CRM (Google Sheets) | Lead tracking | ⏳ Phase 2 |
+| Hotjar (optioneel) | Heatmaps/recordings | ⏳ Latere fase |
+
+### UTM Parameters
+Standard UTM gebruik voor campagnes:
+- `utm_source`: whatsapp, instagram, google, referral
+- `utm_medium`: social, organic, paid, email
+- `utm_campaign`: bijv. "restaurant_week", "lente_actie"
+
+---
+
 ## FASE 2: INFRASTRUCTURE & AUTOMATISERING ⏳
 
 ### 2.1 Betalingen & Administratie

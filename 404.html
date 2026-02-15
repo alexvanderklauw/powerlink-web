@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina niet gevonden | Floatweb</title>
+    <meta name="description" content="Deze pagina bestaat niet. Ga terug naar de homepage van Floatweb.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    
+    <style>
+        :root {
+            --primary: #1E293B;
+            --primary-dark: #0F172A;
+            --accent: #F97316;
+            --text: #1F2937;
+            --text-light: #64748B;
+            --bg: #FFFFFF;
+            --bg-light: #F8FAFC;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .error-code {
+                font-size: 12rem;
+            }
+        }
+
+        .error-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #EA580C;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .suggestions {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            max-width: 400px;
+        }
+
+        .suggestions h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .suggestions ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .suggestions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .suggestions a {
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .suggestions a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .logo {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">🌊</div>
+        <div class="error-code">404</div>
+        <h1 class="error-title">Pagina niet gevonden</h1>
+        <p class="error-message">
+            Oeps! Deze pagina lijkt te zijn weggespoeld. <br>
+            Misschien is hij verhuisd, verwijderd, of heeft de URL een typefout.
+        </p>
+        
+        <div class="error-actions">
+            <a href="index.html" class="btn btn-primary">
+                ← Terug naar home
+            </a>
+            <a href="index.html#offerte" class="btn btn-outline">
+                Direct een website aanvragen
+            </a>
+        </div>
+
+        <div class="suggestions">
+            <h3>Populaire pagina's:</h3>
+            <ul>
+                <li><a href="index.html">🏠 Homepage</a></li>
+                <li><a href="index.html#prijzen">💰 Prijzen</a></li>
+                <li><a href="index.html#hoe-werkt-het">❓ Hoe werkt het</a></li>
+                <li><a href="index.html#offerte">📝 Offerte aanvragen</a></li>
+                <li><a href="privacy.html">🔒 Privacyverklaring</a></li>
+                <li><a href="voorwaarden.html">📄 Algemene voorwaarden</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <a href="index.html" class="logo">🌊 Floatweb</a>
+        <p style="opacity: 0.7;">Jouw website, zonder gedoe</p>
+        <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.5;">
+            © 2026 Floatweb
+        </p>
+    </footer>
+</body>
+</html>

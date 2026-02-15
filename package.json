@@ -1,0 +1,9 @@
+{
+  "name": "powerlink-web",
+  "version": "1.0.0",
+  "description": "Powerlink website service portfolio",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'"
+  }
+}

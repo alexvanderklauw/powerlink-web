@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floatweb - Simpel. Snel. Betaalbaar.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Option 1: Navy + Orange (current) */
+            --primary: #1E293B;
+            --primary-dark: #0F172A;
+            --primary-light: #334155;
+            --accent: #F97316;
+            --accent-hover: #EA580C;
+            --text: #1F2937;
+            --text-light: #64748B;
+            --bg: #FFFFFF;
+            --bg-light: #F8FAFC;
+            --border: #E2E8F0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Option 2: Clean Slate + Coral - Uncomment to use
+        :root {
+            --primary: #475569;
+            --primary-dark: #334155;
+            --primary-light: #64748B;
+            --accent: #FB7185;
+            --accent-hover: #E11D48;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --bg: #FFFFFF;
+            --bg-light: #F1F5F9;
+            --border: #CBD5E1;
+        }
+        */
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        nav .nav-links a {
+            color: var(--text);
+        }
+
+        nav .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: #1E3A5F;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #1E3A5F;
+            font-weight: 900;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+
+        .btn-white:hover {
+            background: #f8fafc;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-secondary:hover { background: var(--primary-dark); }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover { background: #128C7E; }
+
+        /* Section Dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
+            margin: 0;
+        }
+
+        .section-block {
+            position: relative;
+        }
+
+        .section-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Top Promo Bar */
+        .promo-bar {
+            background: var(--accent) !important;
+            color: white !important;
+            text-align: center !important;
+            padding: 12px 16px !important;
+            font-weight: 700 !important;
+            font-size: 15px !important;
+            line-height: 1.4 !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 7rem 2rem 5rem;
+            background: var(--primary);
+            text-align: center;
+            border-bottom: none;
+        }
+
+        .hero h1 {
+            color: #FFFFFF !important;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: #FFFFFF !important;
+        }
+
+        .hero p {
+            color: #FFFFFF;
+            font-weight: 400;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Mobile-first adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.75rem, 10vw, 2.5rem);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .hero-buttons .btn {
+                width: auto;
+                min-width: fit-content;
+                max-width: 100%;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 0.75rem;
+                margin-top: 2rem;
+            }
+
+            .badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+        .hero .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .hero .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .hero .badge {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .trust-badge svg, .trust-badge span:first-child {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Hero USPs - Mobile First */
+        .hero-usps {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .hero-usp {
+            color: rgba(255,255,255,0.95);
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .hero-usp svg {
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .hero-price {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .hero-price .price-highlight {
+            color: white;
+            font-weight: 800;
+            background: rgba(255,255,255,0.15);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        @media (min-width: 768px) {
+            .hero-usps {
+                flex-direction: row;
+                justify-content: center;
+                gap: 2rem;
+            }
+        }
+
+        /* How it works - Mobile First */
+        .how-it-works {
+            padding: 3rem 1rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        @media (min-width: 768px) {
+            .how-it-works {
+                padding: 5rem 2rem;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        .steps {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .steps {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .step {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .step h3 {
+            min-height: 3rem;
+            display: block;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .step p {
+            margin: 0;
+            min-height: 80px;
+            display: block;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.3);
+            flex-shrink: 0;
+        }
+
+        /* Pricing - Mobile First */
+        .pricing {
+            padding: 3rem 1rem;
+            background: var(--primary);
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        @media (min-width: 768px) {
+            .pricing {
+                padding: 5rem 2rem;
+            }
+        }
+
+        .pricing .section-header h2,
+        .pricing .section-header p {
+            color: white;
+        }
+
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .pricing-card .features {
+            flex-grow: 1;
+        }
+
+        .pricing-disclaimer {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .pricing-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            align-items: stretch;
+        }
+
+        @media (min-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            transform: scale(1.02);
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.02) translateY(-4px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: white;
+            padding: 0.35rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .pricing-card .description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            margin-bottom: 1.5rem;
+        }
+
+        .price-setup {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .price-setup span {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .price-monthly {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .features li::before {
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%231E293B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .features li.plus::before {
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+        }
+
+        .features .extra {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Calculator - Mobile First */
+        .calculator {
+            padding: 3rem 1rem;
+            background: white;
+            border-bottom: 1px solid var(--border);
+        }
+
+        @media (min-width: 768px) {
+            .calculator {
+                padding: 5rem 2rem;
+            }
+        }
+
+        .calc-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .calc-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .checkbox-item:hover { background: #F0FDFA; }
+
+        .checkbox-item input {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+        }
+
+        .price-preview {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .price-preview .total {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .price-preview .breakdown {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact .btn {
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--text);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+
+            nav .nav-container {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .hero-buttons .btn {
+                font-size: 0.95rem;
+                padding: 0.875rem 1.25rem;
+                width: auto;
+                flex: 1;
+                min-width: 140px;
+            }
+
+            .pricing-card.popular { transform: none; }
+            .pricing-card.popular:hover { transform: translateY(-4px); }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Multi-Step Form Styles */
+        .progress-container {
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 1rem;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--border);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+        }
+
+        .progress-step.active .step-circle {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .progress-step.completed .step-circle {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .progress-step.completed .step-circle::after {
+            content: "✓";
+        }
+
+        .progress-step.completed .step-circle {
+            font-size: 0;
+        }
+
+        .progress-line {
+            width: 40px;
+            height: 2px;
+            background: var(--border);
+            margin: 0 4px;
+            transition: background 0.3s ease;
+        }
+
+        .progress-line.completed {
+            background: var(--primary);
+        }
+
+        .progress-text {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Form Steps */
+        .form-step {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(-20px); }
+        }
+
+        .step-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Radio Groups */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .radio-item:hover {
+            border-color: var(--primary-light);
+            background: var(--bg-light);
+        }
+
+        .radio-item:has(input:checked) {
+            border-color: var(--accent);
+            background: rgba(249, 115, 22, 0.05);
+        }
+
+        .radio-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .radio-item span {
+            font-weight: 500;
+        }
+
+        .radio-item small {
+            display: block;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        .radio-item strong {
+            display: block;
+            color: var(--text);
+        }
+
+        /* Template Selection Cards */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .template-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .template-card {
+            position: relative;
+            cursor: pointer;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid var(--border);
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .template-card:hover {
+            transform: scale(1.02);
+            border-color: var(--primary-light);
+        }
+
+        .template-card:has(input:checked) {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
+        }
+
+        .template-card input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .template-image {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .template-info {
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .template-info strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .template-info small {
+            color: var(--text-light);
+            font-size: 0.75rem;
+        }
+
+        /* Tier Badges */
+        .tier-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .tier-badge.pro-badge {
+            background: var(--accent);
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--accent);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* Form Navigation */
+        .form-navigation {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .form-navigation .btn {
+            flex: 1;
+        }
+
+        .form-navigation .btn-prev {
+            flex: 0 0 auto;
+            min-width: 100px;
+        }
+
+        /* Proposal Preview */
+        .proposal-preview {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid var(--border);
+        }
+
+        .proposal-template {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .template-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+        }
+
+        .template-details h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .template-details p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin: 0.25rem 0 0;
+        }
+
+        .proposal-tier {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-label {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .tier-name {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .tier-price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .setup-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .monthly-price {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .proposal-reasons,
+        .proposal-includes,
+        .proposal-extras {
+            margin-bottom: 1rem;
+        }
+
+        .proposal-reasons h5,
+        .proposal-includes h5,
+        .proposal-extras h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .proposal-reasons ul,
+        .proposal-includes ul,
+        .proposal-extras ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .proposal-reasons li,
+        .proposal-includes li,
+        .proposal-extras li {
+            padding: 0.35rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .proposal-reasons li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .proposal-includes li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .proposal-extras li {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .proposal-extras li::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .submit-note {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        /* Error States */
+        .form-group.error input,
+        .form-group.error select,
+        .form-group.error textarea {
+            border-color: #ef4444;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Mobile Responsiveness for Multi-Step Form */
+        @media (max-width: 640px) {
+            .template-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .progress-line {
+                width: 20px;
+            }
+
+            .step-circle {
+                width: 32px;
+                height: 32px;
+                font-size: 0.75rem;
+            }
+
+            .form-navigation {
+                flex-direction: column;
+            }
+
+            .form-navigation .btn-prev {
+                flex: 1;
+                order: 2;
+            }
+
+            .form-navigation .btn-next,
+            .form-navigation .btn-submit {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Promo Bar -->
+    <div class="promo-bar">
+        Eerst zien dan betalen - Gratis preview t.w.v. 29,99
+    </div>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Hoofdnavigatie">
+        <div class="nav-container">
+            <a href="#" class="logo">Floatweb</a>
+            <div class="nav-links">
+                <a href="#hoe-werkt-het">Hoe werkt het</a>
+                <a href="#prijzen">Prijzen</a>
+                <a href="#offerte" class="btn btn-primary">Start nu</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" role="banner">
+        <div class="hero-container">
+            <div class="badge" style="background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.25);">
+                <span>Eerst zien dan betalen - Gratis preview t.w.v. 29,99</span>
+            </div>
+            <h1 style="text-align: center;">
+                Simpel.<br>
+                Snel.<br>
+                Betaalbaar.
+            </h1>
+            <div class="hero-buttons">
+                <a href="#prijzen" class="btn btn-primary">
+                    Start nu
+                </a>
+                <a href="https://wa.me/31612345678" class="btn btn-whatsapp" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    WhatsApp ons
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works" id="hoe-werkt-het">
+        <div class="section-header">
+            <h2 style="color: var(--accent); font-weight: 900; font-size: 2.75rem; text-shadow: 1px 0 0 currentColor, -1px 0 0 currentColor;">Makkelijker kan haast niet.</h2>
+            <p>Een website en een professioneel mailadres, in 5 simpele stappen.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Deel jouw idee</h3>
+                <p>Vul het formulier in of app ons. Vertel wie je bent en wat je nodig hebt.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>Wij ontwerpen</h3>
+                <p>Binnen 48 uur ontvang je een eerste ontwerp. <strong style="color: var(--accent);">Tijdelijk gratis (t.w.v. €29,99).</strong></p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Samen finetunen</h3>
+                <p>Basisontwerp goed? Na een kleine aanbetaling werken we samen de details uit.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Kies je naam</h3>
+                <p>Het ontwerp staat. Kies je websitenaam en wij maken alles klaar voor publicatie.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">05</div>
+                <h3>Je gaat live</h3>
+                <p>Activeer je abonnement en zet je website (en mailadres) online. Tijd om te ondernemen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="prijzen">
+        <div class="section-header">
+            <h2>Kies wat bij je past</h2>
+            <p>Geen verborgen kosten. Altijd inclusief hosting, updates en support.</p>
+        </div>
+        <div class="pricing-grid">
+            <!-- Start -->
+            <div class="pricing-card">
+                <h3>Start</h3>
+                <p class="description">Perfect om online te starten</p>
+                <div class="price">
+                    <div class="price-setup">€99 <span>eenmalig</span></div>
+                    <div class="price-monthly">+ €9,99/maand</div>
+                </div>
+                <ul class="features">
+                    <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
+                    <li><strong>One-page website</strong></li>
+                    <li class="extra">Eigen logo en foto's</li>
+                    <li>Max 6 diensten/producten met korte tekst</li>
+                    <li>Vindbaarheid op Google: Basis</li>
+                    <li>Offerte, WhatsApp of belknop</li>
+                    <li>Contactformulier</li>
+                    <li>Google Maps</li>
+                    <li>Social media links</li>
+                    <li>2 wijzigingen per jaar**</li>
+                    <li class="extra">Aanbetaling na concept: €20</li>
+                    <li class="plus">Professioneel e-mailadres +€5/maand (tot 5 gebruikers)</li>
+                </ul>
+                <a href="#offerte" class="btn btn-outline" style="width: 100%; justify-content: center;">Kies Start</a>
+            </div>
+
+            <!-- Groei (Popular) -->
+            <div class="pricing-card popular">
+                <span class="popular-badge">Meest gekozen</span>
+                <h3>Groei</h3>
+                <p class="description">Voor serieuze ondernemers</p>
+                <div class="price">
+                    <div class="price-setup">€249 <span>eenmalig</span></div>
+                    <div class="price-monthly">+ €14,99/maand</div>
+                </div>
+                <ul class="features">
+                    <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
+                    <li><strong>5 pagina's*</strong></li>
+                    <li>Alles van Start, plus:</li>
+                    <li>Foto galerij / portfolio</li>
+                    <li class="extra">Vindbaarheid op Google: Extra (per regio/stad)</li>
+                    <li>Klanten reviews sectie</li>
+                    <li>4 wijzigingen per jaar**</li>
+                    <li class="extra">Aanbetaling na concept: €30</li>
+                    <li class="plus">€25 per extra regio pagina***</li>
+                    <li class="plus">Meertalig €99 per taal</li>
+                    <li class="plus">Professioneel e-mailadres +€5/maand (tot 5 gebruikers)</li>
+                </ul>
+                <a href="#offerte" class="btn btn-primary" style="width: 100%; justify-content: center;">Kies Groei</a>
+            </div>
+
+            <!-- Pro -->
+            <div class="pricing-card">
+                <h3>Pro</h3>
+                <p class="description">Alles geregeld, groei verzekerd</p>
+                <div class="price">
+                    <div class="price-setup">€499 <span>eenmalig</span></div>
+                    <div class="price-monthly">+ €19,99/maand</div>
+                </div>
+                <ul class="features">
+                    <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
+                    <li><strong>Tot 10 pagina's*</strong></li>
+                    <li>Alles van Groei, plus:</li>
+                    <li class="extra">Boeking / reservering systeem</li>
+                    <li>iDEAL betalingen mogelijk</li>
+                    <li>Meertalig (NL + EN)</li>
+                    <li>6 wijzigingen per jaar**</li>
+                    <li class="extra">Aanbetaling na concept: €50</li>
+                    <li class="plus">Professioneel e-mailadres +€5/maand (tot 5 gebruikers)</li>
+                </ul>
+                <a href="#offerte" class="btn btn-outline" style="width: 100%; justify-content: center;">Kies Pro</a>
+            </div>
+        </div>
+
+        <p class="pricing-disclaimer">
+            * Extra pagina's boven het limiet: €25 per stuk.<br>
+            ** Wijzigingen = tekst/foto aanpassingen, geen nieuwe pagina's.<br>
+            *** Extra regio pagina's: bijv. "Loodgieter Amsterdam", "Loodgieter Rotterdam" - om beter gevonden te worden in meerdere steden.
+        </p>
+    </section>
+
+    <!-- USPs Section -->
+    <section class="usp-section" style="padding: 3rem 2rem; background: var(--bg-light); border-bottom: 1px solid var(--border);">
+        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Live binnen 5 dagen</h3>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Geen opzegtermijn</h3>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Geheel in ons beheer</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Step Intake Form -->
+    <section class="calculator" id="offerte">
+        <div class="section-header">
+            <h2>Bereken jouw prijs</h2>
+            <p>Duurt ±3 minuten • Binnen 48 uur je eerste ontwerp</p>
+        </div>
+        
+        <div class="calc-container">
+            <!-- Progress Indicator -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-circle">1</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-circle">2</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-circle">3</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-circle">4</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="5">
+                        <div class="step-circle">5</div>
+                    </div>
+                </div>
+                <p class="progress-text">Stap <span id="currentStepNum">1</span> van 5</p>
+            </div>
+
+            <!-- Multi-Step Form -->
+            <form id="intakeForm" name="floatweb-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bedankt.html">
+                <input type="hidden" name="form-name" value="floatweb-intake">
+                <p style="display:none;">
+                    <label>Bot field: <input name="bot-field"></label>
+                </p>
+                
+                <!-- Hidden fields for calculated values -->
+                <input type="hidden" name="calculated_tier" id="hiddenTier">
+                <input type="hidden" name="calculated_setup" id="hiddenSetup">
+                <input type="hidden" name="calculated_monthly" id="hiddenMonthly">
+                <input type="hidden" name="form_data_json" id="formDataJson">
+
+                <!-- Step 1: Jouw bedrijf -->
+                <div class="form-step active" data-step="1">
+                    <div class="step-header">
+                        <h3>Stap 1: Jouw bedrijf</h3>
+                        <p class="step-description">Vertel ons wie je bent</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bedrijfsnaam">Wat is de naam van je bedrijf? *</label>
+                        <input type="text" name="bedrijfsnaam" id="bedrijfsnaam" placeholder="Bijv. Japie's ijssalon" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bedrijfstype">Wat voor bedrijf heb je? *</label>
+                        <input type="text" name="bedrijfstype" id="bedrijfstype" placeholder="Bijv. Restaurant, kapsalon, loodgieter" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regio">In welke regio werk je? *</label>
+                        <input type="text" name="regio" id="regio" placeholder="Bijv. Utrecht en omgeving" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="diensten">Wat verkoop/bied je precies aan? Benoem al je diensten/producten. *</label>
+                        <textarea name="diensten" id="diensten" rows="3" placeholder="Bijv. Badkamerrenovaties, knipbehandelingen, Italiaans ijs" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wat wil je dat bezoekers direct doen op je website? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="cta_voorkeur" value="Bellen" required>
+                                <span>Bellen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="cta_voorkeur" value="WhatsApp">
+                                <span>WhatsApp sturen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="cta_voorkeur" value="Formulier">
+                                <span>Formulier invullen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="cta_voorkeur" value="Afspraak">
+                                <span>Afspraak plannen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="cta_voorkeur" value="Product kopen">
+                                <span>Product kopen</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-primary btn-next">Volgende</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Jouw stijl & content -->
+                <div class="form-step" data-step="2" style="display:none;">
+                    <div class="step-header">
+                        <h3>Stap 2: Jouw stijl & content</h3>
+                        <p class="step-description">Kies een voorbeeld die bij je past</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kies een voorbeeld die bij je past *</label>
+                        <div class="template-grid">
+                            <label class="template-card">
+                                <input type="radio" name="template_keuze" value="restaurant" required>
+                                <div class="template-image" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                                    <span>🍽️</span>
+                                </div>
+                                <div class="template-info">
+                                    <strong>Restaurant</strong>
+                                    <small>Warm, uitnodigend</small>
+                                </div>
+                            </label>
+                            <label class="template-card">
+                                <input type="radio" name="template_keuze" value="salon">
+                                <div class="template-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                                    <span>✂️</span>
+                                </div>
+                                <div class="template-info">
+                                    <strong>Salon</strong>
+                                    <small>Modern, elegant</small>
+                                </div>
+                            </label>
+                            <label class="template-card">
+                                <input type="radio" name="template_keuze" value="cafe">
+                                <div class="template-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                    <span>☕</span>
+                                </div>
+                                <div class="template-info">
+                                    <strong>Café</strong>
+                                    <small>Gezellig, lokaal</small>
+                                </div>
+                            </label>
+                            <label class="template-card">
+                                <input type="radio" name="template_keuze" value="vakman">
+                                <div class="template-image" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
+                                    <span>🔧</span>
+                                </div>
+                                <div class="template-info">
+                                    <strong>Vakman</strong>
+                                    <small>Zakelijk, betrouwbaar</small>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Heb je een logo? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="logo" value="Ja, upload later" required>
+                                <span>Ja, ik upload het later</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="logo" value="Ja, via WhatsApp">
+                                <span>Ja, ik stuur het via WhatsApp</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="logo" value="Nee, maak er een">
+                                <span>Nee, maak er één voor mij <span class="price-tag">+€25</span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Heb je eigen foto's? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="fotos" value="Ja, upload later" required>
+                                <span>Ja, ik upload ze later</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="fotos" value="Ja, via WhatsApp">
+                                <span>Ja, ik stuur ze via WhatsApp</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="fotos" value="Nee, regelen jullie">
+                                <span>Nee, regel jullie dit voor mij</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Heb je teksten? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="teksten" value="Ja, via WhatsApp" required>
+                                <span>Ja, ik stuur ze via WhatsApp</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="teksten" value="Nee, schrijven jullie">
+                                <span>Nee, schrijf ze voor mij <span class="price-tag">+€79</span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wil je prijzen tonen op je website? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="prijzen_tonen" value="Duidelijke prijzen" required>
+                                <span>Ja, duidelijke prijzen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="prijzen_tonen" value="Vanaf-prijzen">
+                                <span>Vanaf-prijzen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="prijzen_tonen" value="Offerte">
+                                <span>Nee, liever offerte</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline btn-prev">Terug</button>
+                        <button type="button" class="btn btn-primary btn-next">Volgende</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Wat moet je website doen? -->
+                <div class="form-step" data-step="3" style="display:none;">
+                    <div class="step-header">
+                        <h3>Stap 3: Wat moet je website doen?</h3>
+                        <p class="step-description">Functionaliteit bepalen</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wat is het belangrijkste doel? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="doel" value="Afspraken aanvragen" required>
+                                <span>Afspraken aanvragen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="doel" value="Offertes aanvragen">
+                                <span>Offertes aanvragen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="doel" value="Producten verkopen">
+                                <span>Direct producten verkopen</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="doel" value="Gebeld worden">
+                                <span>Gebeld worden</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="doel" value="Zichtbaar zijn">
+                                <span>Gewoon professioneel zichtbaar zijn</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="doel" value="Laat adviseren">
+                                <span>Laat mij adviseren</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hoe uitgebreid moet je website zijn? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item tier-option" data-tier="Start">
+                                <input type="radio" name="uitgebreidheid" value="Eén overzichtelijke pagina" required>
+                                <div>
+                                    <strong>Eén overzichtelijke pagina</strong>
+                                    <small class="tier-badge">Start pakket</small>
+                                </div>
+                            </label>
+                            <label class="radio-item tier-option" data-tier="Groei">
+                                <input type="radio" name="uitgebreidheid" value="Meerdere pagina's">
+                                <div>
+                                    <strong>Meerdere pagina's</strong>
+                                    <small class="tier-badge">Groei pakket</small>
+                                </div>
+                            </label>
+                            <label class="radio-item tier-option" data-tier="Pro">
+                                <input type="radio" name="uitgebreidheid" value="Best uitgebreid">
+                                <div>
+                                    <strong>Best uitgebreid met aparte secties</strong>
+                                    <small class="tier-badge">Pro pakket</small>
+                                </div>
+                            </label>
+                            <label class="radio-item tier-option" data-tier="Groei">
+                                <input type="radio" name="uitgebreidheid" value="Laat jullie adviseren">
+                                <div>
+                                    <strong>Laat jullie adviseren</strong>
+                                    <small class="tier-badge">Groei pakket</small>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wil je dat klanten automatisch kunnen reserveren? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="reserveren" value="Ja" required>
+                                <span>Ja <span class="tier-badge pro-badge">Upgrade naar Pro</span></span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="reserveren" value="Nee">
+                                <span>Nee</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wil je beter gevonden worden in meerdere steden? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="meerdere_regios" value="Nee" required>
+                                <span>Nee, 1 stad is genoeg</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="meerdere_regios" value="Ja">
+                                <span>Ja, meerdere regio's <span class="price-tag">+€25 per extra pagina</span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="aantalRegiosGroup" style="display:none;">
+                        <label for="aantalRegios">Hoeveel extra regio's?</label>
+                        <input type="number" name="aantal_regios" id="aantalRegios" min="1" value="1">
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline btn-prev">Terug</button>
+                        <button type="button" class="btn btn-primary btn-next">Volgende</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Contact & livegang -->
+                <div class="form-step" data-step="4" style="display:none;">
+                    <div class="step-header">
+                        <h3>Stap 4: Contact & livegang</h3>
+                        <p class="step-description">Laatste gegevens</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactNaam">Jouw naam *</label>
+                            <input type="text" name="contact_naam" id="contactNaam" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactTelefoon">Telefoonnummer *</label>
+                            <input type="tel" name="contact_telefoon" id="contactTelefoon" placeholder="06-12345678" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">E-mailadres *</label>
+                            <input type="email" name="contact_email" id="contactEmail" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Heb je al een websitenaam in gedachten? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="domein" value="Ja" id="domeinJa" required>
+                                <span>Ja, dit is mijn voorkeur:</span>
+                            </label>
+                            <div id="domeinInput" style="display:none; margin-top: 0.5rem; margin-left: 2rem;">
+                                <input type="text" name="domein_naam" placeholder="bijv. japiesijssalon.nl">
+                            </div>
+                            <label class="radio-item">
+                                <input type="radio" name="domein" value="Nee">
+                                <span>Nee, help mij kiezen</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="openingstijden">Openingstijden (optioneel)</label>
+                        <input type="text" name="openingstijden" id="openingstijden" placeholder="Bijv. Ma-za 09:00-18:00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="socialMedia">Social media links (optioneel)</label>
+                        <input type="text" name="social_media" id="socialMedia" placeholder="Instagram, Facebook, LinkedIn">
+                    </div>
+
+                    <div class="form-group" style="margin-top: 1rem; padding: 1rem; background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border);">
+                        <label class="checkbox-item" style="display: flex; align-items: center; gap: 0.75rem; margin: 0; cursor: pointer;">
+                            <input type="checkbox" name="pro_email" id="proEmailOptie" value="Ja" style="width: 20px; height: 20px; accent-color: var(--accent);">
+                            <div>
+                                <strong style="color: var(--primary);">+ Professioneel e-mailadres</strong>
+                                <small style="color: var(--text-light); display: block;">info@jouwdomein.nl (tot 5 gebruikers) — €5/maand</small>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline btn-prev">Terug</button>
+                        <button type="button" class="btn btn-primary btn-next">Volgende</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Jouw voorstel -->
+                <div class="form-step" data-step="5" style="display:none;">
+                    <div class="step-header">
+                        <h3>Stap 5: Jouw voorstel</h3>
+                        <p class="step-description">Controleer je gegevens</p>
+                    </div>
+
+                    <!-- Proposal Preview -->
+                    <div class="proposal-preview">
+                        <div class="proposal-template">
+                            <div class="template-icon" id="proposalTemplateIcon">🍽️</div>
+                            <div class="template-details">
+                                <h4 id="proposalBusinessName">Jouw Bedrijf</h4>
+                                <p id="proposalTemplateName">Restaurant template</p>
+                            </div>
+                        </div>
+
+                        <div class="proposal-tier">
+                            <div class="tier-header">
+                                <span class="tier-label">Aanbevolen pakket</span>
+                                <span class="tier-name" id="proposalTier">Start</span>
+                            </div>
+                            <div class="tier-price">
+                                <span class="setup-price" id="proposalSetup">€99</span>
+                                <span class="monthly-price" id="proposalMonthly">+ €9,99/maand</span>
+                            </div>
+                        </div>
+
+                        <div class="proposal-reasons">
+                            <h5>Waarom dit pakket:</h5>
+                            <ul id="proposalReasons">
+                                <li>Basis website voor kleine ondernemers</li>
+                            </ul>
+                        </div>
+
+                        <div class="proposal-includes">
+                            <h5>Inbegrepen:</h5>
+                            <ul id="proposalIncludes">
+                                <li>One-page website</li>
+                                <li>Contactformulier</li>
+                                <li>Mobiel vriendelijk</li>
+                            </ul>
+                        </div>
+
+                        <div class="proposal-extras" id="proposalExtras" style="display:none;">
+                            <h5>Extra opties:</h5>
+                            <ul id="proposalExtrasList"></ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label class="checkbox-item" style="align-items: flex-start;">
+                            <input type="checkbox" name="privacy_akkoord" id="privacyAkkoord" required style="margin-top: 0.25rem;">
+                            <span>Ik ga akkoord met de <a href="#" target="_blank">privacyverklaring</a> en <a href="#" target="_blank">algemene voorwaarden</a> *</span>
+                        </label>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline btn-prev">Terug</button>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            Ontvang mijn gratis ontwerp
+                        </button>
+                    </div>
+                    
+                    <p class="submit-note">
+                        Binnen 48 uur ontvang je je eerste ontwerp. Aanpassen kan altijd.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact">
+        <h2>Klaar om te starten?</h2>
+        <p>
+            Heb je vragen of wil je direct sparren over jouw website?
+            We zijn bereikbaar via WhatsApp en reageren binnen een paar uur.
+        </p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/31612345678" class="btn btn-whatsapp" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                WhatsApp ons
+            </a>
+            <a href="mailto:hallo@floatweb.nl" class="btn" style="background: white; color: var(--primary);">
+                Mail ons
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Floatweb</strong> - Simpel. Snel. Betaalbaar.</p>
+        <p style="margin-top: 0.5rem;">hallo@floatweb.nl • KvK: [nummer] • BTW: [nummer]</p>
+    </footer>
+
+    <!-- JavaScript for Multi-Step Form -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Multi-Step Form Class
+            class MultiStepForm {
+                constructor() {
+                    this.currentStep = 1;
+                    this.totalSteps = 5;
+                    this.formData = {};
+                    this.form = document.getElementById('intakeForm');
+                    this.init();
+                }
+
+                init() {
+                    this.loadFromStorage();
+                    this.bindEvents();
+                    this.showStep(this.currentStep);
+                    this.updateProgress();
+                    this.setupConditionalFields();
+                }
+
+                bindEvents() {
+                    // Navigation buttons
+                    document.querySelectorAll('.btn-next').forEach(btn => {
+                        btn.addEventListener('click', () => this.nextStep());
+                    });
+
+                    document.querySelectorAll('.btn-prev').forEach(btn => {
+                        btn.addEventListener('click', () => this.prevStep());
+                    });
+
+                    // Form inputs - save on change
+                    this.form.querySelectorAll('input, select, textarea').forEach(input => {
+                        input.addEventListener('change', () => this.saveCurrentStepData());
+                        input.addEventListener('input', () => this.saveCurrentStepData());
+                    });
+
+                    // Form submission
+                    this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+
+                    // Domein input toggle
+                    const domeinRadios = document.querySelectorAll('input[name="domein"]');
+                    domeinRadios.forEach(radio => {
+                        radio.addEventListener('change', (e) => {
+                            const domeinInput = document.getElementById('domeinInput');
+                            domeinInput.style.display = e.target.value === 'Ja' ? 'block' : 'none';
+                        });
+                    });
+
+                    // Meerdere regios toggle
+                    const regioRadios = document.querySelectorAll('input[name="meerdere_regios"]');
+                    regioRadios.forEach(radio => {
+                        radio.addEventListener('change', (e) => {
+                            const aantalGroup = document.getElementById('aantalRegiosGroup');
+                            aantalGroup.style.display = e.target.value === 'Ja' ? 'block' : 'none';
+                        });
+                    });
+                }
+
+                setupConditionalFields() {
+                    // Initialize conditional field states
+                    const domeinJa = document.getElementById('domeinJa');
+                    if (domeinJa && domeinJa.checked) {
+                        document.getElementById('domeinInput').style.display = 'block';
+                    }
+
+                    const meerdereRegios = document.querySelector('input[name="meerdere_regios"][value="Ja"]');
+                    if (meerdereRegios && meerdereRegios.checked) {
+                        document.getElementById('aantalRegiosGroup').style.display = 'block';
+                    }
+                }
+
+                showStep(stepNum) {
+                    // Hide all steps
+                    document.querySelectorAll('.form-step').forEach(step => {
+                        step.style.display = 'none';
+                        step.classList.remove('active');
+                    });
+
+                    // Show current step
+                    const currentStepEl = document.querySelector(`.form-step[data-step="${stepNum}"]`);
+                    if (currentStepEl) {
+                        currentStepEl.style.display = 'block';
+                        currentStepEl.classList.add('active');
+                    }
+
+                    // Update progress indicator
+                    this.updateProgress();
+
+                    // Update step number text
+                    document.getElementById('currentStepNum').textContent = stepNum;
+
+                    // If step 5, generate proposal
+                    if (stepNum === 5) {
+                        this.generateProposal();
+                    }
+
+                    // Scroll to top of form
+                    document.getElementById('offerte').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                updateProgress() {
+                    const steps = document.querySelectorAll('.progress-step');
+                    const lines = document.querySelectorAll('.progress-line');
+
+                    steps.forEach((step, index) => {
+                        const stepNum = index + 1;
+                        step.classList.remove('active', 'completed');
+
+                        if (stepNum < this.currentStep) {
+                            step.classList.add('completed');
+                        } else if (stepNum === this.currentStep) {
+                            step.classList.add('active');
+                        }
+                    });
+
+                    lines.forEach((line, index) => {
+                        line.classList.remove('completed');
+                        if (index < this.currentStep - 1) {
+                            line.classList.add('completed');
+                        }
+                    });
+                }
+
+                validateStep(stepNum) {
+                    const stepEl = document.querySelector(`.form-step[data-step="${stepNum}"]`);
+                    if (!stepEl) return true;
+
+                    const requiredInputs = stepEl.querySelectorAll('input[required], select[required], textarea[required]');
+                    let isValid = true;
+
+                    requiredInputs.forEach(input => {
+                        // Remove previous error states
+                        input.closest('.form-group')?.classList.remove('error');
+
+                        if (input.type === 'radio') {
+                            const radioGroup = stepEl.querySelectorAll(`input[name="${input.name}"]`);
+                            const isChecked = Array.from(radioGroup).some(r => r.checked);
+                            if (!isChecked) {
+                                isValid = false;
+                                radioGroup.forEach(r => r.closest('.form-group')?.classList.add('error'));
+                            }
+                        } else if (input.type === 'checkbox') {
+                            if (!input.checked) {
+                                isValid = false;
+                                input.closest('.form-group')?.classList.add('error');
+                            }
+                        } else {
+                            if (!input.value.trim()) {
+                                isValid = false;
+                                input.closest('.form-group')?.classList.add('error');
+                            }
+                        }
+                    });
+
+                    // Email validation for step 4
+                    if (stepNum === 4) {
+                        const emailInput = document.getElementById('contactEmail');
+                        if (emailInput && emailInput.value) {
+                            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!emailPattern.test(emailInput.value)) {
+                                isValid = false;
+                                emailInput.closest('.form-group')?.classList.add('error');
+                            }
+                        }
+
+                        const phoneInput = document.getElementById('contactTelefoon');
+                        if (phoneInput && phoneInput.value) {
+                            const phonePattern = /^[\d\s\-\+\(\)]{10,}$/;
+                            if (!phonePattern.test(phoneInput.value)) {
+                                isValid = false;
+                                phoneInput.closest('.form-group')?.classList.add('error');
+                            }
+                        }
+                    }
+
+                    return isValid;
+                }
+
+                saveCurrentStepData() {
+                    const stepEl = document.querySelector(`.form-step[data-step="${this.currentStep}"]`);
+                    if (!stepEl) return;
+
+                    const inputs = stepEl.querySelectorAll('input, select, textarea');
+                    inputs.forEach(input => {
+                        if (input.type === 'radio') {
+                            if (input.checked) {
+                                this.formData[input.name] = input.value;
+                            }
+                        } else if (input.type === 'checkbox') {
+                            if (!this.formData[input.name]) {
+                                this.formData[input.name] = [];
+                            }
+                            if (input.checked) {
+                                if (!this.formData[input.name].includes(input.value)) {
+                                    this.formData[input.name].push(input.value);
+                                }
+                            } else {
+                                this.formData[input.name] = this.formData[input.name].filter(v => v !== input.value);
+                            }
+                        } else {
+                            this.formData[input.name] = input.value;
+                        }
+                    });
+
+                    this.saveToStorage();
+                }
+
+                saveStepData(stepNum) {
+                    const stepEl = document.querySelector(`.form-step[data-step="${stepNum}"]`);
+                    if (!stepEl) return;
+
+                    const inputs = stepEl.querySelectorAll('input, select, textarea');
+                    inputs.forEach(input => {
+                        if (input.type === 'radio') {
+                            if (input.checked) {
+                                this.formData[input.name] = input.value;
+                            }
+                        } else if (input.type === 'checkbox') {
+                            if (input.checked) {
+                                this.formData[input.name] = input.value;
+                            }
+                        } else {
+                            this.formData[input.name] = input.value;
+                        }
+                    });
+
+                    this.saveToStorage();
+                }
+
+                saveToStorage() {
+                    localStorage.setItem('floatweb_intake_data', JSON.stringify({
+                        currentStep: this.currentStep,
+                        formData: this.formData
+                    }));
+                }
+
+                loadFromStorage() {
+                    const saved = localStorage.getItem('floatweb_intake_data');
+                    if (saved) {
+                        try {
+                            const data = JSON.parse(saved);
+                            this.currentStep = data.currentStep || 1;
+                            this.formData = data.formData || {};
+
+                            // Restore form values
+                            Object.keys(this.formData).forEach(key => {
+                                const value = this.formData[key];
+                                const inputs = document.querySelectorAll(`[name="${key}"]`);
+
+                                inputs.forEach(input => {
+                                    if (input.type === 'radio') {
+                                        input.checked = input.value === value;
+                                    } else if (input.type === 'checkbox') {
+                                        input.checked = value === input.value || (Array.isArray(value) && value.includes(input.value));
+                                    } else {
+                                        input.value = value;
+                                    }
+                                });
+                            });
+
+                            // Trigger conditional field checks
+                            this.setupConditionalFields();
+                        } catch (e) {
+                            console.error('Error loading saved data:', e);
+                        }
+                    }
+                }
+
+                clearStorage() {
+                    localStorage.removeItem('floatweb_intake_data');
+                }
+
+                nextStep() {
+                    if (this.validateStep(this.currentStep)) {
+                        this.saveStepData(this.currentStep);
+                        if (this.currentStep < this.totalSteps) {
+                            this.currentStep++;
+                            this.showStep(this.currentStep);
+                            this.saveToStorage();
+                        }
+                    }
+                }
+
+                prevStep() {
+                    if (this.currentStep > 1) {
+                        this.currentStep--;
+                        this.showStep(this.currentStep);
+                        this.saveToStorage();
+                    }
+                }
+
+                calculateTier() {
+                    const data = this.formData;
+
+                    // If reserveren is Ja, always Pro
+                    if (data.reserveren === 'Ja') {
+                        return 'Pro';
+                    }
+
+                    // Base tier on uitgebreidheid
+                    let tier = 'Start';
+                    switch (data.uitgebreidheid) {
+                        case 'Eén overzichtelijke pagina':
+                            tier = 'Start';
+                            break;
+                        case 'Meerdere pagina\'s':
+                        case 'Laat jullie adviseren':
+                            tier = 'Groei';
+                            break;
+                        case 'Best uitgebreid':
+                            tier = 'Pro';
+                            break;
+                    }
+
+                    // Upgrade to Groei if multiple regions and currently Start
+                    if (data.meerdere_regios === 'Ja' && tier === 'Start') {
+                        tier = 'Groei';
+                    }
+
+                    return tier;
+                }
+
+                calculatePrice() {
+                    const tier = this.calculateTier();
+                    const tierData = {
+                        'Start': { setup: 99, monthly: 9.99 },
+                        'Groei': { setup: 249, monthly: 14.99 },
+                        'Pro': { setup: 499, monthly: 19.99 }
+                    };
+
+                    let setup = tierData[tier].setup;
+                    let monthly = tierData[tier].monthly;
+                    const extras = [];
+
+                    // Extra regios
+                    if (this.formData.meerdere_regios === 'Ja') {
+                        const aantalRegios = parseInt(this.formData.aantal_regios) || 1;
+                        const extraRegioCost = aantalRegios * 25;
+                        setup += extraRegioCost;
+                        extras.push(`${aantalRegios} extra regio pagina's (+€${extraRegioCost})`);
+                    }
+
+                    // Logo maken
+                    if (this.formData.logo === 'Nee, maak er een') {
+                        setup += 25;
+                        extras.push('Logo ontwerp (+€25)');
+                    }
+
+                    // Teksten schrijven
+                    if (this.formData.teksten === 'Nee, schrijven jullie') {
+                        setup += 79;
+                        extras.push('Teksten schrijven (+€79)');
+                    }
+
+                    // Pro email
+                    if (this.formData.pro_email === 'Ja') {
+                        monthly += 5;
+                        extras.push('Professioneel e-mailadres (+€5/maand)');
+                    }
+
+                    return { setup, monthly, tier, extras };
+                }
+
+                generateProposal() {
+                    const { setup, monthly, tier, extras } = this.calculatePrice();
+                    const data = this.formData;
+
+                    // Template icons mapping
+                    const templateIcons = {
+                        'restaurant': '🍽️',
+                        'salon': '✂️',
+                        'cafe': '☕',
+                        'vakman': '🔧'
+                    };
+
+                    const templateNames = {
+                        'restaurant': 'Restaurant template',
+                        'salon': 'Salon template',
+                        'cafe': 'Café template',
+                        'vakman': 'Vakman template'
+                    };
+
+                    // Update proposal display
+                    document.getElementById('proposalTemplateIcon').textContent = templateIcons[data.template_keuze] || '🌐';
+                    document.getElementById('proposalBusinessName').textContent = data.bedrijfsnaam || 'Jouw Bedrijf';
+                    document.getElementById('proposalTemplateName').textContent = templateNames[data.template_keuze] || 'Website';
+                    document.getElementById('proposalTier').textContent = tier;
+                    document.getElementById('proposalSetup').textContent = `€${setup}`;
+                    document.getElementById('proposalMonthly').textContent = `+ €${monthly.toFixed(2).replace('.', ',')}/maand`;
+
+                    // Generate reasons
+                    const reasonsList = document.getElementById('proposalReasons');
+                    reasonsList.innerHTML = '';
+
+                    const reasons = [];
+                    if (data.uitgebreidheid) {
+                        reasons.push(`Je koos: "${data.uitgebreidheid}"`);
+                    }
+                    if (data.reserveren === 'Ja') {
+                        reasons.push('Je wilt automatisch reserveren');
+                    }
+                    if (data.meerdere_regios === 'Ja') {
+                        reasons.push('Je richt je op meerdere regio\'s');
+                    }
+                    if (data.doel) {
+                        reasons.push(`Hoofddoel: ${data.doel.toLowerCase()}`);
+                    }
+
+                    reasons.forEach(reason => {
+                        const li = document.createElement('li');
+                        li.textContent = reason;
+                        reasonsList.appendChild(li);
+                    });
+
+                    // Generate includes based on tier
+                    const includesList = document.getElementById('proposalIncludes');
+                    includesList.innerHTML = '';
+
+                    const includes = {
+                        'Start': [
+                            'One-page website',
+                            'Contactformulier',
+                            'Mobiel vriendelijk',
+                            '2 wijzigingen per jaar',
+                            'Basis vindbaarheid Google'
+                        ],
+                        'Groei': [
+                            'Tot 5 pagina\'s',
+                            'Contactformulier & WhatsApp',
+                            'Mobiel vriendelijk',
+                            '4 wijzigingen per jaar',
+                            'Extra vindbaarheid per regio',
+                            'Klanten reviews sectie'
+                        ],
+                        'Pro': [
+                            'Tot 10 pagina\'s',
+                            'Boeking/reservering systeem',
+                            'iDEAL betalingen mogelijk',
+                            'Meertalig (NL + EN)',
+                            '6 wijzigingen per jaar',
+                            'Premium support'
+                        ]
+                    };
+
+                    includes[tier].forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = item;
+                        includesList.appendChild(li);
+                    });
+
+                    // Show extras if any
+                    const extrasSection = document.getElementById('proposalExtras');
+                    const extrasList = document.getElementById('proposalExtrasList');
+                    extrasList.innerHTML = '';
+
+                    if (extras.length > 0) {
+                        extrasSection.style.display = 'block';
+                        extras.forEach(extra => {
+                            const li = document.createElement('li');
+                            li.textContent = extra;
+                            extrasList.appendChild(li);
+                        });
+                    } else {
+                        extrasSection.style.display = 'none';
+                    }
+
+                    // Update hidden fields for Netlify
+                    document.getElementById('hiddenTier').value = tier;
+                    document.getElementById('hiddenSetup').value = setup;
+                    document.getElementById('hiddenMonthly').value = monthly.toFixed(2);
+                    document.getElementById('formDataJson').value = JSON.stringify(this.formData);
+                }
+
+                handleSubmit(e) {
+                    e.preventDefault();
+
+                    if (!this.validateStep(this.currentStep)) {
+                        return;
+                    }
+
+                    // Final save
+                    this.saveStepData(this.currentStep);
+
+                    // Check privacy checkbox
+                    const privacyCheckbox = document.getElementById('privacyAkkoord');
+                    if (!privacyCheckbox.checked) {
+                        privacyCheckbox.closest('.form-group').classList.add('error');
+                        return;
+                    }
+
+                    // Submit form
+                    this.form.submit();
+
+                    // Clear storage after successful submission
+                    this.clearStorage();
+                }
+            }
+
+            // Initialize the multi-step form
+            const multiStepForm = new MultiStepForm();
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
