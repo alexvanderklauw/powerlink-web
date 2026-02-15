@@ -2,16 +2,15 @@
 
 ## Web Dev Service
 
+### Business Model (Source of Truth)
+**File:** `business/business-model.md`  
+**Contains:** Tiers, pricing, customer scripts, objection handling, upgrade paths  
+**Update rule:** Update immediately when website/pricing changes
+
 ### Templates
 - `/templates/onepager/restaurant-template.html` - Restaurants/Cafes
 - `/templates/onepager/salon-template.html` - Salons/Barbers
 - More coming: shop-template, trade-template, bb-template
-
-### Pricing
-- Base: €250
-- Premium (+booking): €350
-- Domain setup: +€50
-- SEO basics: +€30
 
 ### Hosting Options
 1. **Netlify** - Free tier, drag-drop deploy
