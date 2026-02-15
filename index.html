@@ -3,46 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floatweb - Jouw Website, Snel en Betaalbaar | Vanaf €99</title>
-    <meta name="description" content="Professionele websites voor het MKB. Van idee tot live binnen 48 uur. Geen verborgen kosten, altijd inclusief hosting. Restaurant, salon, café of vakman? Wij regelen het.">
-    <meta name="keywords" content="website laten maken, goedkope website, MKB website, restaurant website, salon website, website bouwen">
-    <meta name="author" content="Floatweb">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://floatweb.nl/">
-    <meta property="og:title" content="Floatweb - Jouw Website, Snel en Betaalbaar">
-    <meta property="og:description" content="Professionele websites voor het MKB. Van idee tot live binnen 48 uur. Geen verborgen kosten.">
-    <meta property="og:image" content="https://floatweb.nl/images/og-image.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://floatweb.nl/">
-    <meta property="twitter:title" content="Floatweb - Jouw Website, Snel en Betaalbaar">
-    <meta property="twitter:description" content="Professionele websites voor het MKB. Van idee tot live binnen 48 uur.">
-    <meta property="twitter:image" content="https://floatweb.nl/images/og-image.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    
-    <!-- Fonts -->
+    <title>Floatweb - Simpel. Snel. Betaalbaar.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
     <style>
         :root {
+            /* Option 1: Navy + Orange (current) */
             --primary: #1E293B;
             --primary-dark: #0F172A;
             --primary-light: #334155;
@@ -56,6 +23,21 @@
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
+
+        /* Option 2: Clean Slate + Coral - Uncomment to use
+        :root {
+            --primary: #475569;
+            --primary-dark: #334155;
+            --primary-light: #64748B;
+            --accent: #FB7185;
+            --accent-hover: #E11D48;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --bg: #FFFFFF;
+            --bg-light: #F1F5F9;
+            --border: #CBD5E1;
+        }
+        */
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -192,6 +174,29 @@
         }
 
         .btn-whatsapp:hover { background: #128C7E; }
+
+        /* Section Dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
+            margin: 0;
+        }
+
+        .section-block {
+            position: relative;
+        }
+
+        .section-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
 
         /* Top Promo Bar */
         .promo-bar {
@@ -677,13 +682,13 @@
 
         .calc-form {
             display: grid;
-            gap: 3.5rem;
+            gap: 1.5rem;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .form-group label {
@@ -800,23 +805,6 @@
 
         footer p {
             opacity: 0.7;
-        }
-
-        footer a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: white;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
         }
 
         /* Mobile Navigation */
@@ -1150,23 +1138,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Tier Selector Styles */
-        .tier-option-card {
-            transition: all 0.2s ease;
-        }
-        .tier-option-card:hover {
-            border-color: var(--primary-light) !important;
-            transform: translateY(-2px);
-        }
-        .tier-option-card input:checked + .tier-option-name {
-            color: var(--accent);
-        }
-        @media (max-width: 640px) {
-            .tier-options {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
         .template-icon {
             width: 60px;
             height: 60px;
@@ -1348,331 +1319,21 @@
                 order: 1;
             }
         }
-
-        /* USPs Section */
-        .usp-section {
-            padding: 3rem 2rem;
-            background: var(--bg-light);
-            border-bottom: 1px solid var(--border);
-        }
-
-        @media (min-width: 768px) {
-            .usp-section {
-                padding: 4rem 2rem;
-            }
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 4rem 1.5rem;
-            background: white;
-            border-bottom: 1px solid var(--border);
-        }
-
-        @media (min-width: 768px) {
-            .about-section {
-                padding: 5rem 2rem;
-            }
-        }
-
-        .about-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr 2fr;
-                gap: 3rem;
-            }
-        }
-
-        .about-avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .about-avatar {
-                width: 200px;
-                height: 200px;
-                font-size: 5rem;
-            }
-        }
-
-        .about-content h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .about-content h3 {
-                text-align: left;
-            }
-        }
-
-        .about-content p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-
-        .about-content strong {
-            color: var(--text);
-        }
-
-        /* Portfolio Section */
-        .portfolio-section {
-            padding: 4rem 1.5rem;
-            background: var(--bg-light);
-            border-bottom: 1px solid var(--border);
-        }
-
-        @media (min-width: 768px) {
-            .portfolio-section {
-                padding: 5rem 2rem;
-            }
-        }
-
-        .portfolio-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 640px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .portfolio-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .portfolio-preview {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-        }
-
-        .portfolio-info {
-            padding: 1.5rem;
-        }
-
-        .portfolio-info h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .portfolio-tag {
-            background: var(--bg-light);
-            color: var(--text-light);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        /* Testimonials Section */
-        .testimonials-section {
-            padding: 4rem 1.5rem;
-            background: white;
-            border-bottom: 1px solid var(--border);
-        }
-
-        @media (min-width: 768px) {
-            .testimonials-section {
-                padding: 5rem 2rem;
-            }
-        }
-
-        .testimonials-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .testimonial-card {
-            background: var(--bg-light);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 2px dashed var(--border);
-        }
-
-        .testimonial-placeholder {
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .testimonial-placeholder .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin: 0 auto 1rem;
-        }
-
-        .testimonial-coming-soon {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 4rem 1.5rem;
-            background: var(--bg-light);
-            border-bottom: 1px solid var(--border);
-        }
-
-        @media (min-width: 768px) {
-            .faq-section {
-                padding: 5rem 2rem;
-            }
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 1.25rem;
-            background: white;
-            border: none;
-            text-align: left;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
-        }
-
-        .faq-question:hover {
-            background: var(--bg-light);
-        }
-
-        .faq-question::after {
-            content: "+";
-            font-size: 1.5rem;
-            color: var(--accent);
-            transition: transform 0.2s;
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            padding: 0 1.25rem 1.25rem;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
     </style>
 </head>
 <body>
     <!-- Promo Bar -->
     <div class="promo-bar">
-        🎁 Eerst zien dan betalen - Gratis preview t.w.v. €29,99
+        Eerst zien dan betalen - Gratis preview t.w.v. 29,99
     </div>
 
     <!-- Navigation -->
     <nav role="navigation" aria-label="Hoofdnavigatie">
         <div class="nav-container">
-            <a href="#" class="logo">🌊 Floatweb</a>
+            <a href="#" class="logo">Floatweb</a>
             <div class="nav-links">
                 <a href="#hoe-werkt-het">Hoe werkt het</a>
                 <a href="#prijzen">Prijzen</a>
-                <a href="#portfolio">Voorbeelden</a>
-                <a href="#faq">FAQ</a>
                 <a href="#offerte" class="btn btn-primary">Start nu</a>
             </div>
         </div>
@@ -1682,51 +1343,23 @@
     <section class="hero" role="banner">
         <div class="hero-container">
             <div class="badge" style="background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.25);">
-                <span>🚀 Van idee tot live binnen 48 uur</span>
+                <span>Eerst zien dan betalen - Gratis preview t.w.v. 29,99</span>
             </div>
             <h1 style="text-align: center;">
-                Jouw website<br>
-                <span style="color: var(--accent);">zonder gedoe</span>
+                Simpel.<br>
+                Snel.<br>
+                Betaalbaar.
             </h1>
-            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem;">
-                Professionele websites voor ondernemers. <strong style="color: white;">Vanaf €99</strong> eenmalig + €9,99/maand. Geen technisch gedoe, wij regelen alles.
-            </p>
-            
-            <div class="hero-usps">
-                <div class="hero-usp">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Eerst zien, dan beslissen
-                </div>
-                <div class="hero-usp">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Geen opzegtermijn
-                </div>
-                <div class="hero-usp">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Alles inclusief
-                </div>
-            </div>
-            
             <div class="hero-buttons">
-                <a href="#offerte" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.1rem 2rem;">
-                    Start je gratis preview
+                <a href="#prijzen" class="btn btn-primary">
+                    Start nu
                 </a>
-                <a href="https://wa.me/31612345678" class="btn btn-whatsapp" target="_blank" style="font-size: 1.1rem; padding: 1.1rem 2rem;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                <a href="https://wa.me/31612345678" class="btn btn-whatsapp" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                     WhatsApp ons
                 </a>
-            </div>
-            
-            <div class="hero-price" style="margin-top: 1.5rem; font-size: 1rem; color: rgba(255,255,255,0.8);">
-                ⚡ Live binnen 5 dagen · 🔄 Geen opzegtermijn · 🛡️ Alles in ons beheer
             </div>
         </div>
     </section>
@@ -1735,7 +1368,7 @@
     <section class="how-it-works" id="hoe-werkt-het">
         <div class="section-header">
             <h2 style="color: var(--accent); font-weight: 900; font-size: 2.75rem; text-shadow: 1px 0 0 currentColor, -1px 0 0 currentColor;">Makkelijker kan haast niet.</h2>
-            <p>Jouw eigen website en een professioneel mailadres, in 5 simpele stappen.</p>
+            <p>Een website en een professioneel mailadres, in 5 simpele stappen.</p>
         </div>
         <div class="steps">
             <div class="step">
@@ -1766,137 +1399,6 @@
         </div>
     </section>
 
-    <!-- USPs Section -->
-    <section class="usp-section">
-        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center;">
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
-                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Live binnen 5 dagen</h3>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Geen opzegtermijn</h3>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Geheel in ons beheer</h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="over-ons">
-        <div class="section-header">
-            <h2>Wie is Floatweb?</h2>
-            <p>Persoonlijk contact, professioneel resultaat</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-avatar">
-                👨‍💻
-            </div>
-            <div class="about-content">
-                <h3>Hoi, ik ben Alex</h3>
-                <p>
-                    Floatweb is ontstaan vanuit een simpele frustratie: waarom moet het zo moeilijk zijn om een fatsoenlijke website te krijgen? Als ondernemer heb je al genoeg aan je hoofd zonder dat je ook nog eens technische details moet uitzoeken.
-                </p>
-                <p>
-                    Daarom bouw ik <strong>persoonlijke websites voor ondernemers</strong> die gewoon willen ondernemen. Geen ingewikkelde bouwpakketten, geen uren puzzelen met templates. Jij vertelt wat je nodig hebt, ik regel de rest.
-                </p>
-                <p>
-                    Met Floatweb krijg je <strong>één aanspreekpunt</strong>, <strong>heldere prijzen</strong> en <strong>geen verborgen kosten</strong>. Van restaurant tot schoonheidssalon, van café tot klusbedrijf — iedereen verdient een professionele online presence.
-                </p>
-                <p style="margin-bottom: 0;">
-                    <strong style="color: var(--accent);">Klaar om jouw verhaal online te vertellen?</strong>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio-section" id="portfolio">
-        <div class="section-header">
-            <h2>Voorbeelden</h2>
-            <p>Bekijk onze templates — volledig aanpasbaar aan jouw huisstijl</p>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <div class="portfolio-preview" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
-                    🍽️
-                </div>
-                <div class="portfolio-info">
-                    <h4>Restaurant / Café</h4>
-                    <p>Perfect voor restaurants, cafés en eateries. Met menu, openingstijden en reserveringsmogelijkheid.</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">Menu</span>
-                        <span class="portfolio-tag">Reserveren</span>
-                        <span class="portfolio-tag">Foto's</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <div class="portfolio-preview" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
-                    💇
-                </div>
-                <div class="portfolio-info">
-                    <h4>Salon / Kapsalon</h4>
-                    <p>Ideaal voor schoonheidssalons, kappers en wellness. Met prijslijst, afspraak systeem en portfolio.</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">Prijzen</span>
-                        <span class="portfolio-tag">Afspraken</span>
-                        <span class="portfolio-tag">Portfolio</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <div class="portfolio-preview" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
-                    🔧
-                </div>
-                <div class="portfolio-info">
-                    <h4>Vakman / Service</h4>
-                    <p>Voor loodgieters, elektriciens en andere vakmensen. Met diensten, offerte formulier en regio-pagina's.</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">Offertes</span>
-                        <span class="portfolio-tag">Regio's</span>
-                        <span class="portfolio-tag">Reviews</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="section-header">
-            <h2>Wat klanten zeggen</h2>
-            <p>Eerlijke ervaringen van ondernemers</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-placeholder">
-                    <div class="avatar">🏪</div>
-                    <p style="font-style: italic;">"Binnenkort delen we hier de eerste succesverhalen van ondernemers die met Floatweb zijn gegaan."</p>
-                    <p style="margin-top: 0.5rem; font-weight: 600;">— Jij?</p>
-                    <span class="testimonial-coming-soon">Jouw verhaal hier</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-placeholder">
-                    <div class="avatar">🚀</div>
-                    <p style="font-style: italic;">"We zijn net live gegaan en de eerste reacties zijn super positief! Het proces was inderdaad binnen 5 dagen af."</p>
-                    <p style="margin-top: 0.5rem; font-weight: 600;">— Demo Klant</p>
-                    <span class="testimonial-coming-soon">Eerste review binnenkort</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Pricing -->
     <section class="pricing" id="prijzen">
         <div class="section-header">
@@ -1917,7 +1419,7 @@
                     <li><strong>One-page website</strong></li>
                     <li class="extra">Eigen logo en foto's</li>
                     <li>Max 6 diensten/producten met korte tekst</li>
-                    <li>Vindbaar in 1 regio/stad</li>
+                    <li>Vindbaarheid op Google: Basis</li>
                     <li>Offerte, WhatsApp of belknop</li>
                     <li>Contactformulier</li>
                     <li>Google Maps</li>
@@ -1943,7 +1445,7 @@
                     <li><strong>5 pagina's*</strong></li>
                     <li>Alles van Start, plus:</li>
                     <li>Foto galerij / portfolio</li>
-                    <li class="extra">Vindbaarheid Groei — meerdere regio's op 1 pagina</li>
+                    <li class="extra">Vindbaarheid op Google: Extra (per regio/stad)</li>
                     <li>Klanten reviews sectie</li>
                     <li>4 wijzigingen per jaar**</li>
                     <li class="extra">Aanbetaling na concept: €30</li>
@@ -1967,7 +1469,6 @@
                     <li><strong>Tot 10 pagina's*</strong></li>
                     <li>Alles van Groei, plus:</li>
                     <li class="extra">Boeking / reservering systeem</li>
-                    <li class="extra">Vindbaarheid Pro: eigen pagina per regio of onderwerp</li>
                     <li>iDEAL betalingen mogelijk</li>
                     <li>Meertalig (NL + EN)</li>
                     <li>6 wijzigingen per jaar**</li>
@@ -1985,68 +1486,27 @@
         </p>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
-        <div class="section-header">
-            <h2>Veelgestelde vragen</h2>
-            <p>Alles wat je wilt weten over Floatweb</p>
-        </div>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question">
-                    Wat kost een website echt alles inclusief?
-                </button>
-                <div class="faq-answer">
-                    <p>Onze prijzen zijn all-in: €99-499 eenmalig afhankelijk van het pakket, plus €9,99-19,99/maand voor hosting en onderhoud. Geen verborgen kosten, geen verrassingen. Je betaalt pas na het zien van je gratis concept.</p>
-                </div>
+    <!-- USPs Section -->
+    <section class="usp-section" style="padding: 3rem 2rem; background: var(--bg-light); border-bottom: 1px solid var(--border);">
+        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Live binnen 5 dagen</h3>
             </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    Hoelang duurt het voordat mijn website live is?
-                </button>
-                <div class="faq-answer">
-                    <p>Van eerste contact tot live: gemiddeld 5 dagen. Je ontvangt binnen 48 uur je eerste concept. Na je goedkeuring en kleine aanbetaling finetunen we samen de details. Domeinregistratie en livegang gebeuren daarna binnen 24 uur.</p>
-                </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Geen opzegtermijn</h3>
             </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    Kan ik later nog wijzigingen aanbrengen?
-                </button>
-                <div class="faq-answer">
-                    <p>Zeker! Afhankelijk van je pakket krijg je 2-6 wijzigingsrondes per jaar (tekst en foto's). Wil je meer aanpassen? Dan rekenen we €75 per uur. Nieuwe pagina's toevoegen kan altijd voor €25 per pagina.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    Is de website van mij?
-                </button>
-                <div class="faq-answer">
-                    <p>Ja, alle content is van jou. Tijdens je abonnement beheren wij het technische deel (hosting, updates, beveiliging). Wil je het domein en de website volledig in eigen beheer? Dat kan met een eenmalige buyout van €1.500. <a href="voorwaarden.html" style="color: var(--accent);">Lees meer in onze voorwaarden</a>.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    Wat als ik wil stoppen?
-                </button>
-                <div class="faq-answer">
-                    <p>Geen probleem! Er is geen opzegtermijn. Je kunt maandelijks opzeggen. We zorgen voor een nette overdracht of archivering van je website. Je domeinnaam blijft wel eigendom van Floatweb tenzij je deze overneemt.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    Heb ik technische kennis nodig?
-                </button>
-                <div class="faq-answer">
-                    <p>Absoluut niet! Dat is juist het idee achter Floatweb. Jij levert tekst en foto's aan (via WhatsApp, mail of upload), wij doen de rest. Updates, beveiliging, backups — we regelen alles technische zodat jij kunt ondernemen.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    Kan ik een professioneel e-mailadres krijgen?
-                </button>
-                <div class="faq-answer">
-                    <p>Ja! Voor €5/maand extra krijg je een professioneel e-mailadres zoals info@jouwbedrijf.nl. Dit werkt met tot 5 gebruikers en is optioneel bij elk pakket.</p>
-                </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">Geheel in ons beheer</h3>
             </div>
         </div>
     </section>
@@ -2121,7 +1581,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="diensten">Welke diensten en producten moeten op je website komen? *</label>
+                        <label for="diensten">Wat verkoop/bied je precies aan? Benoem al je diensten/producten. *</label>
                         <textarea name="diensten" id="diensten" rows="3" placeholder="Bijv. Badkamerrenovaties, knipbehandelingen, Italiaans ijs" required></textarea>
                     </div>
 
@@ -2164,60 +1624,46 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Welke sfeer spreekt je aan? (meerdere opties mogelijk)</label>
+                        <label>Kies een voorbeeld die bij je past *</label>
                         <div class="template-grid">
                             <label class="template-card">
-                                <input type="checkbox" name="template_sfeer" value="warm">
+                                <input type="radio" name="template_keuze" value="restaurant" required>
                                 <div class="template-image" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
-                                    <span style="font-size: 1.5rem;">🌅</span>
+                                    <span>🍽️</span>
                                 </div>
                                 <div class="template-info">
-                                    <small>Warm & uitnodigend</small>
+                                    <strong>Restaurant</strong>
+                                    <small>Warm, uitnodigend</small>
                                 </div>
                             </label>
                             <label class="template-card">
-                                <input type="checkbox" name="template_sfeer" value="modern">
+                                <input type="radio" name="template_keuze" value="salon">
                                 <div class="template-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
-                                    <span style="font-size: 1.5rem;">✨</span>
+                                    <span>✂️</span>
                                 </div>
                                 <div class="template-info">
-                                    <small>Modern & strak</small>
+                                    <strong>Salon</strong>
+                                    <small>Modern, elegant</small>
                                 </div>
                             </label>
                             <label class="template-card">
-                                <input type="checkbox" name="template_sfeer" value="natuurlijk">
+                                <input type="radio" name="template_keuze" value="cafe">
                                 <div class="template-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                    <span style="font-size: 1.5rem;">🌿</span>
+                                    <span>☕</span>
                                 </div>
                                 <div class="template-info">
-                                    <small>Natuurlijk & rustig</small>
+                                    <strong>Café</strong>
+                                    <small>Gezellig, lokaal</small>
                                 </div>
                             </label>
                             <label class="template-card">
-                                <input type="checkbox" name="template_sfeer" value="zakelijk">
+                                <input type="radio" name="template_keuze" value="vakman">
                                 <div class="template-image" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
-                                    <span style="font-size: 1.5rem;">💼</span>
+                                    <span>🔧</span>
                                 </div>
                                 <div class="template-info">
-                                    <small>Zakelijk & betrouwbaar</small>
-                                </div>
-                            </label>
-                            <label class="template-card">
-                                <input type="checkbox" name="template_sfeer" value="kleurrijk">
-                                <div class="template-image" style="background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);">
-                                    <span style="font-size: 1.5rem;">🎨</span>
-                                </div>
-                                <div class="template-info">
-                                    <small>Kleurrijk & sprankelend</small>
-                                </div>
-                            </label>
-                            <label class="template-card">
-                                <input type="checkbox" name="template_sfeer" value="industrieel">
-                                <div class="template-image" style="background: linear-gradient(135deg, #64748b 0%, #475569 100%);">
-                                    <span style="font-size: 1.5rem;">🏭</span>
-                                </div>
-                                <div class="template-info">
-                                    <small>Industrieel & robuust</small>
+                                    <strong>Vakman</strong>
+                                    <small>Zakelijk, betrouwbaar</small>
                                 </div>
                             </label>
                         </div>
@@ -2242,23 +1688,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Welke kleuren heb je in gedachten voor je logo/huisstijl?</label>
-                        <div class="radio-group">
-                            <label class="radio-item">
-                                <input type="radio" name="logo_kleuren" value="Kleuren zelf bepalen" id="logoKleurenZelf">
-                                <span>Kleuren zelf bepalen</span>
-                            </label>
-                            <div id="logoKleurenInput" style="display:none; margin-top: 0.5rem; margin-left: 2rem;">
-                                <input type="text" name="logo_kleuren_invoer" placeholder="Bijv. donkerblauw en goud">
-                            </div>
-                            <label class="radio-item">
-                                <input type="radio" name="logo_kleuren" value="Laat me adviseren">
-                                <span>Ik laat me adviseren</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         <label>Heb je eigen foto's? *</label>
                         <div class="radio-group">
                             <label class="radio-item">
@@ -2272,6 +1701,20 @@
                             <label class="radio-item">
                                 <input type="radio" name="fotos" value="Nee, regelen jullie">
                                 <span>Nee, regel jullie dit voor mij</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Heb je teksten? *</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="teksten" value="Ja, via WhatsApp" required>
+                                <span>Ja, ik stuur ze via WhatsApp</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="teksten" value="Nee, schrijven jullie">
+                                <span>Nee, schrijf ze voor mij <span class="price-tag">+€79</span></span>
                             </label>
                         </div>
                     </div>
@@ -2342,15 +1785,31 @@
                         <div class="radio-group">
                             <label class="radio-item tier-option" data-tier="Start">
                                 <input type="radio" name="uitgebreidheid" value="Eén overzichtelijke pagina" required>
-                                <span>Eén overzichtelijke pagina (One-pager) <span class="tier-badge" style="background: var(--accent); color: var(--primary); margin-left: 0.5rem;">Start</span></span>
+                                <div>
+                                    <strong>Eén overzichtelijke pagina</strong>
+                                    <small class="tier-badge">Start pakket</small>
+                                </div>
                             </label>
                             <label class="radio-item tier-option" data-tier="Groei">
                                 <input type="radio" name="uitgebreidheid" value="Meerdere pagina's">
-                                <span>Meerdere pagina's <span class="tier-badge" style="background: var(--accent); color: var(--primary); margin-left: 0.5rem;">Groei</span></span>
+                                <div>
+                                    <strong>Meerdere pagina's</strong>
+                                    <small class="tier-badge">Groei pakket</small>
+                                </div>
                             </label>
                             <label class="radio-item tier-option" data-tier="Pro">
-                                <input type="radio" name="uitgebreidheid" value="Uitgebreid: reserveren, afspraak plannen, betalingen">
-                                <span>Uitgebreid: reserveren, afspraak plannen, betalingen <span class="tier-badge" style="background: var(--accent); color: var(--primary); margin-left: 0.5rem;">Pro</span></span>
+                                <input type="radio" name="uitgebreidheid" value="Best uitgebreid">
+                                <div>
+                                    <strong>Best uitgebreid met aparte secties</strong>
+                                    <small class="tier-badge">Pro pakket</small>
+                                </div>
+                            </label>
+                            <label class="radio-item tier-option" data-tier="Groei">
+                                <input type="radio" name="uitgebreidheid" value="Laat jullie adviseren">
+                                <div>
+                                    <strong>Laat jullie adviseren</strong>
+                                    <small class="tier-badge">Groei pakket</small>
+                                </div>
                             </label>
                         </div>
                     </div>
@@ -2360,7 +1819,7 @@
                         <div class="radio-group">
                             <label class="radio-item">
                                 <input type="radio" name="reserveren" value="Ja" required>
-                                <span>Ja <span class="tier-badge" style="background: var(--accent); color: var(--primary); margin-left: 0.5rem;">Pro</span></span>
+                                <span>Ja <span class="tier-badge pro-badge">Upgrade naar Pro</span></span>
                             </label>
                             <label class="radio-item">
                                 <input type="radio" name="reserveren" value="Nee">
@@ -2479,46 +1938,9 @@
                             </div>
                         </div>
 
-                        <!-- Tier Selector -->
-                        <div class="tier-selector" style="margin-bottom: 1.5rem;">
-                            <p style="color: var(--text-light); font-size: 0.875rem; margin-bottom: 0.75rem;">
-                                Wij raden het <strong id="recommendedTierName" style="color: var(--primary);">Start</strong> pakket aan. 
-                                <span id="tierChangeHint" style="font-style: italic;">Liever een ander pakket? Kies hieronder:</span>
-                            </p>
-                            <div class="tier-options" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
-                                <label class="tier-option-card" data-tier="Start" style="cursor: pointer; border: 2px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; transition: all 0.2s;">
-                                    <input type="radio" name="selected_tier" value="Start" style="display: none;">
-                                    <div class="tier-option-name" style="font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">Start</div>
-                                    <div class="tier-option-price" style="font-size: 0.875rem; color: var(--text-light);">
-                                        <span class="tier-total-setup" data-tier="Start">€99</span> + 
-                                        <span class="tier-total-monthly" data-tier="Start">€9,99</span>/maand
-                                    </div>
-                                    <div class="tier-option-extras" data-tier="Start" style="font-size: 0.75rem; color: var(--accent); margin-top: 0.5rem; min-height: 1.5rem;"></div>
-                                </label>
-                                <label class="tier-option-card" data-tier="Groei" style="cursor: pointer; border: 2px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; transition: all 0.2s;">
-                                    <input type="radio" name="selected_tier" value="Groei" style="display: none;">
-                                    <div class="tier-option-name" style="font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">Groei</div>
-                                    <div class="tier-option-price" style="font-size: 0.875rem; color: var(--text-light);">
-                                        <span class="tier-total-setup" data-tier="Groei">€249</span> + 
-                                        <span class="tier-total-monthly" data-tier="Groei">€14,99</span>/maand
-                                    </div>
-                                    <div class="tier-option-extras" data-tier="Groei" style="font-size: 0.75rem; color: var(--accent); margin-top: 0.5rem; min-height: 1.5rem;"></div>
-                                </label>
-                                <label class="tier-option-card" data-tier="Pro" style="cursor: pointer; border: 2px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; transition: all 0.2s;">
-                                    <input type="radio" name="selected_tier" value="Pro" style="display: none;">
-                                    <div class="tier-option-name" style="font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">Pro</div>
-                                    <div class="tier-option-price" style="font-size: 0.875rem; color: var(--text-light);">
-                                        <span class="tier-total-setup" data-tier="Pro">€499</span> + 
-                                        <span class="tier-total-monthly" data-tier="Pro">€19,99</span>/maand
-                                    </div>
-                                    <div class="tier-option-extras" data-tier="Pro" style="font-size: 0.75rem; color: var(--accent); margin-top: 0.5rem; min-height: 1.5rem;"></div>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="proposal-tier" style="display: none;">
+                        <div class="proposal-tier">
                             <div class="tier-header">
-                                <span class="tier-label">Gekozen pakket</span>
+                                <span class="tier-label">Aanbevolen pakket</span>
                                 <span class="tier-name" id="proposalTier">Start</span>
                             </div>
                             <div class="tier-price">
@@ -2528,7 +1950,7 @@
                         </div>
 
                         <div class="proposal-reasons">
-                            <h5>Waarom dit pakket past bij jou:</h5>
+                            <h5>Waarom dit pakket:</h5>
                             <ul id="proposalReasons">
                                 <li>Basis website voor kleine ondernemers</li>
                             </ul>
@@ -2552,7 +1974,7 @@
                     <div class="form-group" style="margin-top: 1.5rem;">
                         <label class="checkbox-item" style="align-items: flex-start;">
                             <input type="checkbox" name="privacy_akkoord" id="privacyAkkoord" required style="margin-top: 0.25rem;">
-                            <span>Ik ga akkoord met de <a href="privacy.html" target="_blank" style="color: var(--accent);">privacyverklaring</a> en <a href="voorwaarden.html" target="_blank" style="color: var(--accent);">algemene voorwaarden</a> *</span>
+                            <span>Ik ga akkoord met de <a href="#" target="_blank">privacyverklaring</a> en <a href="#" target="_blank">algemene voorwaarden</a> *</span>
                         </label>
                     </div>
 
@@ -2579,13 +2001,13 @@
             We zijn bereikbaar via WhatsApp en reageren binnen een paar uur.
         </p>
         <div class="contact-buttons">
-            <a href="https://wa.me/31612345678" class="btn btn-whatsapp" target="_blank" onclick="gtag('event', 'conversion', {'event_category': 'contact', 'event_label': 'whatsapp'});">
+            <a href="https://wa.me/31612345678" class="btn btn-whatsapp" target="_blank">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
                 WhatsApp ons
             </a>
-            <a href="mailto:hallo@floatweb.nl" class="btn" style="background: white; color: var(--primary);" onclick="gtag('event', 'conversion', {'event_category': 'contact', 'event_label': 'email'});">
+            <a href="mailto:hallo@floatweb.nl" class="btn" style="background: white; color: var(--primary);">
                 Mail ons
             </a>
         </div>
@@ -2593,21 +2015,11 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <a href="privacy.html">Privacyverklaring</a>
-            <a href="voorwaarden.html">Algemene voorwaarden</a>
-            <a href="#offerte">Offerte aanvragen</a>
-        </div>
-        <p><strong>🌊 Floatweb</strong> - Jouw website, zonder gedoe</p>
-        <p style="margin-top: 0.5rem; font-size: 0.875rem;">
-            📧 hallo@floatweb.nl | 🌐 floatweb.nl
-        </p>
-        <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.5;">
-            © 2026 Floatweb. Alle rechten voorbehouden.
-        </p>
+        <p><strong>Floatweb</strong> - Simpel. Snel. Betaalbaar.</p>
+        <p style="margin-top: 0.5rem;">hallo@floatweb.nl • KvK: [nummer] • BTW: [nummer]</p>
     </footer>
 
-    <!-- JavaScript for Multi-Step Form and FAQ -->
+    <!-- JavaScript for Multi-Step Form -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Multi-Step Form Class
@@ -2617,8 +2029,6 @@
                     this.totalSteps = 5;
                     this.formData = {};
                     this.form = document.getElementById('intakeForm');
-                    this.tierListenersSetup = false;
-                    this.recommendedTier = 'Start';
                     this.init();
                 }
 
@@ -2658,15 +2068,6 @@
                         });
                     });
 
-                    // Logo kleuren input toggle
-                    const logoKleurenRadios = document.querySelectorAll('input[name="logo_kleuren"]');
-                    logoKleurenRadios.forEach(radio => {
-                        radio.addEventListener('change', (e) => {
-                            const kleurenInput = document.getElementById('logoKleurenInput');
-                            kleurenInput.style.display = e.target.value === 'Kleuren zelf bepalen' ? 'block' : 'none';
-                        });
-                    });
-
                     // Meerdere regios toggle
                     const regioRadios = document.querySelectorAll('input[name="meerdere_regios"]');
                     regioRadios.forEach(radio => {
@@ -2687,13 +2088,6 @@
                     const meerdereRegios = document.querySelector('input[name="meerdere_regios"][value="Ja"]');
                     if (meerdereRegios && meerdereRegios.checked) {
                         document.getElementById('aantalRegiosGroup').style.display = 'block';
-                    }
-
-                    const logoKleurenZelf = document.getElementById('logoKleurenZelf');
-                    if (logoKleurenZelf && logoKleurenZelf.checked) {
-                        document.getElementById('logoKleurenInput').style.display = 'block';
-                    } else if (document.querySelector('input[name="logo_kleuren"][value="Kleuren zelf bepalen"]')?.checked) {
-                        document.getElementById('logoKleurenInput').style.display = 'block';
                     }
                 }
 
@@ -2844,25 +2238,8 @@
                                 this.formData[input.name] = input.value;
                             }
                         } else if (input.type === 'checkbox') {
-                            // Handle checkbox arrays (multiple with same name)
-                            const existing = this.formData[input.name];
                             if (input.checked) {
-                                if (Array.isArray(existing)) {
-                                    if (!existing.includes(input.value)) {
-                                        this.formData[input.name] = [...existing, input.value];
-                                    }
-                                } else if (existing) {
-                                    this.formData[input.name] = [existing, input.value];
-                                } else {
-                                    this.formData[input.name] = [input.value];
-                                }
-                            } else {
-                                // Remove from array if unchecked
-                                if (Array.isArray(existing)) {
-                                    this.formData[input.name] = existing.filter(v => v !== input.value);
-                                } else if (existing === input.value) {
-                                    delete this.formData[input.name];
-                                }
+                                this.formData[input.name] = input.value;
                             }
                         } else {
                             this.formData[input.name] = input.value;
@@ -2965,9 +2342,8 @@
                     return tier;
                 }
 
-                calculatePrice(selectedTier = null) {
-                    const recommendedTier = this.calculateTier();
-                    const tier = selectedTier || recommendedTier;
+                calculatePrice() {
+                    const tier = this.calculateTier();
                     const tierData = {
                         'Start': { setup: 99, monthly: 9.99 },
                         'Groei': { setup: 249, monthly: 14.99 },
@@ -2992,50 +2368,44 @@
                         extras.push('Logo ontwerp (+€25)');
                     }
 
+                    // Teksten schrijven
+                    if (this.formData.teksten === 'Nee, schrijven jullie') {
+                        setup += 79;
+                        extras.push('Teksten schrijven (+€79)');
+                    }
+
                     // Pro email
                     if (this.formData.pro_email === 'Ja') {
                         monthly += 5;
                         extras.push('Professioneel e-mailadres (+€5/maand)');
                     }
 
-                    return { setup, monthly, tier, extras, recommendedTier };
+                    return { setup, monthly, tier, extras };
                 }
 
                 generateProposal() {
-                    const selectedTier = this.formData.selected_tier;
-                    const { setup, monthly, tier, extras, recommendedTier } = this.calculatePrice(selectedTier);
+                    const { setup, monthly, tier, extras } = this.calculatePrice();
                     const data = this.formData;
-                    
-                    // Store recommended tier for reference
-                    this.recommendedTier = recommendedTier;
 
-                    // Sfeer mapping
-                    const sfeerIcons = {
-                        'warm': '🌅',
-                        'modern': '✨',
-                        'natuurlijk': '🌿',
-                        'zakelijk': '💼',
-                        'kleurrijk': '🎨',
-                        'industrieel': '🏭'
+                    // Template icons mapping
+                    const templateIcons = {
+                        'restaurant': '🍽️',
+                        'salon': '✂️',
+                        'cafe': '☕',
+                        'vakman': '🔧'
                     };
 
-                    const sfeerNames = {
-                        'warm': 'Warm & uitnodigend',
-                        'modern': 'Modern & strak',
-                        'natuurlijk': 'Natuurlijk & rustig',
-                        'zakelijk': 'Zakelijk & betrouwbaar',
-                        'kleurrijk': 'Kleurrijk & sprankelend',
-                        'industrieel': 'Industrieel & robuust'
+                    const templateNames = {
+                        'restaurant': 'Restaurant template',
+                        'salon': 'Salon template',
+                        'cafe': 'Café template',
+                        'vakman': 'Vakman template'
                     };
-
-                    // Get selected sferen
-                    const selectedSferen = data.template_sfeer || [];
-                    const primarySfeer = Array.isArray(selectedSferen) ? selectedSferen[0] : selectedSferen;
 
                     // Update proposal display
-                    document.getElementById('proposalTemplateIcon').textContent = sfeerIcons[primarySfeer] || '🎨';
+                    document.getElementById('proposalTemplateIcon').textContent = templateIcons[data.template_keuze] || '🌐';
                     document.getElementById('proposalBusinessName').textContent = data.bedrijfsnaam || 'Jouw Bedrijf';
-                    document.getElementById('proposalTemplateName').textContent = primarySfeer ? sfeerNames[primarySfeer] : 'Op maat gemaakt';
+                    document.getElementById('proposalTemplateName').textContent = templateNames[data.template_keuze] || 'Website';
                     document.getElementById('proposalTier').textContent = tier;
                     document.getElementById('proposalSetup').textContent = `€${setup}`;
                     document.getElementById('proposalMonthly').textContent = `+ €${monthly.toFixed(2).replace('.', ',')}/maand`;
@@ -3045,20 +2415,17 @@
                     reasonsList.innerHTML = '';
 
                     const reasons = [];
-                    if (selectedSferen && selectedSferen.length > 0) {
-                        const sfeerLabels = selectedSferen.map(s => sfeerNames[s]).filter(Boolean);
-                        if (sfeerLabels.length > 0) {
-                            reasons.push(`Gewenste sfeer: ${sfeerLabels.join(', ')}`);
-                        }
-                    }
                     if (data.uitgebreidheid) {
-                        reasons.push(`Opbouw: ${data.uitgebreidheid}`);
+                        reasons.push(`Je koos: "${data.uitgebreidheid}"`);
                     }
                     if (data.reserveren === 'Ja') {
-                        reasons.push('Met automatisch reserveren');
+                        reasons.push('Je wilt automatisch reserveren');
                     }
                     if (data.meerdere_regios === 'Ja') {
-                        reasons.push('Meerdere regio\'s');
+                        reasons.push('Je richt je op meerdere regio\'s');
+                    }
+                    if (data.doel) {
+                        reasons.push(`Hoofddoel: ${data.doel.toLowerCase()}`);
                     }
 
                     reasons.forEach(reason => {
@@ -3077,20 +2444,19 @@
                             'Contactformulier',
                             'Mobiel vriendelijk',
                             '2 wijzigingen per jaar',
-                            'Vindbaarheid Start — 1 regio/stad'
+                            'Basis vindbaarheid Google'
                         ],
                         'Groei': [
                             'Tot 5 pagina\'s',
                             'Contactformulier & WhatsApp',
                             'Mobiel vriendelijk',
                             '4 wijzigingen per jaar',
-                            'Vindbaarheid Groei — meerdere regio\'s',
+                            'Extra vindbaarheid per regio',
                             'Klanten reviews sectie'
                         ],
                         'Pro': [
                             'Tot 10 pagina\'s',
                             'Boeking/reservering systeem',
-                            'Vindbaarheid Pro: eigen pagina per regio',
                             'iDEAL betalingen mogelijk',
                             'Meertalig (NL + EN)',
                             '6 wijzigingen per jaar',
@@ -3120,94 +2486,6 @@
                         extrasSection.style.display = 'none';
                     }
 
-                    // Calculate prices for ALL tiers to show in cards
-                    const allTiers = ['Start', 'Groei', 'Pro'];
-                    const tierData = {
-                        'Start': { setup: 99, monthly: 9.99 },
-                        'Groei': { setup: 249, monthly: 14.99 },
-                        'Pro': { setup: 499, monthly: 19.99 }
-                    };
-                    
-                    allTiers.forEach(tierName => {
-                        let setupPrice = tierData[tierName].setup;
-                        let monthlyPrice = tierData[tierName].monthly;
-                        const tierExtras = [];
-                        
-                        // Extra regios (apply to all tiers)
-                        if (this.formData.meerdere_regios === 'Ja') {
-                            const aantalRegios = parseInt(this.formData.aantal_regios) || 1;
-                            const extraRegioCost = aantalRegios * 25;
-                            setupPrice += extraRegioCost;
-                            tierExtras.push(`${aantalRegios}x extra regio`);
-                        }
-                        
-                        // Logo maken (apply to all tiers)
-                        if (this.formData.logo === 'Nee, maak er een') {
-                            setupPrice += 25;
-                            tierExtras.push('logo');
-                        }
-                        
-                        // Pro email (apply to all tiers)
-                        if (this.formData.pro_email === 'Ja') {
-                            monthlyPrice += 5;
-                            tierExtras.push('e-mail');
-                        }
-                        
-                        // Update the tier card
-                        const setupEl = document.querySelector(`.tier-total-setup[data-tier="${tierName}"]`);
-                        const monthlyEl = document.querySelector(`.tier-total-monthly[data-tier="${tierName}"]`);
-                        const extrasEl = document.querySelector(`.tier-option-extras[data-tier="${tierName}"]`);
-                        
-                        if (setupEl) setupEl.textContent = `€${setupPrice}`;
-                        if (monthlyEl) monthlyEl.textContent = `€${monthlyPrice.toFixed(2).replace('.', ',')}`;
-                        if (extrasEl) {
-                            if (tierExtras.length > 0) {
-                                extrasEl.textContent = `+ ${tierExtras.join(', ')}`;
-                            } else {
-                                extrasEl.textContent = '';
-                            }
-                        }
-                    });
-
-                    // Update tier selector UI
-                    document.getElementById('recommendedTierName').textContent = recommendedTier;
-                    
-                    // Update tier option cards styling
-                    document.querySelectorAll('input[name="selected_tier"]').forEach(radio => {
-                        const card = radio.closest('.tier-option-card');
-                        if (radio.value === tier) {
-                            card.style.borderColor = 'var(--accent)';
-                            card.style.background = 'rgba(249, 115, 22, 0.05)';
-                            card.style.boxShadow = '0 0 0 3px rgba(249, 115, 22, 0.2)';
-                        } else {
-                            card.style.borderColor = 'var(--border)';
-                            card.style.background = 'white';
-                            card.style.boxShadow = 'none';
-                        }
-                    });
-                    
-                    // Setup tier selector change listeners (only once)
-                    if (!this.tierListenersSetup) {
-                        document.querySelectorAll('input[name="selected_tier"]').forEach(radio => {
-                            radio.addEventListener('change', (e) => {
-                                this.formData.selected_tier = e.target.value;
-                                this.saveToStorage();
-                                this.generateProposal();
-                            });
-                        });
-                        this.tierListenersSetup = true;
-                    }
-                    
-                    // Set default selected tier on first load
-                    const currentSelected = document.querySelector('input[name="selected_tier"]:checked');
-                    if (!currentSelected) {
-                        const defaultRadio = document.querySelector(`input[name="selected_tier"][value="${recommendedTier}"]`);
-                        if (defaultRadio) {
-                            defaultRadio.checked = true;
-                            this.formData.selected_tier = recommendedTier;
-                        }
-                    }
-
                     // Update hidden fields for Netlify
                     document.getElementById('hiddenTier').value = tier;
                     document.getElementById('hiddenSetup').value = setup;
@@ -3232,15 +2510,6 @@
                         return;
                     }
 
-                    // Track form submission
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'conversion', {
-                            'event_category': 'form',
-                            'event_label': 'intake_form_submit',
-                            'value': parseFloat(document.getElementById('hiddenSetup').value)
-                        });
-                    }
-
                     // Submit form
                     this.form.submit();
 
@@ -3252,24 +2521,6 @@
             // Initialize the multi-step form
             const multiStepForm = new MultiStepForm();
 
-            // FAQ Accordion
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', () => {
-                    const faqItem = question.parentElement;
-                    const isActive = faqItem.classList.contains('active');
-                    
-                    // Close all FAQ items
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    
-                    // Open clicked item if it wasn't active
-                    if (!isActive) {
-                        faqItem.classList.add('active');
-                    }
-                });
-            });
-
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
@@ -3280,25 +2531,8 @@
                     }
                 });
             });
-
-            // Track calculator engagement
-            const calculatorSection = document.getElementById('offerte');
-            if (calculatorSection && typeof gtag !== 'undefined') {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            gtag('event', 'engagement', {
-                                'event_category': 'calculator',
-                                'event_label': 'calculator_viewed'
-                            });
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                
-                observer.observe(calculatorSection);
-            }
         });
     </script>
 </body>
 </html>
+

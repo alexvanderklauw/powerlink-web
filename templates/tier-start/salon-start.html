@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Salon] — Kapper in [Stad]</title>
+    <meta name="description" content="[Tagline]. Boek online. Open [dagen] [tijden]. [Adres]">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b4a6e; --primary-dark: #6d3a57;
+            --neutral-900: #0f172a; --neutral-700: #334155; --neutral-100: #f1f5f9;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--neutral-900); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; font-weight: 600; border-radius: 0.5rem; cursor: pointer; border: none; transition: all 0.2s; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-lg { padding: 1rem 2rem; font-size: 1.125rem; }
+        
+        .header { background: white; border-bottom: 1px solid #e2e8f0; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+        
+        .hero { background: linear-gradient(135deg, #f5e6f0 0%, #e8d5e0 100%); padding: 5rem 1rem; text-align: center; }
+        .hero-title { font-size: 2.5rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 1rem; }
+        .hero-subtitle { color: var(--neutral-700); margin-bottom: 2rem; }
+        
+        .section { padding: 4rem 1rem; }
+        .section-title { font-size: 1.875rem; font-weight: 700; text-align: center; margin-bottom: 2rem; }
+        
+        .services { background: white; }
+        .service-grid { display: grid; gap: 2rem; }
+        @media (min-width: 768px) { .service-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        .service-card { background: var(--neutral-100); padding: 2rem; border-radius: 0.75rem; text-align: center; }
+        .service-icon { width: 48px; height: 48px; margin: 0 auto 1rem; color: var(--primary); }
+        .service-title { font-weight: 600; margin-bottom: 0.5rem; }
+        .service-price { color: var(--primary); font-weight: 700; font-size: 1.25rem; }
+        
+        .team { background: var(--neutral-100); }
+        .team-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .team-card { background: white; padding: 2rem; border-radius: 0.75rem; text-align: center; }
+        .team-photo { width: 120px; height: 120px; background: #e2e8f0; border-radius: 50%; margin: 0 auto 1rem; }
+        
+        .contact { background: var(--primary); color: white; text-align: center; }
+        .contact .section-title { color: white; }
+        .contact-phone { font-size: 2rem; font-weight: 700; margin: 1rem 0; display: inline-block; }
+        
+        .footer { background: var(--neutral-900); color: #94a3b8; padding: 2rem 1rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">[Salon Naam]</a>
+            <a href="#contact" class="btn btn-primary">Boek nu</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">[Salon Naam]</h1>
+            <p class="hero-subtitle">[Tagline: Jouw haar, jouw stijl]</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Maak een afspraak</a>
+        </div>
+    </section>
+
+    <section class="services section">
+        <div class="container">
+            <h2 class="section-title">Onze behandelingen</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><path d="M8 12v8M6 12h4"/></svg>
+                    <h3 class="service-title">Dames</h3>
+                    <p>Knippen, stylen, kleuren</p>
+                    <p class="service-price">vanaf €35</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20h4M12 4v16M8 8h8"/></svg>
+                    <h3 class="service-title">Heren</h3>
+                    <p>Knippen, baard, contours</p>
+                    <p class="service-price">vanaf €25</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    <h3 class="service-title">Kleuren</h3>
+                    <p>Highlights, balayage, verf</p>
+                    <p class="service-price">vanaf €55</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team section">
+        <div class="container">
+            <h2 class="section-title">Ons team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">[Foto]</div>
+                    <h3>[Naam]</h3>
+                    <p>Stylist</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Foto]</div>
+                    <h3>[Naam]</h3>
+                    <p>Colorist</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">[Foto]</div>
+                    <h3>[Naam]</h3>
+                    <p>Barber</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Maak je afspraak</h2>
+            <p>Bel of WhatsApp ons direct</p>
+            <a href="tel:[PHONE]" class="contact-phone">[06-12345678]</a>
+            <p>[Straatnaam 123, 1234 AB Stad]<br>Ma-Za: 9:00 - 18:00</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; [Jaar] [Salon Naam]</p>
+        </div>
+    </footer>
+</body>
+</html>

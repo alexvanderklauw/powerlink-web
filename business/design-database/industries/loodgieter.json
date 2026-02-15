@@ -1,0 +1,101 @@
+{
+  "industry": "loodgieter",
+  "sample_size": 3,
+  "research_date": "2026-02-14",
+  "status": "PARTIAL_RESEARCH",
+  "last_updated": "2026-02-14",
+  
+  "common_navigation_structure": "Logo + Home + Diensten + Over Ons / Referenties + Contact",
+  
+  "homepage_structure": [
+    "Hero with service area emphasis + phone CTA",
+    "Emergency service highlight (if 24/7)",
+    "Service overview (categories)",
+    "Service area / Regions",
+    "Trust elements (certifications, years)",
+    "Contact form + phone number"
+  ],
+  
+  "menu_strategy": "Service categories (CV, Sanitair, Riool, etc.). Focus on benefits, NOT technical details. Clear and scannable.",
+  
+  "booking_strategy": "Phone DOMINANT. Secondary: Offerte aanvragen via form. Emergency: 24/7 phone line.",
+  
+  "pricing_strategy": "Usually NOT on homepage. 'Vraag offerte aan' or phone for pricing. Some show vaste tarieven for common jobs.",
+  
+  "cta_patterns": [
+    "Bel direct (primary - phone number DOMINANT)",
+    "Offerte aanvragen (secondary - form)",
+    "WhatsApp (tertiary)",
+    "24/7 Spoed (if applicable - emergency)"
+  ],
+  
+  "trust_elements": [
+    "KVK number",
+    "Certifications (Techniek Nederland, InstallQ)",
+    "Garantie terms",
+    "Years in business",
+    "Local/regional service area",
+    "Customer reviews",
+    "Brand logos (Grohe, etc.)"
+  ],
+  
+  "gallery_usage": "Minimal. Some use project photos, but not primary. Focus on credibility over aesthetics.",
+  
+  "common_mistakes": [
+    "No clear phone number (CRITICAL)",
+    "No service area defined",
+    "Too aesthetic, not credible enough",
+    "Long technical descriptions (customers don't read)",
+    "No emergency contact info",
+    "Missing certifications"
+  ],
+  
+  "modern_trends": [
+    "WhatsApp for non-urgent contact",
+    "Online offerte aanvraag",
+    "Service area map",
+    "Customer portal (Pro tier)",
+    "Maintenance contracts"
+  ],
+  
+  "conversion_patterns": [
+    "Large click-to-call phone number",
+    "24/7 availability emphasis",
+    "Fast response time promise",
+    "Vaste tarieven for common issues",
+    "Service area clearly stated"
+  ],
+  
+  "research_notes": "Partial research completed. Analyzed spaansloodgieters.nl (traditional local). Site is VERY dated (2010s design) - massive opportunity. Need 7+ more loodgieter sites for complete picture.",
+  
+  "example_sites": [
+    {
+      "url": "https://www.spaansloodgieters.nl",
+      "name": "Spaans Loodgieters",
+      "type": "Local family business",
+      "tier": "Groei (dated)",
+      "key_features": ["75-year history", "Brand logos", "Multi-page", "Local service area"],
+      "observations": "VERY dated design (2010s), no hero section, text-heavy, no reviews, not mobile-optimized"
+    }
+  ],
+  
+  "template_requirements": {
+    "start_tier": {
+      "required_sections": ["hero", "services", "about", "contact"],
+      "cta": "Phone number DOMINANT",
+      "trust": "KVK, years in business, certifications"
+    },
+    "groei_tier": {
+      "required_sections": ["hero", "services", "service-area", "about", "reviews", "contact"],
+      "cta": "Phone primary + Offerte form secondary",
+      "trust": "All Start + customer reviews, brand logos"
+    },
+    "pro_tier": {
+      "required_sections": "All Groei + customer portal, maintenance contracts, emergency service system",
+      "cta": "Phone + WhatsApp + Portal login",
+      "trust": "All Groei + case studies, partner logos"
+    }
+  },
+  
+  "market_opportunity": "CRITICAL: Local trades businesses have extremely dated websites (2010-era). This is Floatweb's highest opportunity market. Modern, mobile-first, conversion-focused sites will dominate."
+}

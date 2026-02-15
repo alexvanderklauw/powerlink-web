@@ -1,0 +1,527 @@
+SIMPLESITE RESEARCH & STRATEGY DOCUMENT
+=====================================
+Date: 2026-02-11
+Prepared by: ChiefOperator
+Status: Research Phase - Pre-Launch
+
+=====================================
+TASK 1: STOCK IMAGES (FREE + PAID)
+=====================================
+
+FREE OPTIONS:
+1. Unsplash (https://unsplash.com)
+   - Completely free, no attribution required
+   - High quality photos
+   - Good for: hero backgrounds, business photos, abstract
+   - Best for electricians: search "electrician", "electrical work", "tools"
+
+2. Pexels (https://pexels.com)
+   - Free, no attribution
+   - Video and photos
+   - Good variety of business/trade photos
+
+3. Pixabay (https://pixabay.com)
+   - Free, no attribution
+   - Illustrations + photos
+   - Good for icons and graphics
+
+4. Burst by Shopify (https://burst.shopify.com)
+   - Free, business-focused
+   - Good for e-commerce but limited trades
+
+PAID OPTIONS (if free insufficient):
+1. Shutterstock - €29/month, huge library
+2. Adobe Stock - €29.99/month, integrates with Creative Cloud
+3. iStock - Pay per image (credits)
+
+RECOMMENDATION: Start with Unsplash + Pexels, upgrade to Shutterstock if needed.
+
+=====================================
+TASK 2: FORM SEQUENCE DESIGN
+=====================================
+
+GOAL: Minimal friction, maximum info collection
+PLATFORM: Tally.so (free tier, beautiful UI, file uploads)
+
+PROPOSED FORM FLOW (10-12 steps, progress bar):
+
+Step 1: Welcome
+"Hi! Laten we jouw nieuwe website bouwen.
+Dit duurt 3-5 minuten."
+[Start button]
+
+Step 2: Business Basics
+- Bedrijfsnaam (required)
+- Branche (dropdown: Elektricien/Kapper/Horeca/ZZP/Anders)
+- Waar ben je het beste in? (short text)
+
+Step 3: Contact
+- Naam (required)
+- Email (required)
+- Telefoon (required for WhatsApp)
+
+Step 4: Visual Identity
+"Heb je een logo?"
+- Ja (file upload)
+- Nee (checkbox: "Ontwerp logo voor €25")
+
+Step 5: Photos
+"Heb je foto's van je werk?"
+- Ja (file upload, multiple)
+- Nee (we gebruiken stock foto's)
+
+Step 6: Content
+"Vertel in 2-3 zinnen wie je bent en wat je doet"
+(textarea)
+
+Step 7: Services
+"Welke diensten bied je aan?"
+- Checkboxes or multi-select
+- Plus "Anders, namelijk..." field
+
+Step 8: Service Area
+"Waar werk je?"
+- Plaats/regio (text)
+- Hele provincie? (checkbox)
+
+Step 9: Style Preference
+"Welke stijl spreekt je aan?"
+- Modern/Minimal
+- Kleurrijk/Energiek
+- Zakelijk/Strak
+- Geen voorkeur
+
+Step 10: Competitors/Examples
+"Website(s) die je mooi vindt?"
+(text - optional)
+
+Step 11: Special Features
+"Wat heb je nodig?"
+- Contactformulier
+- WhatsApp knop
+- Foto's/galerij
+- Openingstijden
+- Reviews
+
+Step 12: Summary & Submit
+Overview of all answers
+[Verstuur aanvraag]
+
+TECHNICAL SETUP:
+- Tally.so free plan: unlimited forms, 100 responses/month
+- File uploads: up to 10MB
+- Notifications: email to us when submitted
+- Integration: can export to CSV or connect via Zapier
+
+WHATSAPP ALTERNATIVE:
+For clients who prefer WhatsApp, create a structured conversation flow:
+1. "Bedrijfsnaam?"
+2. "Telefoonnummer?"
+3. "Email?"
+4. "Wat doe je? (2-3 zinnen)"
+5. "Logo ja/nee?"
+6. "Foto's ja/nee?"
+7. Summary + confirmation
+
+=====================================
+TASK 3: MULTI-PAGE WEBSITE STRUCTURE
+=====================================
+
+TECHNICAL APPROACH:
+
+Option A: Static HTML (Recommended for Starter)
+- Each page = separate HTML file
+- index.html (home)
+- diensten.html (services)
+- contact.html (contact)
+- over-ons.html (about)
+- Navigation links between pages
+
+Folder structure:
+/site-name/
+  ├── index.html
+  ├── diensten.html
+  ├── contact.html
+  ├── over-ons.html
+  └── /assets/
+      ├── /css/
+      ├── /js/
+      └── /images/
+
+Option B: Single-Page with sections (SPA feel)
+- One HTML file with multiple sections
+- Smooth scroll navigation
+- Anchor links: #diensten, #contact
+- Faster, simpler
+
+Option C: Static Site Generator (11ty/Astro)
+- Templates + markdown content
+- Better for 5+ pages
+- More complex setup but scalable
+
+RECOMMENDATION:
+- Starter tier: Single-page (sections)
+- Growth tier: 5 static HTML pages
+- Premium tier: 10 pages, possibly with generator
+
+NAVIGATION PATTERN:
+Simple, clean nav bar:
+```
+[Logo]    Home | Diensten | Over Ons | Contact    [CTA Button]
+```
+
+Mobile: Hamburger menu or stacked nav
+
+=====================================
+TASK 4: JANSEN ELEKTRA EXAMPLE SITE
+=====================================
+
+SITE PLAN: One-pager for electrician
+
+SECTIONS:
+1. Hero
+   - Background: Unsplash electrician/tools image
+   - Headline: "Jouw elektricien in [Regio]"
+   - Subhead: "Meterkasten, laadpalen & alle elektra"
+   - CTA: "Bel direct" + "Offerte aanvragen"
+
+2. Diensten (3 columns)
+   - Meterkasten vervangen (icon: zap)
+   - Laadpalen installeren (icon: battery)
+   - Elektra werkzaamheden (icon: tool)
+
+3. Waarom Jansen
+   - 10+ jaar ervaring
+   - Gecertificeerd
+   - 24/7 spoedservice
+   - 5 jaar garantie
+
+4. Recent werk (gallery)
+   - 4-6 photos from Unsplash
+
+5. Reviews
+   - 3 testimonials (placeholder)
+
+6. Contact
+   - Phone (click to call)
+   - WhatsApp button
+   - Email
+   - Form
+
+7. Footer
+   - KvK (placeholder)
+   - BTW (placeholder)
+
+IMAGES TO USE (Unsplash):
+- Hero: https://unsplash.com/photos/electrician (search: electrician, tools)
+- Meterkast: search "electrical panel"
+- Laadpaal: search "ev charging"
+- Tools: search "electrical tools"
+
+COLORS:
+- Primary: Navy blue (#1E293B)
+- Accent: Electric orange or yellow (#F59E0B or #EAB308)
+- Trust factor for electricians
+
+NEXT STEP: Build actual HTML file
+
+=====================================
+TASK 5: GITHUB & NETLIFY MASTERY
+=====================================
+
+GITHUB BASICS:
+
+1. Create Repository
+   - github.com/new
+   - Name: client-websites
+   - Public or Private
+   - Add README
+
+2. Folder Structure for Client Sites:
+```
+client-websites/
+├── jansen-elektra/
+│   ├── index.html
+│   ├── about.html
+│   └── assets/
+├── bakker-dejong/
+│   └── ...
+└── README.md
+```
+
+3. Upload via Web:
+   - Drag & drop files
+   - Or use "Add file" > "Upload files"
+
+4. GitHub Pages (Free hosting):
+   - Settings > Pages
+   - Source: main branch
+   - URL: username.github.io/repo-name/site-name
+
+NETLIFY (BETTER FOR CLIENTS):
+
+1. Create Account
+   - netlify.com
+   - Sign up with GitHub
+
+2. Deploy Method:
+   - Connect to GitHub repo
+   - Or drag & drop folder
+
+3. Custom Domain:
+   - Settings > Domain management
+   - Add custom domain
+   - Update DNS
+
+4. Forms (Netlify Forms):
+   - Add `netlify` attribute to form
+   - Automatic submission handling
+   - 100 submissions/month free
+
+WORKFLOW:
+1. Build site locally
+2. Push to GitHub
+3. Deploy to Netlify
+4. Connect custom domain
+5. Done!
+
+CUSTOM DOMAIN SETUP:
+- Namecheap/Cloudflare: Buy domain
+- DNS: Point to Netlify nameservers
+- SSL: Auto-generated by Netlify
+
+=====================================
+TASK 6: CUSTOMER JOURNEY STRATEGY
+=====================================
+
+PROPOSED FLOW (Minimal Human Intervention):
+
+PHASE 1: FIRST CONTACT
+Channel: WhatsApp or Web Form
+- Customer fills form / starts WhatsApp chat
+- Instant auto-reply: "Bedankt! We nemen binnen 24u contact op."
+
+PHASE 2: PREVIEW CREATION (AI-Assisted)
+Human: Chief reviews form, approves brief
+AI: Generate preview website
+
+Options for preview delivery:
+A) Local HTML file (screenshots/video)
+   - We generate locally
+   - Send screenshots via WhatsApp
+   - Or screen recording (Loom)
+   - Customer sees design, no hosting needed
+
+B) Temporary Netlify deploy
+   - Deploy to free subdomain
+   - Share link
+   - Delete after approval
+
+C) CodePen / StackBlitz
+   - Live preview in browser
+   - No deploy needed
+
+RECOMMENDED: Option A (screenshots) + Option C (StackBlitz for interaction)
+- No hosting costs
+- No domain setup needed
+- Customer sees exactly what they get
+
+PHASE 3: REVIEW & FEEDBACK
+- Customer reviews preview
+- WhatsApp: "Wat vind je ervan?"
+- 1-2 revision rounds
+- Minor tweaks (colors, text, photos)
+
+PHASE 4: PAYMENT & COMMITMENT
+- Customer approves design
+- Invoice sent (Mollie/Stripe/Tikkie)
+- Payment received
+
+PHASE 5: DEPLOYMENT
+- Deploy to live domain
+- Setup hosting
+- Connect domain
+- Final delivery
+
+PHASE 6: POST-LAUNCH
+- 14-day warranty period
+- Minor tweaks included
+- Training (5 min) on how to request changes
+
+AUTOMATION OPPORTUNITIES:
+- Form → Auto email confirmation
+- Payment received → Auto deploy
+- Domain expiry alerts
+- Monthly hosting invoice
+
+HUMAN TOUCH POINTS:
+1. Form review (2 min)
+2. Preview approval (5 min)
+3. Revision discussion (WhatsApp, 10 min)
+4. Final check before deploy (5 min)
+
+Total per client: ~20-30 min human time
+
+=====================================
+TASK 7: BUSINESS & COMMUNICATION EXPERTISE
+=====================================
+
+TARGET MARKET: Trades, small businesses, ZZP
+VOLUME PLAY: 10-20 sites/month at €99-499
+OUTREACH: Direct WhatsApp
+
+MESSAGING STRATEGY:
+
+Message 1 (Initial):
+"Hoi [Naam], ik zag dat [Bedrijf] nog geen website heeft. 
+Wij bouwen professionele websites voor vakmensen zoals jij. 
+Vanaf €99 eenmalig + €9,99/maand. 
+Eerst zien, dan betalen. 
+Interesse in een gratis preview?"
+
+Message 2 (Follow-up after 3 days):
+"Hoi [Naam], even een korte reminder. 
+Je website staat binnen 5 dagen online. 
+Geen verplichtingen. 
+Zullen we een gratis voorbeeld maken?"
+
+Message 3 (Value-add):
+"Wist je dat 80% van je klanten je eerst online zoekt? 
+Met een website ben je 24/7 bereikbaar. 
+Ik maak graag een gratis preview voor je."
+
+KEY SELLING POINTS:
+- "Eerst zien, dan betalen" (risk reversal)
+- "Binnen 5 dagen live" (speed)
+- "Vanaf €9,99/maand" (affordable)
+- "Geen technisch gedoe" (ease)
+- "Geheel in ons beheer" (convenience)
+
+OBJECTION HANDLING:
+
+"Ik heb al genoeg klanten"
+→ "Perfect! Een website helpt je om de beste klanten te selecteren en je tarieven te verhogen."
+
+"Het is te duur"
+→ "Voor €9,99/maand (minder dan 1 uur werk) heb je een professionele aanwezigheid die elke dag klanten brengt."
+
+"Ik heb geen tijd"
+→ "Wij doen al het werk. Jij hoeft alleen 10 minuten te chatten voor de briefing."
+
+"Ik wil eerst denken"
+→ "Geen probleem. Ik stuur je een voorbeeld van hoe jouw site eruit zou kunnen zien. Geen verplichtingen."
+
+=====================================
+TASK 8: OUTREACH STRATEGY
+=====================================
+
+CHANNELS:
+
+1. ZOOFY / WERKSPOT
+   - Find leads: People posting jobs
+   - Extract: Usually shows first name + city
+   - Approach: "Zag je zoekopdracht op Zoofy. Heb je ook een website nodig?"
+   - Challenge: No direct contact info
+   - Solution: Message via platform, then WhatsApp if they respond
+
+2. GOOGLE MAPS
+   - Search: "elektricien [stad]"
+   - Find businesses without website
+   - Get: Phone number (often listed)
+   - Approach: Direct WhatsApp
+
+3. KVK (Chamber of Commerce)
+   - kvk.nl/zoeken
+   - Search by industry + location
+   - Get: Business name, city
+   - Phone: Not always public
+   - Cross-reference with Google Maps
+
+4. INSTAGRAM/FACEBOOK
+   - Search hashtags: #elektricien #kapperamsterdam
+   - Find businesses with only social, no website
+   - DM or comment, then WhatsApp
+
+5. LINKEDIN
+   - Search: "elektricien" + location
+   - Connect, then message
+   - More professional, slower
+
+6. REFERRAL PROGRAM
+   - Existing client gets €50 for referral
+   - Client introduces: "Dit is mijn webbouwer"
+
+LEAD GEN WORKFLOW:
+1. Search Google Maps for trades in target city
+2. Check if they have website
+3. If not, note phone number
+4. WhatsApp: Personalized message
+5. Track in simple spreadsheet
+
+SPAM AVOIDANCE:
+- Max 3 messages per lead
+- Space messages: Day 1, Day 4, Day 7
+- If no response after 3 → move on
+- Always personalize with name/business
+- Never copy-paste exact same message
+
+OPENCLAW BOT CONSIDERATION:
+- If building outreach bot:
+- Rotate message templates
+- Add delays between messages
+- Human review before send
+- Respect "stop" responses
+- Don't message same person from multiple accounts
+
+=====================================
+NEXT STEPS & GAMEPLAN
+=====================================
+
+IMMEDIATE (This Week):
+1. ✓ Form design (Tally.so setup)
+2. ✓ Jansen Elektra example site
+3. ✓ Stock image library (Unsplash bookmarks)
+4. Setup GitHub repo for client sites
+5. Deploy SimpelSite to Netlify (our own site!)
+
+SHORT TERM (Next 2 Weeks):
+1. Build 3 example sites:
+   - Electrician (Jansen Elektra)
+   - Barber/Kapper
+   - Restaurant
+2. Create WhatsApp message templates
+3. Setup Tally.so form live
+4. Test customer journey end-to-end
+5. First outreach campaign (50 leads)
+
+MEDIUM TERM (Month 1):
+1. First 5 clients
+2. Refine process based on feedback
+3. Build template library
+4. Automate invoicing (Mollie/Stripe)
+5. Document standard operating procedures
+
+ONGOING:
+- 10-20 outreach messages per day
+- 2-3 previews per week
+- 1-2 sales per week
+- Continuous template improvement
+
+SUCCESS METRICS:
+- 20% response rate on outreach
+- 30% conversion from preview to sale
+- €2,000+ revenue month 1
+- 90% customer satisfaction
+
+TECH STACK FINAL:
+- Forms: Tally.so
+- Hosting: Netlify (free tier)
+- Code: GitHub
+- Images: Unsplash (free)
+- Payments: Mollie/Tikkie
+- Communication: WhatsApp Business
+- Project mgmt: Simple spreadsheet/Notion
+
+=====================================
+END OF DOCUMENT
+=====================================

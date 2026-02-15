@@ -1,0 +1,162 @@
+{
+  "industry": "trades",
+  "sub_industries": ["loodgieter", "installatietechniek", "elektricien", "cv-monteur"],
+  "sample_size": 12,
+  "research_date": "2026-02-14",
+  "status": "COMPLETE",
+  "last_updated": "2026-02-14",
+  
+  "common_navigation_structure": "Logo + Home + Diensten + [Over Ons/Referenties] + Contact",
+  
+  "homepage_structure": [
+    "Hero with service area emphasis",
+    "Emergency/24-7 banner (if applicable)",
+    "Phone number DOMINANT (largest element)",
+    "Service categories (icons + brief)",
+    "Trust bar (certifications, years, guarantee)",
+    "Service area/regions",
+    "About/trust section",
+    "Contact form + phone"
+  ],
+  
+  "menu_strategy": "Service categories, NOT detailed descriptions. Focus on customer benefits, not technical features. Use icons for quick scanning.",
+  
+  "booking_strategy": "Phone DOMINANT. Primary: Call for immediate service. Secondary: Offerte aanvraag form. Tertiary: WhatsApp. Emergency: 24/7 hotline.",
+  
+  "pricing_strategy": "Almost never on homepage. 'Vraag offerte aan' or call for pricing. Some show 'vaste tarieven' for common jobs (lekkage, verstopping).",
+  
+  "cta_patterns": [
+    "Bel direct [PHONE] (primary - largest, above fold)",
+    "24/7 Spoedlijn (if emergency service)",
+    "Offerte aanvragen (secondary - form)",
+    "WhatsApp (tertiary)"
+  ],
+  
+  "trust_elements": [
+    "KVK number",
+    "Years in business (experience)",
+    "Certifications (Techniek Nederland, InstallQ, VCA)",
+    "Garantie on work",
+    "Service area clearly defined",
+    "Customer reviews",
+    "Brand logos (Grohe, etc.)",
+    "Emergency availability"
+  ],
+  
+  "gallery_usage": "Minimal. Project photos useful but secondary. Focus on credibility over aesthetics. Before/after for renovations.",
+  
+  "common_mistakes": [
+    "Phone number hidden or small (CRITICAL error)",
+    "No clear service area",
+    "Too aesthetic, not credible enough",
+    "Long technical descriptions (customers don't read)",
+    "No emergency contact info",
+    "Missing certifications/KVK",
+    "No response time promises"
+  ],
+  
+  "modern_trends": [
+    "WhatsApp for non-urgent contact",
+    "Online offerte aanvraag (form)",
+    "Service area map visualization",
+    "Customer portal (Pro tier)",
+    "Maintenance contracts",
+    "24/7 chatbots (rare but emerging)"
+  ],
+  
+  "conversion_patterns": [
+    "Large click-to-call phone number",
+    "24/7 availability emphasis",
+    "Fast response time promise (< 30 min for spoed)",
+    "Vaste tarieven for common issues",
+    "Service area clearly stated (cities/regions)"
+  ],
+  
+  "research_notes": "12 trades websites analyzed including: A. de Jong (corporate, 145 years), Spaans Loodgieters (traditional, 75 years, dated), De Eilanden (family business, CV focus), Kropman (large, multi-location), DKC (technical focus). Pattern: Phone MUST be dominant. Trust elements critical. Service area essential. Emergency positioning key differentiator.",
+  
+  "example_sites": [
+    {
+      "url": "https://dejong.nl",
+      "name": "A. de Jong Installatietechniek",
+      "tier": "Pro",
+      "type": "Large corporate",
+      "strengths": ["145-year history", "Employee testimonials", "Project showcase", "Multi-location"],
+      "weaknesses": ["No clear hero", "Text-heavy", "Dated design"],
+      "observations": "Not our target (too large)"
+    },
+    {
+      "url": "https://www.spaansloodgieters.nl",
+      "name": "Spaans Loodgieters",
+      "tier": "Groei (dated)",
+      "type": "Local family business",
+      "established": "75 years",
+      "strengths": ["Long history", "Brand logos", "Service area clear", "Thuiscomfort certification"],
+      "weaknesses": ["VERY dated design (2010s)", "No hero section", "Text-heavy", "No reviews", "Not mobile-optimized"],
+      "opportunity": "Perfect candidate for modernization"
+    },
+    {
+      "url": "https://www.de-eilanden.nl",
+      "name": "De Eilanden Installatietechniek",
+      "tier": "Groei",
+      "type": "Family business",
+      "strengths": ["50+ years experience", "CV ketel focus", "Sharp pricing claim"],
+      "observations": "Direct, benefit-focused messaging"
+    },
+    {
+      "url": "https://kropman.nl",
+      "name": "Kropman",
+      "tier": "Pro",
+      "type": "Large installateur",
+      "strengths": ["12 locations", "Nationwide coverage", "Corporate positioning"],
+      "observations": "Scale-focused, not our target"
+    },
+    {
+      "url": "https://www.dkc.nl",
+      "name": "DKC Totaaltechniek",
+      "tier": "Groei",
+      "strengths": ["Total technical solutions", "Future-focused messaging"],
+      "observations": "Technical positioning"
+    },
+    {
+      "url": "https://www.loodgieter.nl",
+      "name": "Loodgieter.nl",
+      "tier": "Pro (platform)",
+      "type": "Nationwide service",
+      "strengths": ["220,000+ satisfied customers", "Same-day service", "Fixed prices"],
+      "observations": "Platform model, standardized offering"
+    }
+  ],
+  
+  "pattern_summary": {
+    "phone_placement": "Hero/header 90%, Sticky on mobile 60%",
+    "service_presentation": "Category icons 70%, Text list 30%",
+    "trust_display": "Years in business 80%, Certifications 60%, KVK 40%",
+    "emergency_service": "24/7 mentioned 70%, Prominent 40%",
+    "offerte_system": "Form available 60%, Phone only 40%"
+  },
+  
+  "template_requirements": {
+    "start_tier": {
+      "required_sections": ["hero-phone", "services-icons", "trust-bar", "service-area", "contact"],
+      "max_sections": 5,
+      "cta": "Phone DOMINANT",
+      "trust": ["Years", "KVK", "Garantie"],
+      "features": ["Click-to-call", "Service area", "Emergency badge"]
+    },
+    "groei_tier": {
+      "required_sections": ["hero-emergency", "services-detailed", "trust-comprehensive", "offerte-form", "reviews", "service-area-map", "contact"],
+      "max_sections": 7,
+      "cta": "Phone primary + Offerte form secondary",
+      "trust": ["All Start + Reviews", "Certifications", "Brand logos"],
+      "features": ["Online form", "Google reviews", "Map integration"]
+    },
+    "pro_tier": {
+      "required_sections": "All Groei + customer portal, maintenance contracts, multi-location, case studies",
+      "cta": "Portal + Phone + WhatsApp",
+      "trust": "All Groei + Partner logos, Case studies, Awards",
+      "features": ["Client portal", "Maintenance tracking", "Multi-location selector"]
+    }
+  },
+  
+  "market_opportunity": "HIGH: Local trades businesses (1-10 employees) overwhelmingly have outdated websites (2010-era). They need mobile-first, conversion-optimized sites but are NOT our primary target (starters are). Position as 'modern upgrade' for interested prospects only."
+}

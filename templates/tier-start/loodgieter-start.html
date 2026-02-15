@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bedrijfsnaam] - Loodgieter in [Regio]</title>
+    <meta name="description" content="[Bedrijfsnaam] is uw betrouwbare loodgieter in [Regio]. 24/7 spoedservice. Bel direct [telefoonnummer]">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           DESIGN TOKENS
+           ======================================== */
+        :root {
+            /* Colors - Trust Blue Theme */
+            --color-primary-600: #1e40af;
+            --color-primary-700: #1e3a8a;
+            --color-primary-100: #dbeafe;
+            
+            --color-accent-500: #f59e0b;
+            --color-accent-600: #d97706;
+            
+            --color-neutral-900: #0f172a;
+            --color-neutral-700: #334155;
+            --color-neutral-500: #64748b;
+            --color-neutral-200: #e2e8f0;
+            --color-neutral-100: #f1f5f9;
+            --color-neutral-50: #f8fafc;
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            
+            /* Spacing */
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            
+            /* Section padding */
+            --section-py: var(--space-12);
+            --section-px: var(--space-4);
+        }
+        
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--text-base);
+            line-height: 1.6;
+            color: var(--color-neutral-900);
+            background: var(--color-neutral-50);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--section-px);
+        }
+        
+        .section-padding {
+            padding: var(--section-py) var(--section-px);
+        }
+        
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-6);
+            font-family: var(--font-primary);
+            font-size: var(--text-base);
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary-600);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-700);
+            transform: translateY(-1px);
+        }
+        
+        .btn-accent {
+            background: var(--color-accent-500);
+            color: white;
+            font-size: var(--text-xl);
+            padding: var(--space-4) var(--space-8);
+        }
+        
+        .btn-accent:hover {
+            background: var(--color-accent-600);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary-600);
+            border: 2px solid var(--color-primary-600);
+        }
+        
+        .btn-outline:hover {
+            background: var(--color-primary-100);
+        }
+        
+        /* ========================================
+           HEADER
+           ======================================== */
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--color-neutral-200);
+            padding: var(--space-4) 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-primary-600);
+        }
+        
+        .nav-desktop {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-desktop {
+                display: flex;
+                gap: var(--space-6);
+            }
+        }
+        
+        .nav-link {
+            color: var(--color-neutral-700);
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-primary-600);
+        }
+        
+        /* ========================================
+           HERO
+           ======================================== */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-600) 100%);
+            color: white;
+            padding: var(--space-16) var(--section-px);
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: rgba(255,255,255,0.2);
+            padding: var(--space-2) var(--space-4);
+            border-radius: 9999px;
+            font-size: var(--text-sm);
+            font-weight: 500;
+            margin-bottom: var(--space-4);
+        }
+        
+        .hero-badge::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .hero-title {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-4);
+        }
+        
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: var(--text-4xl);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: var(--text-lg);
+            opacity: 0.9;
+            margin-bottom: var(--space-8);
+        }
+        
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            align-items: flex-start;
+        }
+        
+        .phone-display {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+        }
+        
+        .phone-display svg {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .hero-note {
+            font-size: var(--text-sm);
+            opacity: 0.8;
+            margin-top: var(--space-2);
+        }
+        
+        /* ========================================
+           SERVICES
+           ======================================== */
+        .services {
+            background: white;
+        }
+        
+        .section-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-8);
+            color: var(--color-neutral-900);
+        }
+        
+        .services-grid {
+            display: grid;
+            gap: var(--space-6);
+        }
+        
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: var(--space-6);
+            background: var(--color-neutral-50);
+            border-radius: 0.75rem;
+        }
+        
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--space-4);
+            color: var(--color-primary-600);
+        }
+        
+        .service-title {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+        }
+        
+        .service-desc {
+            color: var(--color-neutral-500);
+            font-size: var(--text-sm);
+        }
+        
+        /* ========================================
+           TRUST BAR
+           ======================================== */
+        .trust {
+            background: var(--color-neutral-100);
+        }
+        
+        .trust-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .trust-grid {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+        
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-2);
+        }
+        
+        .trust-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--color-primary-600);
+        }
+        
+        .trust-text {
+            font-weight: 500;
+            color: var(--color-neutral-700);
+        }
+        
+        /* ========================================
+           ABOUT
+           ======================================== */
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-text {
+            color: var(--color-neutral-700);
+            margin-bottom: var(--space-6);
+        }
+        
+        .years-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: var(--color-primary-100);
+            color: var(--color-primary-700);
+            padding: var(--space-2) var(--space-4);
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        
+        /* ========================================
+           SERVICE AREA
+           ======================================== */
+        .service-area {
+            background: var(--color-neutral-100);
+        }
+        
+        .area-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .area-text {
+            color: var(--color-neutral-700);
+            margin-bottom: var(--space-6);
+        }
+        
+        .area-map {
+            background: var(--color-neutral-200);
+            height: 200px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-neutral-500);
+        }
+        
+        /* ========================================
+           CONTACT CTA
+           ======================================== */
+        .contact-cta {
+            background: var(--color-primary-600);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+        }
+        
+        .contact-phone {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+        }
+        
+        .contact-alt {
+            opacity: 0.9;
+        }
+        
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: var(--color-neutral-900);
+            color: var(--color-neutral-200);
+            padding: var(--space-8) var(--section-px);
+            text-align: center;
+        }
+        
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            font-size: var(--text-sm);
+        }
+        
+        @media (min-width: 768px) {
+            .footer-info {
+                flex-direction: row;
+                justify-content: center;
+                gap: var(--space-6);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">[Bedrijfsnaam]</a>
+            <nav class="nav-desktop">
+                <a href="#diensten" class="nav-link">Diensten</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">24/7 Spoedservice</div>
+                <h1 class="hero-title">Uw betrouwbare loodgieter in [Regio]</h1>
+                <p class="hero-subtitle">Snel ter plaatse voor al uw lekkages, verstoppingen en cv-problemen</p>
+                <div class="hero-cta">
+                    <a href="tel:[PHONE]" class="btn btn-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        [06-12345678]
+                    </a>
+                    <p class="hero-note">Direct iemand aan de lijn • Geen wachttijden</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="diensten" class="services section-padding">
+        <div class="container">
+            <h2 class="section-title">Onze diensten</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.74 5.88a1 1 0 0 1 .26.67v8.76a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8.76a1 1 0 0 1 .26-.67L12 2.69z"/><path d="M12 22v-7"/><path d="M12 15l-3-3"/><path d="M12 15l3-3"/></svg>
+                    <h3 class="service-title">Lekkages</h3>
+                    <p class="service-desc">Snelle detectie en reparatie van alle lekkages</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-3-4-3-7a5 5 0 0 1 10 0c0 3-1.928 4.857-3 7-.5 1-1 1.62-1 3a2.5 2.5 0 0 0 2.5 2.5h-7z"/></svg>
+                    <h3 class="service-title">CV & Verwarming</h3>
+                    <p class="service-desc">Installatie, onderhoud en reparatie</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6v-2H9v2z"/><path d="M9 17h6v-5a3 3 0 0 0-6 0v5z"/><path d="M12 2a7 7 0 0 0-7 7c0 2 1 3 1 5v1h12v-1c0-2 1-3 1-5a7 7 0 0 0-7-7z"/></svg>
+                    <h3 class="service-title">Sanitair</h3>
+                    <p class="service-desc">Badkamers, wc's en keukens</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust section-padding">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span class="trust-text">Garantie op werk</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span class="trust-text">Snel ter plaatse</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="trust-text">Werkzaam in [Regio]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Over [Bedrijfsnaam]</h2>
+                <p class="about-text">[Bedrijfsnaam] is uw lokale loodgieter in [Regio]. Wij staan voor vakmanschap, betrouwbaarheid en snelle service. Of het nu gaat om een lekkage, een nieuwe cv-ketel of een complete badkamerrenovatie - wij helpen u graag.</p>
+                <div class="years-badge">[X] jaar ervaring</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="service-area section-padding">
+        <div class="container">
+            <div class="area-content">
+                <h2 class="section-title">Werkgebied</h2>
+                <p class="area-text">Wij zijn werkzaam in [Stad1], [Stad2], [Stad3] en omgeving. Staat uw plaats er niet bij? Neem gerust contact op, dan kijken we naar de mogelijkheden.</p>
+                <div class="area-map">[Google Maps embed]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section id="contact" class="contact-cta section-padding">
+        <div class="container">
+            <h2 class="contact-title">Direct contact?</h2>
+            <a href="tel:[PHONE]" class="contact-phone">[06-12345678]</a>
+            <p class="contact-alt">Of vraag een <a href="mailto:[EMAIL]" style="text-decoration: underline;">vrijblijvende offerte</a> aan</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-info">
+                <span>KVK: [nummer]</span>
+                <span>Tel: [telefoonnummer]</span>
+                <span>Bereikbaar: ma-vr 8:00-18:00</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

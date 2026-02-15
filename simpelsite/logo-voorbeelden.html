@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpelSite - Logo Voorbeelden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Inter:wght@400;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f1f5f9;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #1E293B;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #64748B;
+            margin-bottom: 3rem;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .logo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .logo-card:hover {
+            transform: translateY(-4px);
+        }
+        .logo-card h3 {
+            color: #1E293B;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Option 1 - Bold */
+        .logo-bold {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            color: #1E293B;
+        }
+        .logo-bold span {
+            color: #F97316;
+            font-weight: 900;
+        }
+        
+        /* Option 2 - Geometric */
+        .logo-geo-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .logo-geo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        .logo-geo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #1E293B;
+        }
+        .logo-geo span {
+            color: #F97316;
+        }
+        
+        /* Option 3 - Monogram */
+        .logo-mono-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-mono-icon {
+            width: 56px;
+            height: 56px;
+            background: #1E293B;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            font-weight: 800;
+            font-size: 1.75rem;
+        }
+        .logo-mono-icon::after {
+            content: 'S';
+            position: absolute;
+            color: #F97316;
+            font-weight: 800;
+            font-size: 1rem;
+            bottom: 6px;
+            right: 8px;
+        }
+        .logo-mono {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #1E293B;
+            text-align: left;
+        }
+        .logo-mono span {
+            color: #F97316;
+        }
+        
+        /* Option 4 - Elegant */
+        .logo-elegant-wrapper {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo-elegant-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #F97316 0%, #EA580C 100%);
+            border-radius: 2px;
+            margin-bottom: 0.75rem;
+        }
+        .logo-elegant {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1E293B;
+        }
+        .logo-elegant span {
+            color: #F97316;
+            font-weight: 500;
+        }
+        .logo-elegant-underline {
+            width: 40px;
+            height: 3px;
+            background: #1E293B;
+            border-radius: 2px;
+            margin-top: 0.5rem;
+            opacity: 0.3;
+        }
+        
+        /* Option 5 - Connected */
+        .logo-connected {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            color: #1E293B;
+            display: inline-flex;
+            align-items: center;
+        }
+        .logo-connected-part1 {
+            font-weight: 500;
+            color: #1E293B;
+        }
+        .logo-connected-dot {
+            width: 6px;
+            height: 6px;
+            background: #F97316;
+            border-radius: 50%;
+            margin: 0 2px;
+            position: relative;
+            top: -2px;
+        }
+        .logo-connected-part2 {
+            font-weight: 700;
+            color: #F97316;
+        }
+        
+        /* Option 6 - Layered */
+        .logo-layered-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .logo-layered-shadow {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #F97316;
+            opacity: 0.25;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            z-index: 1;
+        }
+        .logo-layered {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #1E293B;
+            position: relative;
+            z-index: 2;
+        }
+        .logo-layered span {
+            color: #F97316;
+        }
+        
+        /* Option 7 - Gradient */
+        .logo-gradient-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .logo-gradient-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #F97316 0%, #FB923C 50%, #FDBA74 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+        }
+        .logo-gradient-icon::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 4px;
+            transform: rotate(45deg);
+        }
+        .logo-gradient {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1E293B;
+        }
+        .logo-gradient span {
+            background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Option 8 - Rounded Badge */
+        .logo-rounded-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1E293B;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 0.5rem;
+        }
+        .logo-rounded-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+        .logo-rounded-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .logo-rounded-text span {
+            color: #F97316;
+            font-weight: 800;
+        }
+        .logo-rounded-standalone {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #1E293B;
+            margin-top: 0.5rem;
+        }
+        .logo-rounded-standalone span {
+            color: #F97316;
+        }
+        
+        .description {
+            margin-top: 1.5rem;
+            color: #64748B;
+            font-size: 0.875rem;
+        }
+        
+        .actions {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #1E293B;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #334155;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #1E293B;
+            color: #1E293B;
+        }
+        .btn-outline:hover {
+            background: #1E293B;
+            color: white;
+        }
+        
+        .pro-label {
+            display: inline-block;
+            background: #F97316;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SimpelSite Logo Opties</h1>
+        <p class="subtitle">8 professionele ontwerpen - Kies je favoriet</p>
+        
+        <h2 style="text-align: center; color: #1E293B; margin: 3rem 0 1.5rem; font-size: 1.25rem;">Set 1: Basis Ontwerpen</h2>
+        <div class="logo-grid">
+            <!-- Option 1 -->
+            <div class="logo-card">
+                <h3>1. Bold Modern</h3>
+                <div class="logo-bold">Simpel<span>Site</span></div>
+                <p class="description">Extra vet (900), strak, krachtig<br>Modern en professioneel</p>
+            </div>
+            
+            <!-- Option 2 -->
+            <div class="logo-card">
+                <h3>2. Geometric Icon</h3>
+                <div class="logo-geo-wrapper">
+                    <div class="logo-geo-icon">S</div>
+                    <div class="logo-geo">Simpel<span>Site</span></div>
+                </div>
+                <p class="description">Oranje vierkant met 'S'<br>Herkenbaar en app-achtig</p>
+            </div>
+            
+            <!-- Option 3 -->
+            <div class="logo-card">
+                <h3>3. Monogram SS</h3>
+                <div class="logo-mono-wrapper">
+                    <div class="logo-mono-icon">S</div>
+                    <div class="logo-mono">Simpel<span>Site</span></div>
+                </div>
+                <p class="description">Dubbele 'S' in vierkant<br>Elegant en tijdloos</p>
+            </div>
+            
+            <!-- Option 4 -->
+            <div class="logo-card">
+                <h3>4. Elegant Lines</h3>
+                <div class="logo-elegant-wrapper">
+                    <div class="logo-elegant-line"></div>
+                    <div class="logo-elegant">Simpel<span>Site</span></div>
+                    <div class="logo-elegant-underline"></div>
+                </div>
+                <p class="description">Lijnen boven/onder<br>Eleganter, uniek font</p>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; color: #1E293B; margin: 3rem 0 1.5rem; font-size: 1.25rem;">Set 2: SaaS/Pro Inspiratie <span class="pro-label">Aanbevolen</span></h2>
+        <div class="logo-grid">
+            <!-- Option 5 -->
+            <div class="logo-card">
+                <h3>5. Connected <span class="pro-label">Linear</span></h3>
+                <div class="logo-connected">
+                    <span class="logo-connected-part1">Simpel</span>
+                    <span class="logo-connected-dot"></span>
+                    <span class="logo-connected-part2">Site</span>
+                </div>
+                <p class="description">Verbonden met punt<br>Inspiratie: Linear, Stripe</p>
+            </div>
+            
+            <!-- Option 6 -->
+            <div class="logo-card">
+                <h3>6. Layered <span class="pro-label">Notion</span></h3>
+                <div class="logo-layered-wrapper">
+                    <div class="logo-layered-shadow">Simpel<span>Site</span></div>
+                    <div class="logo-layered">Simpel<span>Site</span></div>
+                </div>
+                <p class="description">Schaduw laag voor diepte<br>Inspiratie: Notion, Figma</p>
+            </div>
+            
+            <!-- Option 7 -->
+            <div class="logo-card">
+                <h3>7. Gradient Abstract <span class="pro-label">Vercel</span></h3>
+                <div class="logo-gradient-wrapper">
+                    <div class="logo-gradient-icon"></div>
+                    <div class="logo-gradient">Simpel<span>Site</span></div>
+                </div>
+                <p class="description">Abstract geometrisch icoon<br>Inspiratie: Vercel, Supabase</p>
+            </div>
+            
+            <!-- Option 8 -->
+            <div class="logo-card">
+                <h3>8. Rounded Badge <span class="pro-label">Slack</span></h3>
+                <div class="logo-rounded-badge">
+                    <div class="logo-rounded-icon">S</div>
+                    <div class="logo-rounded-text">Simpel<span>Site</span></div>
+                </div>
+                <div class="logo-rounded-standalone">Simpel<span>Site</span></div>
+                <p class="description">Pill/badge + standalone<br>Inspiratie: Slack, Spotify</p>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <h3 style="margin-bottom: 1rem; color: #1E293B;">Bekijk alle opties</h3>
+            <a href="logo-voorbeeld-1-bold.html" class="btn" target="_blank">1</a>
+            <a href="logo-voorbeeld-2-geometric.html" class="btn" target="_blank">2</a>
+            <a href="logo-voorbeeld-3-monogram.html" class="btn" target="_blank">3</a>
+            <a href="logo-voorbeeld-4-elegant.html" class="btn" target="_blank">4</a>
+            <a href="logo-voorbeeld-5-connected.html" class="btn" target="_blank">5</a>
+            <a href="logo-voorbeeld-6-layered.html" class="btn" target="_blank">6</a>
+            <a href="logo-voorbeeld-7-gradient.html" class="btn" target="_blank">7</a>
+            <a href="logo-voorbeeld-8-rounded.html" class="btn" target="_blank">8</a>
+            <br><br>
+            <a href="index.html" class="btn btn-outline">Terug naar website</a>
+        </div>
+    </div>
+</body>
+</html>

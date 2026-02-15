@@ -1,0 +1,105 @@
+# SIMPLESITE RESEARCH SUMMARY
+**Date:** 2026-02-11 | **Status:** Research Complete
+
+---
+
+## ✅ TASK 1: STOCK IMAGES
+**Solution:** Unsplash + Pexels (free)
+- Unlimited free high-quality photos
+- No attribution required
+- Search terms: "electrician", "electrical tools", "ev charging"
+- Paid backup: Shutterstock (€29/month) if needed
+
+---
+
+## ✅ TASK 2: FORM SEQUENCE
+**Platform:** Tally.so (free tier)
+**Steps:** 12-step progressive form
+- Business basics → Contact → Visuals → Content → Services → Style → Submit
+- File uploads: Logo + photos
+- WhatsApp alternative for mobile-first clients
+**Time:** 3-5 minutes for client
+
+---
+
+## ✅ TASK 3: MULTI-PAGE WEBSITES
+**Starter:** Single-page with sections
+**Growth:** 5 static HTML pages (home, services, about, contact, gallery)
+**Premium:** 10 pages, possibly with static generator
+**Structure:** Simple folder per client, navigation links between pages
+
+---
+
+## ✅ TASK 4: JANSEN ELEKTRA EXAMPLE
+**Status:** Building now...
+**Sections:** Hero, 3 Services (meterkast/laadpaal/elektra), USPs, Gallery, Reviews, Contact
+**Images:** Unsplash free stock
+**Colors:** Navy + Electric yellow/orange
+**Build:** Single-page, mobile-first
+
+---
+
+## ✅ TASK 5: GITHUB & NETLIFY
+**GitHub:** Create repo per client or single repo with folders
+**Netlify:** Drag-drop deploy or GitHub auto-deploy
+**Domain:** Custom domains via Netlify (free SSL)
+**Forms:** Netlify Forms (100 submissions/month free)
+**Workflow:** Build → GitHub → Netlify → Live
+
+---
+
+## ✅ TASK 6: CUSTOMER JOURNEY
+**Proposed Flow:**
+1. Form/WhatsApp → Auto-reply
+2. AI + Human → Generate preview (screenshots/local HTML)
+3. Customer reviews → WhatsApp feedback
+4. Payment → Invoice via Mollie/Tikkie
+5. Deploy → Live site + domain
+**Human time:** ~20-30 min per client
+**Preview method:** Screenshots + StackBlitz (no hosting costs)
+
+---
+
+## ✅ TASK 7: BUSINESS EXPERTISE
+**Target:** Trades, ZZP, small business
+**Volume:** 10-20 sites/month
+**Price:** €99-499 setup + €9.99-19.99/month
+**Outreach:** Direct WhatsApp, personalized
+**Key message:** "Eerst zien, dan betalen"
+
+---
+
+## ✅ TASK 8: OUTREACH STRATEGY
+**Channels:**
+- Google Maps (search trades, get phone)
+- Zoofy/Werkspot (message via platform)
+- KVK (cross-reference with Google Maps)
+- Instagram/Facebook (DM trades without websites)
+**Spam avoidance:** Max 3 messages, personalize, 3-day intervals
+**Response rate target:** 20%
+**Conversion target:** 30% preview → sale
+
+---
+
+## 🎯 NEXT STEPS
+
+### THIS WEEK:
+1. ✅ Build Jansen Elektra example
+2. Setup Tally.so form
+3. Deploy SimpelSite to Netlify
+4. Create GitHub repo
+
+### NEXT 2 WEEKS:
+1. Build 3 example sites
+2. WhatsApp templates
+3. Test customer journey
+4. First 50 outreach messages
+
+### MONTH 1 GOAL:
+- 5 clients
+- €2,000+ revenue
+- Refine process
+
+---
+
+📄 **Full details:** `RESEARCH_STRATEGY.txt`
