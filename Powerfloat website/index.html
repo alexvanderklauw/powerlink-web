@@ -1417,14 +1417,15 @@
                 <ul class="features">
                     <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
                     <li><strong>One-page website</strong></li>
+                    <li class="extra"><strong>Aanbetaling na concept: €20</strong></li>
                     <li class="extra">Eigen logo en foto's</li>
-                    <li>Aanbetaling na concept: €20</li>
                     <li>Vindbaarheid Start: Extra pagina voor 1 regio/onderwerp</li>
                     <li>Offerte, WhatsApp of belknop</li>
                     <li>Contactformulier</li>
                     <li>Google Maps</li>
                     <li>Social media links</li>
                     <li>2 wijzigingen per jaar**</li>
+                    <li class="plus">+ €25 'standaard logo ontwerp'</li>
                     <li class="plus">+ €25 per extra vindbaarheidpagina*</li>
                     <li class="plus">Professioneel e-mailadres +€5/maand (tot 5 gebruikers)</li>
                 </ul>
@@ -1443,12 +1444,13 @@
                 <ul class="features">
                     <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
                     <li><strong>5 pagina's</strong></li>
-                    <li>Aanbetaling na concept: €30</li>
+                    <li class="extra"><strong>Aanbetaling na concept: €30</strong></li>
                     <li>Vindbaarheid Groei: Extra pagina voor 3 regio's/onderwerpen</li>
                     <li>Alles van Start, plus:</li>
                     <li>Foto galerij / portfolio</li>
                     <li>Klanten reviews sectie</li>
                     <li>4 wijzigingen per jaar**</li>
+                    <li class="plus">+ €25 'standaard logo ontwerp'</li>
                     <li class="plus">+ €25 per (vindbaarheid) pagina*</li>
                     <li class="plus">Meertalig €99 per taal</li>
                     <li class="plus">Professioneel e-mailadres +€5/maand (tot 5 gebruikers)</li>
@@ -1467,13 +1469,14 @@
                 <ul class="features">
                     <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
                     <li><strong>Tot 10 pagina's</strong></li>
-                    <li>Aanbetaling na concept: €50</li>
+                    <li class="extra"><strong>Aanbetaling na concept: €50</strong></li>
                     <li>Vindbaarheid Pro: Extra pagina voor alle regio's/onderwerpen</li>
                     <li>Alles van Groei, plus:</li>
                     <li class="extra">Boeking / reservering systeem</li>
                     <li>iDEAL betalingen mogelijk</li>
                     <li>Meertalig (NL + EN)</li>
                     <li>6 wijzigingen per jaar**</li>
+                    <li class="plus">+ €25 'standaard logo ontwerp'</li>
                     <li class="plus">Professioneel e-mailadres +€5/maand (tot 5 gebruikers)</li>
                 </ul>
                 <a href="#offerte" class="btn btn-outline" style="width: 100%; justify-content: center;">Kies Pro</a>
@@ -1581,7 +1584,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="diensten">Wat verkoop/bied je precies aan? Benoem al je diensten/producten. *</label>
+                        <label for="diensten">Welke producten en diensten moeten op je site komen? *</label>
                         <textarea name="diensten" id="diensten" rows="3" placeholder="Bijv. Badkamerrenovaties, knipbehandelingen, Italiaans ijs" required></textarea>
                     </div>
 
@@ -1688,33 +1691,33 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Heb je eigen foto's? *</label>
+                        <label>Wil je de kleuren van je site zelf bepalen? *</label>
                         <div class="radio-group">
                             <label class="radio-item">
-                                <input type="radio" name="fotos" value="Ja, upload later" required>
-                                <span>Ja, ik upload ze later</span>
+                                <input type="radio" name="kleuren" value="Ja" required>
+                                <span>Ja</span>
                             </label>
                             <label class="radio-item">
-                                <input type="radio" name="fotos" value="Ja, via WhatsApp">
-                                <span>Ja, ik stuur ze via WhatsApp</span>
+                                <input type="radio" name="kleuren" value="Nee, jullie mogen kiezen">
+                                <span>Nee, jullie mogen kiezen</span>
                             </label>
-                            <label class="radio-item">
-                                <input type="radio" name="fotos" value="Nee, regelen jullie">
-                                <span>Nee, regel jullie dit voor mij</span>
-                            </label>
+                        </div>
+                        <div id="kleurenInput" style="display:none; margin-top:1rem;">
+                            <label for="kleurenKeuze">Welke kleuren wil je gebruiken?</label>
+                            <input type="text" name="kleuren_keuze" id="kleurenKeuze" placeholder="blauw, geel">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Heb je teksten? *</label>
+                        <label>Heb je eigen foto's? *</label>
                         <div class="radio-group">
                             <label class="radio-item">
-                                <input type="radio" name="teksten" value="Ja, via WhatsApp" required>
-                                <span>Ja, ik stuur ze via WhatsApp</span>
+                                <input type="radio" name="fotos" value="Ja, upload later" required>
+                                <span>Ja (deze kun je later uploaden)</span>
                             </label>
                             <label class="radio-item">
-                                <input type="radio" name="teksten" value="Nee, schrijven jullie">
-                                <span>Nee, schrijf ze voor mij <span class="price-tag">+€79</span></span>
+                                <input type="radio" name="fotos" value="Nee, regelen jullie">
+                                <span>Nee, regel jullie dit voor mij</span>
                             </label>
                         </div>
                     </div>
@@ -2077,6 +2080,15 @@
                             aantalGroup.style.display = e.target.value === 'Ja' ? 'block' : 'none';
                         });
                     });
+
+                    // Kleuren toggle
+                    const kleurenRadios = document.querySelectorAll('input[name="kleuren"]');
+                    kleurenRadios.forEach(radio => {
+                        radio.addEventListener('change', (e) => {
+                            const kleurenInput = document.getElementById('kleurenInput');
+                            kleurenInput.style.display = e.target.value === 'Ja' ? 'block' : 'none';
+                        });
+                    });
                 }
 
                 setupConditionalFields() {
@@ -2089,6 +2101,12 @@
                     const meerdereRegios = document.querySelector('input[name="meerdere_regios"][value="Ja"]');
                     if (meerdereRegios && meerdereRegios.checked) {
                         document.getElementById('aantalRegiosGroup').style.display = 'block';
+                    }
+
+                    // Initialize kleuren input state
+                    const kleurenJa = document.querySelector('input[name="kleuren"][value="Ja"]');
+                    if (kleurenJa && kleurenJa.checked) {
+                        document.getElementById('kleurenInput').style.display = 'block';
                     }
                 }
 
@@ -2371,12 +2389,6 @@
                     if (this.formData.logo === 'Nee, maak er een') {
                         setup += 25;
                         extras.push('Logo ontwerp (+€25)');
-                    }
-
-                    // Teksten schrijven
-                    if (this.formData.teksten === 'Nee, schrijven jullie') {
-                        setup += 79;
-                        extras.push('Teksten schrijven (+€79)');
                     }
 
                     // Pro email
