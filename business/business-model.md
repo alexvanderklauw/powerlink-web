@@ -22,9 +22,9 @@
 ### What's Included:
 - ✅ Gratis conceptwebsite (t.w.v. €29,99)
 - ✅ One-page website
-- ✅ Eigen logo en foto's
+- ✅ **1 vindbaarheidpagina**
 - ✅ Aanbetaling na concept: €20
-- ✅ **Vindbaarheid Start: Extra pagina voor 1 regio/onderwerp**
+- ✅ Eigen logo en foto's
 - ✅ Offerte, WhatsApp of belknop
 - ✅ Contactformulier
 - ✅ Google Maps
@@ -49,8 +49,8 @@
 ### What's Included:
 - ✅ Gratis conceptwebsite (t.w.v. €29,99)
 - ✅ **5 pagina's**
+- ✅ **3 vindbaarheidspagina's**
 - ✅ Aanbetaling na concept: €30
-- ✅ **Vindbaarheid Groei: Extra pagina voor 3 regio's/onderwerpen**
 - ✅ Alles van Start, plus:
   - Foto galerij / portfolio
   - Klanten reviews sectie
@@ -75,8 +75,8 @@
 ### What's Included:
 - ✅ Gratis conceptwebsite (t.w.v. €29,99)
 - ✅ **Tot 10 pagina's**
+- ✅ **10 vindbaarheidspagina's**
 - ✅ Aanbetaling na concept: €50
-- ✅ **Vindbaarheid Pro: Extra pagina voor alle regio's/onderwerpen**
 - ✅ Alles van Groei, plus:
   - Boeking / reservering systeem
   - iDEAL betalingen mogelijk
