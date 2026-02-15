@@ -1346,13 +1346,13 @@
                 <span>Eerst zien dan betalen - Gratis preview t.w.v. 29,99</span>
             </div>
             <h1 style="text-align: center;">
-                Simpel.<br>
+                Persoonlijk.<br>
                 Snel.<br>
                 Betaalbaar.
             </h1>
             <div class="hero-buttons">
                 <a href="#prijzen" class="btn btn-primary">
-                    Start nu
+                    Start je gratis preview
                 </a>
                 <a href="https://wa.me/31612345678" class="btn btn-whatsapp" target="_blank">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
@@ -1418,8 +1418,8 @@
                     <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
                     <li><strong>One-page website</strong></li>
                     <li class="extra">Eigen logo en foto's</li>
-                    <li class="extra">Vindbaarheid Start: Extra pagina voor 1 regio/onderwerp</li>
-                    <li class="extra">Aanbetaling na concept: €20</li>
+                    <li>Aanbetaling na concept: €20</li>
+                    <li>Vindbaarheid Start: Extra pagina voor 1 regio/onderwerp</li>
                     <li>Offerte, WhatsApp of belknop</li>
                     <li>Contactformulier</li>
                     <li>Google Maps</li>
@@ -1443,10 +1443,10 @@
                 <ul class="features">
                     <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
                     <li><strong>5 pagina's</strong></li>
-                    <li class="extra">Aanbetaling na concept: €30</li>
+                    <li>Aanbetaling na concept: €30</li>
+                    <li>Vindbaarheid Groei: Extra pagina voor 3 regio's/onderwerpen</li>
                     <li>Alles van Start, plus:</li>
                     <li>Foto galerij / portfolio</li>
-                    <li class="extra">Vindbaarheid Groei: Extra pagina voor 3 regio's/onderwerpen</li>
                     <li>Klanten reviews sectie</li>
                     <li>4 wijzigingen per jaar**</li>
                     <li class="plus">+ €25 per (vindbaarheid) pagina*</li>
@@ -1467,8 +1467,8 @@
                 <ul class="features">
                     <li class="extra">Gratis conceptwebsite (t.w.v. €29,99)</li>
                     <li><strong>Tot 10 pagina's</strong></li>
-                    <li class="extra">Aanbetaling na concept: €50</li>
-                    <li class="extra">Vindbaarheid Pro: Extra pagina voor alle regio's/onderwerpen</li>
+                    <li>Aanbetaling na concept: €50</li>
+                    <li>Vindbaarheid Pro: Extra pagina voor alle regio's/onderwerpen</li>
                     <li>Alles van Groei, plus:</li>
                     <li class="extra">Boeking / reservering systeem</li>
                     <li>iDEAL betalingen mogelijk</li>
@@ -1481,7 +1481,7 @@
         </div>
 
         <p class="pricing-disclaimer">
-            * Extra vindbaarheid pagina's: €25 per extra regio/onderwerp boven het limiet van je pakket.<br>
+            * Extra (vindbaarheid) pagina's boven het limiet van je pakket: +€25<br>
             ** Wijzigingen = tekst/foto aanpassingen, geen nieuwe pagina's.
         </p>
     </section>
@@ -2029,6 +2029,7 @@
                     this.totalSteps = 5;
                     this.formData = {};
                     this.form = document.getElementById('intakeForm');
+                    this.hasInteracted = false;
                     this.init();
                 }
 
@@ -2116,8 +2117,10 @@
                         this.generateProposal();
                     }
 
-                    // Scroll to top of form
-                    document.getElementById('offerte').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Scroll to top of form (only when navigating, not on initial load)
+                    if (this.hasInteracted) {
+                        document.getElementById('offerte').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
 
                 updateProgress() {
@@ -2293,6 +2296,7 @@
                 }
 
                 nextStep() {
+                    this.hasInteracted = true;
                     if (this.validateStep(this.currentStep)) {
                         this.saveStepData(this.currentStep);
                         if (this.currentStep < this.totalSteps) {
@@ -2304,6 +2308,7 @@
                 }
 
                 prevStep() {
+                    this.hasInteracted = true;
                     if (this.currentStep > 1) {
                         this.currentStep--;
                         this.showStep(this.currentStep);
