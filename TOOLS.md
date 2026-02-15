@@ -222,10 +222,13 @@ We use Git as primary backup system (branches + tags) with local release folders
 ### Directory Structure
 ```
 clawd/
+├── Powerfloat website/ ← WEBSITE: floatweb.nl + templates + backups
+│   ├── index.html      ← Main site
+│   ├── templates/      ← Customer templates
+│   ├── releases/       ← Major version snapshots
+│   └── .backup-log.json← Tracks backups
 ├── workspace/          ← ACTIVE: Work in feature branches only
-├── backups/            ← AUTO: Git tags (lightweight, unlimited)
-├── releases/           ← MANUAL: Major version snapshots
-└── .backup-log.json    ← Tracks releases
+└── memory/             ← Docs, credentials, daily notes
 ```
 
 ### Workflow: The 4-Step Safety Net
