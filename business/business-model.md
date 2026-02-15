@@ -32,8 +32,11 @@
 - ✅ 2 wijzigingen per jaar**
 
 ### Extras (add-on pricing):
-- ➕ + €25 per extra vindbaarheidpagina*
 - ➕ Professioneel e-mailadres +€5/maand (tot 5 gebruikers)
+- ➕ Meertalig +€99 per taal (Groei & Pro)
+
+### Need More?
+Upgrade naar een hoger pakket. Geen losse pagina's te koop.
 
 ### Ideal For:
 - Small local businesses
@@ -57,9 +60,11 @@
 - ✅ 4 wijzigingen per jaar**
 
 ### Extras (add-on pricing):
-- ➕ + €25 per (vindbaarheid) pagina*
 - ➕ Meertalig €99 per taal
 - ➕ Professioneel e-mailadres +€5/maand (tot 5 gebruikers)
+
+### Need More?
+Upgrade naar Pro voor onbeperkte vindbaarheidspagina's.
 
 ### Ideal For:
 - Growing businesses with multiple services
@@ -96,8 +101,8 @@
 ## Footnotes & Disclaimers
 
 ```
-* Extra (vindbaarheid) pagina's boven het limiet van je pakket: +€25
-** Wijzigingen = tekst/foto aanpassingen, geen nieuwe pagina's.
+* Wijzigingen = tekst/foto aanpassingen, geen nieuwe pagina's.
+** Geen losse pagina verkoop. Wil je meer? Upgrade naar hoger pakket.
 ```
 
 ---

@@ -1855,27 +1855,24 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="aantalRegios">Aantal regio's/steden *</label>
-                        <select name="aantal_regios" id="aantalRegios" required>
-                            <option value="1">1 regio/stad</option>
-                            <option value="2">2 regio's/steden</option>
-                            <option value="3">3 regio's/steden</option>
-                            <option value="4">4 regio's/steden</option>
-                            <option value="5">5+ regio's/steden</option>
-                        </select>
-                        <small class="form-help">Per extra regio boven je pakketlimiet: +€25</small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="aantalDiensten">Aantal diensten/producten voor aparte pagina's *</label>
-                        <select name="aantal_diensten" id="aantalDiensten" required>
-                            <option value="1">1 dienst/product</option>
-                            <option value="2">2 diensten/producten</option>
-                            <option value="3">3 diensten/producten</option>
-                            <option value="4">4 diensten/producten</option>
-                            <option value="5">5+ diensten/producten</option>
-                        </select>
-                        <small class="form-help">Per extra onderwerp boven je pakketlimiet: +€25</small>
+                        <label>Wil je gevonden worden in meerdere steden? *</label>
+                        <div class="radio-group tier-radio-group">
+                            <label class="radio-item tier-option" data-tier="Start">
+                                <input type="radio" name="meerdere_steden" value="Nee" required>
+                                <span class="tier-label-text">Nee, 1 stad is genoeg</span>
+                                <span class="tier-badge-inline">START</span>
+                            </label>
+                            <label class="radio-item tier-option" data-tier="Groei">
+                                <input type="radio" name="meerdere_steden" value="Ja">
+                                <span class="tier-label-text">Ja, 2-3 steden</span>
+                                <span class="tier-badge-inline">GROEI</span>
+                            </label>
+                            <label class="radio-item tier-option" data-tier="Pro">
+                                <input type="radio" name="meerdere_steden" value="Heel veel">
+                                <span class="tier-label-text">Ja, meer dan 3 steden</span>
+                                <span class="tier-badge-inline">PRO</span>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="form-navigation">
@@ -2370,16 +2367,11 @@
                             break;
                     }
 
-                    // Check vindbaarheid limits
-                    const aantalRegios = parseInt(data.aantal_regios) || 1;
-                    const aantalDiensten = parseInt(data.aantal_diensten) || 1;
-                    const totaalVindbaarheid = aantalRegios + aantalDiensten;
-
-                    // Upgrade tier if vindbaarheid exceeds limits
-                    if (tier === 'Start' && totaalVindbaarheid > 2) {
+                    // Check meerdere steden - upgrade if needed
+                    if (data.meerdere_steden === 'Ja' && tier === 'Start') {
                         tier = 'Groei';
                     }
-                    if (tier === 'Groei' && totaalVindbaarheid > 6) {
+                    if (data.meerdere_steden === 'Heel veel') {
                         tier = 'Pro';
                     }
 
@@ -2398,32 +2390,9 @@
                     let monthly = tierData[tier].monthly;
                     const extras = [];
 
-                    // Calculate vindbaarheid limits
-                    const aantalRegios = parseInt(this.formData.aantal_regios) || 1;
-                    const aantalDiensten = parseInt(this.formData.aantal_diensten) || 1;
-                    
-                    // Determine limits per tier
-                    let regioLimiet = 1;
-                    let dienstLimiet = 1;
-                    
-                    if (tier === 'Groei') {
-                        regioLimiet = 3;
-                        dienstLimiet = 3;
-                    } else if (tier === 'Pro') {
-                        regioLimiet = 999; // Onbeperkt
-                        dienstLimiet = 999;
-                    }
-                    
-                    // Calculate extra costs
-                    const extraRegios = Math.max(0, aantalRegios - regioLimiet);
-                    const extraDiensten = Math.max(0, aantalDiensten - dienstLimiet);
-                    const totaalExtra = extraRegios + extraDiensten;
-                    
-                    if (totaalExtra > 0) {
-                        const extraKosten = totaalExtra * 25;
-                        setup += extraKosten;
-                        extras.push(`${totaalExtra} extra vindbaarheid pagina's (+€${extraKosten})`);
-                    }
+                    // Option C: No extra page sales, fixed packages only
+                    // If user needs more, they upgrade tier
+                    // No additional costs beyond tier price
 
                     // Logo maken
                     if (this.formData.logo === 'Nee, maak er een') {
@@ -2478,9 +2447,11 @@
                     if (data.reserveren === 'Ja') {
                         reasons.push('Je wilt automatisch reserveren');
                     }
-                    const totaalVindbaarheid = (parseInt(data.aantal_regios) || 1) + (parseInt(data.aantal_diensten) || 1);
-                    if (totaalVindbaarheid > 2) {
-                        reasons.push(`Je wilt ${totaalVindbaarheid} vindbaarheid pagina's (regio's + diensten)`);
+                    if (data.meerdere_steden === 'Ja') {
+                        reasons.push('Je wilt gevonden worden in meerdere steden (2-3)');
+                    }
+                    if (data.meerdere_steden === 'Heel veel') {
+                        reasons.push('Je wilt gevonden worden in veel steden (meer dan 3)');
                     }
                     if (data.doel) {
                         reasons.push(`Hoofddoel: ${data.doel.toLowerCase()}`);
