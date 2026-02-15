@@ -1110,6 +1110,16 @@
             color: var(--primary) !important;
         }
 
+        .tier-radio-group .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tier-label-text {
+            flex: 1;
+        }
+
         .tier-badge-inline {
             display: inline-block;
             background: var(--accent);
@@ -1118,8 +1128,7 @@
             font-size: 0.7rem;
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
-            margin-left: 0.5rem;
-            vertical-align: middle;
+            white-space: nowrap;
         }
 
         .price-tag {
@@ -1811,46 +1820,36 @@
 
                     <div class="form-group">
                         <label>Hoe uitgebreid moet je website zijn? *</label>
-                        <div class="radio-group">
+                        <div class="radio-group tier-radio-group">
                             <label class="radio-item tier-option" data-tier="Start">
                                 <input type="radio" name="uitgebreidheid" value="Eén overzichtelijke pagina" required>
-                                <div>
-                                    <strong>Eén overzichtelijke pagina</strong>
-                                    <span class="tier-badge-inline">START</span>
-                                </div>
+                                <span class="tier-label-text">Eén overzichtelijke pagina</span>
+                                <span class="tier-badge-inline">START</span>
                             </label>
                             <label class="radio-item tier-option" data-tier="Groei">
                                 <input type="radio" name="uitgebreidheid" value="Meerdere pagina's">
-                                <div>
-                                    <strong>Meerdere pagina's</strong>
-                                    <span class="tier-badge-inline">GROEI</span>
-                                </div>
+                                <span class="tier-label-text">Meerdere pagina's</span>
+                                <span class="tier-badge-inline">GROEI</span>
                             </label>
                             <label class="radio-item tier-option" data-tier="Pro">
                                 <input type="radio" name="uitgebreidheid" value="Best uitgebreid">
-                                <div>
-                                    <strong>Best uitgebreid met aparte secties</strong>
-                                    <span class="tier-badge-inline">PRO</span>
-                                </div>
+                                <span class="tier-label-text">Best uitgebreid met aparte secties</span>
+                                <span class="tier-badge-inline">PRO</span>
                             </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Wil je dat klanten automatisch kunnen reserveren? *</label>
-                        <div class="radio-group">
+                        <div class="radio-group tier-radio-group">
                             <label class="radio-item tier-option" data-tier="Pro">
                                 <input type="radio" name="reserveren" value="Ja" required>
-                                <div>
-                                    <strong>Ja</strong>
-                                    <span class="tier-badge-inline">PRO</span>
-                                </div>
+                                <span class="tier-label-text">Ja</span>
+                                <span class="tier-badge-inline">PRO</span>
                             </label>
                             <label class="radio-item tier-option" data-tier="Start">
                                 <input type="radio" name="reserveren" value="Nee">
-                                <div>
-                                    <strong>Nee</strong>
-                                </div>
+                                <span class="tier-label-text">Nee</span>
                             </label>
                         </div>
                     </div>
