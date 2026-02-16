@@ -63,6 +63,12 @@ See `/business/outreach-scripts/initial-outreach.md`
 - ⚠️ Sites have bot protection (manual download needed)
 - 🔄 Can browse but not auto-download
 
+### Brave Search API
+- **API Key:** `BSAHX4obVplWJIZzblmbn-3gMzeWQQW` (stored in `.env`)
+- **Status:** ⚠️ Gateway restart required to activate
+- **Usage:** `web_search` tool for research
+- **Setup:** Set `BRAVE_API_KEY` environment variable or restart OpenClaw gateway
+
 ---
 
 ## Browser Access
